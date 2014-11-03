@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Mayank Jain. All rights reserved.
 //
 
-#import "TableViewController.h"
+#import "EventsTableViewController.h"
 
-@interface TableViewController ()
+@interface EventsTableViewController ()
 
 @end
 
-@implementation TableViewController
+@implementation EventsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,14 +22,36 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    if (![PFUser currentUser]) { // No user logged in
+        // Create the log in view controller
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        [logInViewController setDelegate:self]; // Set ourselves as the delegate
+        
+        // Create the sign up view controller
+        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+        
+        // Assign our sign up controller to be displayed from the login controller
+        [logInViewController setSignUpController:signUpViewController];
+        
+        // Present the log in view controller
+        [self presentViewController:logInViewController animated:YES completion:NULL];
+    }
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.array = [[NSMutableArray alloc] initWithArray: @[@"Mayank's Bday Party", @"Barndance", @"Wedding"]];
     
-    UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    imagePicker.delegate = self;
-    [self presentViewController:imagePicker animated:YES completion:NULL];
+    FBLoginView *loginView = [[FBLoginView alloc] init];
+    loginView.center = self.view.center;
+    [self.view addSubview:loginView];
+
+    
+//    UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
+//    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    imagePicker.delegate = self;
+//    [self presentViewController:imagePicker animated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning {
