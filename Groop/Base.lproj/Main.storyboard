@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eWd-Sa-GJO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4Jq-DR-dXd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="aMh-ix-2bx">
+            <objects>
+                <viewController storyboardIdentifier="LoginIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4Jq-DR-dXd" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CLO-HR-IZV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Now-xe-ey0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TdM-Ch-As6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera Permissions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fj2-O7-x0p">
+                                <rect key="frame" x="85" y="289" width="159" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-ft-0ba">
+                                <rect key="frame" x="278" y="285" width="68" height="31"/>
+                                <color key="backgroundColor" red="0.1728346795" green="0.75348377229999997" blue="0.032863564790000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Allow">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraPermissionsButtonPressed:" destination="4Jq-DR-dXd" eventType="touchUpInside" id="e0D-YX-K4Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1sG-2t-neu"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="cameraPermissionButton" destination="3cq-ft-0ba" id="yfI-YN-img"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GS1-bl-ZiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-205" y="-975"/>
+        </scene>
         <!--Events-->
         <scene sceneID="9nm-Sp-fMb">
             <objects>
-                <tableViewController id="QkJ-i0-7jL" customClass="EventsTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Events" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QkJ-i0-7jL" customClass="EventsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FCy-KW-c0n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,28 +100,28 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="371" y="-213"/>
+            <point key="canvasLocation" x="432" y="-213"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OYL-Th-dAd">
             <objects>
-                <navigationController id="eWd-Sa-GJO" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eWd-Sa-GJO" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RPs-2W-dC3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="QkJ-i0-7jL" kind="relationship" relationship="rootViewController" id="FiF-B9-cLc"/>
+                        <segue destination="QkJ-i0-7jL" kind="relationship" relationship="rootViewController" id="uU4-jU-0Ci"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cn2-BH-NsJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-594" y="-197"/>
+            <point key="canvasLocation" x="-112" y="-197"/>
         </scene>
-        <!--Event Collection View Controller-->
+        <!--Album-->
         <scene sceneID="fuX-cV-zbg">
             <objects>
-                <collectionViewController id="ckE-u1-1z1" customClass="EventCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController title="Album" id="ckE-u1-1z1" customClass="EventCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bLW-Fr-LsE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,12 +163,12 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rC-gg-K2U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757" y="-213"/>
+            <point key="canvasLocation" x="867" y="-213"/>
         </scene>
-        <!--View Controller-->
+        <!--Picture-->
         <scene sceneID="B9H-bQ-BC7">
             <objects>
-                <viewController id="CAs-t7-ftK" sceneMemberID="viewController">
+                <viewController title="Picture" id="CAs-t7-ftK" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xNE-iU-VQc"/>
                         <viewControllerLayoutGuide type="bottom" id="BjL-Ce-A2Y"/>

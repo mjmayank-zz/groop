@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface AppDelegate ()
 
@@ -21,8 +22,19 @@
     // Override point for customization after application launch.
     [Parse setApplicationId:@"ZEEeGYn5bYO4tKaE1itCU6entbHT2Gfd4VAxxktL"
                   clientKey:@"W5lbxmYArxFEAXmWevrh6Y6VrSfC1hM4mIGarueF"];
-    
+    [PFFacebookUtils initializeFacebook];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    BOOL hasPermissions =
+    [[NSUserDefaults standardUserDefaults] boolForKey:@"hasPermissions"];
+    
+    NSString *storyboardId = hasPermissions ? @"MainIdentifier" : @"LoginIdentifier";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:storyboardId];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = initViewController;
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
@@ -43,6 +55,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBAppEvents activateApp];
+    [FBSession.activeSession handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -136,7 +150,7 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
     // attempt to extract a token from the url
-    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    return [PFFacebookUtils handleOpenURL:url];
 }
 
 @end

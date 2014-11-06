@@ -23,16 +23,19 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self promptLogin];
-    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.array = [[NSMutableArray alloc] initWithArray: @[@"Mayank's Bday Party", @"Barndance", @"Wedding"]];
     
-//    UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
-//    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    imagePicker.delegate = self;
-//    [self presentViewController:imagePicker animated:YES completion:NULL];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+//    [self promptLogin];
+    
+//    FBLoginView *loginView = [[FBLoginView alloc] init];
+//    loginView.center = self.view.center;
+//    [self.view addSubview:loginView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -147,74 +150,41 @@
 }
 
 -(void)promptLogin{
-    if (![PFUser currentUser]) { // No user logged in
-        // Create the log in view controller
+//    if (![PFUser currentUser]) { // No user logged in
+//        // Create the log in view controller
+//        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+//        [logInViewController setDelegate:self]; // Set ourselves as the delegate
+//        
+//        // Create the sign up view controller
+//        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+//        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+//        
+//        // Assign our sign up controller to be displayed from the login controller
+//        [logInViewController setSignUpController:signUpViewController];
+//        
+//        // Present the log in view controller
+//        [self presentViewController:logInViewController animated:YES completion:NULL];
+//    }
+    
+    // Check if user is logged in
+    if (![PFUser currentUser]) {
+        // If not logged in, we will show a PFLogInViewController
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        [logInViewController setDelegate:self]; // Set ourselves as the delegate
         
-        // Create the sign up view controller
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+        // Customize the Log In View Controller
+        logInViewController.delegate = self;
+        logInViewController.facebookPermissions = @[@"friends_about_me"];
+        logInViewController.fields = PFLogInFieldsTwitter | PFLogInFieldsFacebook; // Show Twitter login, Facebook login, and a Dismiss button.
         
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-//        logInViewController.facebookPermissions = @[@"friends_about_me"];
-        logInViewController.fields = PFLogInFieldsFacebook; //Facebook login, and a Dismiss button.
-        
-        // Present the log in view controller
+        // Present Log In View Controller
         [self presentViewController:logInViewController animated:YES completion:NULL];
     }
 }
 
-#pragma mark -LoginDelegate
-
-// Sent to the delegate to determine whether the log in request should be submitted to the server.
-- (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password {
-    // Check if both fields are completed
-    if (username && password && username.length != 0 && password.length != 0) {
-        return YES; // Begin login process
-    }
-    
-    [[[UIAlertView alloc] initWithTitle:@"Missing Information"
-                                message:@"Make sure you fill out all of the information!"
-                               delegate:nil
-                      cancelButtonTitle:@"ok"
-                      otherButtonTitles:nil] show];
-    return NO; // Interrupt login process
-}
+#pragma mark - PFLogInViewControllerDelegate
 
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-    // Send request to Facebook
-//    FBRequest *request = [FBRequest requestForMe];
-//    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-//        // handle response
-//        if (!error) {
-//            // Parse the data received
-//            if(![PFUser currentUser]){
-//                
-//                NSDictionary *userData = (NSDictionary *)result;
-//                
-//                NSString *facebookID = userData[@"id"];
-//                NSString *facebookUsername = userData[@"username"];
-//                
-//                NSString *pictureURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?width=200&height=200", facebookID];
-//                
-//                [[PFUser currentUser] setObject:pictureURL forKey:@"picURL"];
-//                [[PFUser currentUser] setObject:facebookUsername forKey:@"username"];
-//                
-//                [[PFUser currentUser] saveInBackground];
-//            }
-//            
-//        } else if ([[[[error userInfo] objectForKey:@"error"] objectForKey:@"type"]
-//                    isEqualToString: @"OAuthException"]) { // Since the request failed, we can check if it was due to an invalid session
-//            NSLog(@"The facebook session was invalidated");
-//        } else {
-//            NSLog(@"Some other error: %@", error);
-//        }
-//    }];
-    
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -225,8 +195,9 @@
 
 // Sent to the delegate when the log in screen is dismissed.
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
-    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"User dismissed the logInViewController");
 }
+
 
 
 @end
