@@ -52,7 +52,7 @@
         <!--Events-->
         <scene sceneID="9nm-Sp-fMb">
             <objects>
-                <tableViewController title="Events" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QkJ-i0-7jL" customClass="EventsTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Events" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QkJ-i0-7jL" customClass="LobbiesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FCy-KW-c0n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,13 @@
                             <outlet property="delegate" destination="QkJ-i0-7jL" id="W6i-Fd-FMs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Events" id="vnk-Ze-NeY"/>
+                    <navigationItem key="navigationItem" title="Events" id="vnk-Ze-NeY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zit-Zt-pwq">
+                            <connections>
+                                <segue destination="aHa-Yj-N0C" kind="show" id="gBp-Lq-rft"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="searchBar" destination="0Yc-6F-XPB" id="gtY-EY-FAa"/>
@@ -100,7 +106,95 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="432" y="-213"/>
+            <point key="canvasLocation" x="460" y="-207"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EcI-P7-dfK">
+            <objects>
+                <viewController id="aHa-Yj-N0C" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bIT-kX-vKl"/>
+                        <viewControllerLayoutGuide type="bottom" id="T9o-QC-X4w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R16-kA-gvD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pq-pb-NkP">
+                                <rect key="frame" x="109" y="175" width="102" height="30"/>
+                                <state key="normal" title="From FB Event">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cEd-fe-w9y" kind="show" id="Lpk-7W-mC1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-KU-Z9n">
+                                <rect key="frame" x="145" y="269" width="31" height="30"/>
+                                <state key="normal" title="New">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iLw-mP-g7Y" kind="show" id="nJs-YL-i8M"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NvL-5P-mGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="-653"/>
+        </scene>
+        <!--Events Table View Controller-->
+        <scene sceneID="kGL-A2-MY3">
+            <objects>
+                <tableViewController id="cEd-fe-w9y" customClass="FBEventsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="11X-DU-fqd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="fbEventCell" id="O5g-Bd-UYD">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O5g-Bd-UYD" id="zEn-OM-uy7">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="iLw-mP-g7Y" kind="show" id="loA-Mk-D76"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cEd-fe-w9y" id="HzW-Lb-Msw"/>
+                            <outlet property="delegate" destination="cEd-fe-w9y" id="0Eg-pS-P0L"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="11X-DU-fqd" id="pXf-6D-7GE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jG8-BU-vGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1461" y="-898"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="v6R-Ap-veh">
+            <objects>
+                <viewController id="iLw-mP-g7Y" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Xb-ut-UXt"/>
+                        <viewControllerLayoutGuide type="bottom" id="3C4-5b-03Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="60W-UN-nVO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ida-U4-jdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2027" y="-889"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OYL-Th-dAd">
@@ -163,7 +257,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rC-gg-K2U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867" y="-213"/>
+            <point key="canvasLocation" x="944" y="5"/>
         </scene>
         <!--Picture-->
         <scene sceneID="B9H-bQ-BC7">
@@ -182,10 +276,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DL0-b8-16d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="-213"/>
+            <point key="canvasLocation" x="1419" y="5"/>
         </scene>
     </scenes>
     <resources>
         <image name="mayankwithorphans.jpeg" width="720" height="720"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="loA-Mk-D76"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Mayank Jain. All rights reserved.
 //
 
-#import "EventsTableViewController.h"
+#import "LobbiesTableViewController.h"
 
-@interface EventsTableViewController ()
+@interface LobbiesTableViewController ()
 
 @end
 
-@implementation EventsTableViewController
+@implementation LobbiesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,8 +25,33 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.array = [[NSMutableArray alloc] initWithArray: @[@"Mayank's Bday Party", @"Barndance", @"Wedding"]];
+    self.array = [[NSMutableArray alloc] init];
     
+//    PFObject *event = [PFObject objectWithClassName:@"lobby"];
+//    event[@"name"] = @"Mayank Bday Party";
+//    PFRelation *users = [event relationForKey:@"users"];
+//    [users addObject:[PFUser currentUser]];
+//    
+//    [event saveInBackground];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"lobby"];
+    [query whereKey:@"users" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu lobbies.", (unsigned long)[objects count]);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                [self.array addObject:object];
+                NSLog(@"%@", object);
+            }
+            [self.tableView reloadData];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -69,7 +94,7 @@
     if (tableView == self.searchDisplayController.searchResultsTableView)
         [cell.textLabel setText:self.searchResults[indexPath.row]];
     else
-        [cell.textLabel setText:self.array[indexPath.row]];
+        [cell.textLabel setText:self.array[indexPath.row][@"name"]];
     return cell;
 }
 
@@ -122,7 +147,7 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"self contains[c] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"self.name contains[c] %@", searchText];
     self.searchResults = [self.array filteredArrayUsingPredicate:resultPredicate];
     
 }

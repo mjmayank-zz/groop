@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import <Photos/Photos.h>
-#import "EventsTableViewController.h"
+#import "LobbiesTableViewController.h"
 
 @interface LoginViewController ()
 
@@ -46,7 +46,7 @@
         
         // Customize the Log In View Controller
         logInViewController.delegate = self;
-        logInViewController.facebookPermissions = @[@"friends_about_me"];
+        logInViewController.facebookPermissions = @[@"friends_about_me", @"user_about_me", @"user_events", @"user_friends"];
         logInViewController.fields = PFLogInFieldsTwitter | PFLogInFieldsFacebook | PFLogInFieldsDismissButton; // Show Twitter login, Facebook login, and a Dismiss button.
         
         // Present Log In View Controller

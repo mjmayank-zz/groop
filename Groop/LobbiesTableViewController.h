@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface EventsTableViewController : UITableViewController<UISearchBarDelegate, UISearchDisplayDelegate, UIImagePickerControllerDelegate, PFLogInViewControllerDelegate>
+@interface LobbiesTableViewController : UITableViewController<UISearchBarDelegate, UISearchDisplayDelegate, UIImagePickerControllerDelegate, PFLogInViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray * array;
