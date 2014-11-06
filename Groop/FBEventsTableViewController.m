@@ -7,6 +7,7 @@
 //
 
 #import "FBEventsTableViewController.h"
+#import "CreateLobbyViewController.h"
 
 @interface FBEventsTableViewController ()
 
@@ -114,7 +115,25 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"fbToCreateLobby"] ){
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
     
+        CreateLobbyViewController *vc = segue.destinationViewController;
+        NSDictionary * event = [self.array objectAtIndex:path.row];
+        vc.name = event[@"name"];
+        NSDateFormatter *df = [[NSDateFormatter alloc] init];
+        [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZ"];
+        NSDate *date = [df dateFromString:event[@"start_time"]];
+        vc.startdate = date;
+        
+        if(event[@"end_time"]){
+            vc.enddate = [df dateFromString:event[@"end_time"]];
+        }
+        else{
+            NSTimeInterval secondsInHour = 60 * 60;
+            vc.enddate = [date dateByAddingTimeInterval:secondsInHour];
+        }
+    }
 }
 
 

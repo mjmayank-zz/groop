@@ -161,7 +161,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="iLw-mP-g7Y" kind="show" id="loA-Mk-D76"/>
+                                    <segue destination="iLw-mP-g7Y" kind="show" identifier="fbToCreateLobby" id="loA-Mk-D76"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="1461" y="-898"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Lobby View Controller-->
         <scene sceneID="v6R-Ap-veh">
             <objects>
-                <viewController id="iLw-mP-g7Y" sceneMemberID="viewController">
+                <viewController id="iLw-mP-g7Y" customClass="CreateLobbyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Xb-ut-UXt"/>
                         <viewControllerLayoutGuide type="bottom" id="3C4-5b-03Q"/>
@@ -189,8 +189,48 @@
                     <view key="view" contentMode="scaleToFill" id="60W-UN-nVO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wAQ-aN-jpn">
+                                <rect key="frame" x="81" y="88" width="223" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUz-3l-h33">
+                                <rect key="frame" x="16" y="92" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WCu-ns-Snn">
+                                <rect key="frame" x="0.0" y="132" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="437000546.057455">
+                                    <!--2014-11-06 21:02:26 +0000-->
+                                </date>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mAj-5d-mmJ">
+                                <rect key="frame" x="0.0" y="302" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="437000550.81056398">
+                                    <!--2014-11-06 21:02:30 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXU-uh-h7B">
+                                <rect key="frame" x="143" y="502" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="iLw-mP-g7Y" eventType="touchUpInside" id="CMn-Wl-LkQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="endDatePicker" destination="mAj-5d-mmJ" id="LZd-Vr-9KH"/>
+                        <outlet property="nameTextField" destination="wAQ-aN-jpn" id="kkb-O0-SRj"/>
+                        <outlet property="saveButton" destination="OXU-uh-h7B" id="Xgb-Kl-hN7"/>
+                        <outlet property="startDatePicker" destination="WCu-ns-Snn" id="Que-C6-mZS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ida-U4-jdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

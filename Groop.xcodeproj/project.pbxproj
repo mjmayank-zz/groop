@@ -19,6 +19,7 @@
 		8F040BCC19EF66790066F2F4 /* EventCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F040BCB19EF66790066F2F4 /* EventCollectionViewController.m */; };
 		8F040BCE19EF67370066F2F4 /* mayankwithorphans.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F040BCD19EF67370066F2F4 /* mayankwithorphans.jpeg */; };
 		8F629B0C1A0BF7280020C0CF /* FBEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */; };
+		8F629B0F1A0C19E00020C0CF /* CreateLobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0E1A0C19E00020C0CF /* CreateLobbyViewController.m */; };
 		8F869F321A0B220400429432 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F869F311A0B220400429432 /* LoginViewController.m */; };
 		8F869F341A0B22BD00429432 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F869F331A0B22BD00429432 /* ParseFacebookUtils.framework */; };
 		8FFB4CE81A05E6A20048A5AC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4CE71A05E6A20048A5AC /* AudioToolbox.framework */; };
@@ -74,6 +75,8 @@
 		8F040BCD19EF67370066F2F4 /* mayankwithorphans.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mayankwithorphans.jpeg; sourceTree = "<group>"; };
 		8F629B0A1A0BF7280020C0CF /* FBEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEventsTableViewController.h; sourceTree = "<group>"; };
 		8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEventsTableViewController.m; sourceTree = "<group>"; };
+		8F629B0D1A0C19E00020C0CF /* CreateLobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateLobbyViewController.h; sourceTree = "<group>"; };
+		8F629B0E1A0C19E00020C0CF /* CreateLobbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateLobbyViewController.m; sourceTree = "<group>"; };
 		8F869F301A0B220400429432 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		8F869F311A0B220400429432 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8F869F331A0B22BD00429432 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				8F040BA819EF60D20066F2F4 /* ViewController.h */,
 				8F040BA919EF60D20066F2F4 /* ViewController.m */,
 				8F040BAB19EF60D20066F2F4 /* Main.storyboard */,
+				8F629B0D1A0C19E00020C0CF /* CreateLobbyViewController.h */,
+				8F629B0E1A0C19E00020C0CF /* CreateLobbyViewController.m */,
 				8F869F301A0B220400429432 /* LoginViewController.h */,
 				8F869F311A0B220400429432 /* LoginViewController.m */,
 				8F040BCA19EF66790066F2F4 /* EventCollectionViewController.h */,
@@ -348,6 +353,7 @@
 				8F040BA119EF60D20066F2F4 /* main.m in Sources */,
 				8F040BAA19EF60D20066F2F4 /* ViewController.m in Sources */,
 				8F040BCC19EF66790066F2F4 /* EventCollectionViewController.m in Sources */,
+				8F629B0F1A0C19E00020C0CF /* CreateLobbyViewController.m in Sources */,
 				8F040BC919EF62580066F2F4 /* LobbiesTableViewController.m in Sources */,
 				8F040BA719EF60D20066F2F4 /* Groop.xcdatamodeld in Sources */,
 			);
