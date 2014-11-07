@@ -16,13 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera Permissions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fj2-O7-x0p">
-                                <rect key="frame" x="153" y="288" width="159" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Camera Permissions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fj2-O7-x0p">
+                                <rect key="frame" x="164" y="288" width="159" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-ft-0ba">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-ft-0ba">
                                 <rect key="frame" x="346" y="284" width="68" height="31"/>
                                 <color key="backgroundColor" red="0.1728346795" green="0.75348377229999997" blue="0.032863564790000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Allow">
@@ -38,6 +38,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="3cq-ft-0ba" secondAttribute="centerX" constant="-80" id="Ay5-S5-Z8i"/>
+                            <constraint firstAttribute="centerX" secondItem="fj2-O7-x0p" secondAttribute="centerX" constant="67.5" id="j40-W7-lfo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1sG-2t-neu"/>
                     <connections>
@@ -81,6 +85,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="vnk-Ze-NeY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="FPB-1d-ns1">
+                            <connections>
+                                <segue destination="8BS-bV-9AW" kind="presentation" id="Zjl-j6-BlB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zit-Zt-pwq">
                             <connections>
                                 <segue destination="aHa-Yj-N0C" kind="show" id="gBp-Lq-rft"/>
@@ -106,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="264" y="-197"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="AEp-I9-u7c">
             <objects>
-                <viewController id="8BS-bV-9AW" sceneMemberID="viewController">
+                <viewController id="8BS-bV-9AW" customClass="CameraViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hIb-hS-cgt"/>
                         <viewControllerLayoutGuide type="bottom" id="nxb-iA-bex"/>
@@ -117,8 +126,63 @@
                     <view key="view" contentMode="scaleToFill" id="UDi-dL-ksf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8wd-hg-qcj" customClass="AVCamPreviewView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bp-5V-HTN">
+                                        <rect key="frame" x="174" y="483" width="50" height="30"/>
+                                        <state key="normal" title="Record">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleMovieRecording:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Q5d-3q-LnI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-6u-W7O">
+                                        <rect key="frame" x="277" y="483" width="54" height="30"/>
+                                        <state key="normal" title="Camera">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="snapStillImage:" destination="8BS-bV-9AW" eventType="touchUpInside" id="DhP-2T-88v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-0f-svP">
+                                        <rect key="frame" x="386" y="483" width="30" height="30"/>
+                                        <state key="normal" title="Flip">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Oat-do-cOg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XU-Uq-ZgA">
+                                        <rect key="frame" x="182" y="156" width="35" height="30"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="QkJ-i0-7jL" kind="popoverPresentation" popoverAnchorView="7XU-Uq-ZgA" id="BDH-W8-EmW">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="8wd-hg-qcj" secondAttribute="centerX" id="ZD1-VQ-aj7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="Kd8-0f-svP" id="ylr-ca-ioX"/>
+                        <outlet property="previewView" destination="8wd-hg-qcj" id="Mj6-sk-LYV"/>
+                        <outlet property="recordButton" destination="7Bp-5V-HTN" id="V7l-Qa-njP"/>
+                        <outlet property="stillButton" destination="zqj-6u-W7O" id="ik5-65-ZFT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VqI-2u-x1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -370,6 +434,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="BDH-W8-EmW"/>
         <segue reference="nJs-YL-i8M"/>
     </inferredMetricsTieBreakers>
 </document>

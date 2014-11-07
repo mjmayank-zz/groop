@@ -46,7 +46,7 @@
         
         // Customize the Log In View Controller
         logInViewController.delegate = self;
-        logInViewController.facebookPermissions = @[@"friends_about_me", @"user_about_me", @"user_events", @"user_friends"];
+        logInViewController.facebookPermissions = @[@"user_about_me", @"user_events", @"user_friends"];
         logInViewController.fields = PFLogInFieldsFacebook; // Show Twitter login, Facebook login, and a Dismiss button.
         
         // Present Log In View Controller
