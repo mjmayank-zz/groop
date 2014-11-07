@@ -71,6 +71,29 @@
     return cell;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    PFRelation * relation = [self.lobby relationForKey:@"users"];
+    
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"fbID" equalTo:[self.array objectAtIndex:indexPath.row][@"id"]];
+    
+    __block PFUser *friend;
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu lobbies.", (unsigned long)[objects count]);
+            // Do something with the found objects
+            friend = [objects objectAtIndex:0];
+            [relation addObject:friend];
+            [self.lobby saveInBackground];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface InviteFriendsTableViewController : UITableViewController
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray * array;
+@property (strong, nonatomic) PFObject * lobby;
 @end

@@ -219,8 +219,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveButtonPressed:" destination="iLw-mP-g7Y" eventType="touchUpInside" id="CMn-Wl-LkQ"/>
-                                    <segue destination="Ax7-Ec-Aak" kind="show" identifier="createToFriends" id="3G1-Hg-8fd"/>
+                                    <segue destination="Ax7-Ec-Aak" kind="show" identifier="createToFriends" id="761-7C-1Nk"/>
                                 </connections>
                             </button>
                         </subviews>

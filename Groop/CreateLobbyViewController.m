@@ -44,17 +44,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)saveButtonPressed:(id)sender {
-    PFObject *lobby = [PFObject objectWithClassName:@"lobby"];
-    lobby[@"name"] = self.nameTextField.text;
-    lobby[@"startTime"] = [self.startDatePicker date];
-    lobby[@"endTime"] = [self.endDatePicker date];
-    PFRelation *users = [lobby relationForKey:@"users"];
-    [users addObject:[PFUser currentUser]];
-    
-    [lobby saveInBackground];
-}
-
 - (void) dateChanged:(id)sender{
     [self.nameTextField resignFirstResponder];
 }
@@ -66,7 +55,18 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if([segue.identifier isEqualToString:@"createToFriends"]){
-        InviteFriendsTableViewController *vc = segue.destinationViewController;
+        InviteFriendsTableViewController *vc = [segue destinationViewController];
+        
+        self.lobby = [PFObject objectWithClassName:@"lobby"];
+        self.lobby[@"name"] = self.nameTextField.text;
+        self.lobby[@"startTime"] = [self.startDatePicker date];
+        self.lobby[@"endTime"] = [self.endDatePicker date];
+        PFRelation *users = [self.lobby relationForKey:@"users"];
+        [users addObject:[PFUser currentUser]];
+        
+        [self.lobby saveInBackground];
+        
+        vc.lobby = self.lobby;
         
         [FBRequestConnection startWithGraphPath:@"me/friends?fields=installed,id,name,picture"
                               completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {

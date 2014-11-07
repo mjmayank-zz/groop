@@ -18,5 +18,6 @@
 @property (strong, nonatomic) NSDate * startdate;
 @property (strong, nonatomic) NSDate * enddate;
 @property (strong, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) PFObject * lobby;
 
 @end
