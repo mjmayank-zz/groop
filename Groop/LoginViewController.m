@@ -82,6 +82,25 @@
 
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    [FBRequestConnection startWithGraphPath:@"me"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              if (!error) {
+                                  // Sucess! Include your code to handle the results here
+                                  NSLog(@"user events: %@", result);
+                                  PFUser *currentUser = [PFUser currentUser];
+                                  
+                                  NSString * fbID = result[@"id"];
+                                  
+                                  [currentUser setObject:fbID forKey:@"fbID"];
+                                  
+                                  [currentUser saveInBackground];
+                                
+                              } else {
+                                  // An error occurred, we need to handle the error
+                                  // See: https://developers.facebook.com/docs/ios/errors
+                              }
+                          }];
+    
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

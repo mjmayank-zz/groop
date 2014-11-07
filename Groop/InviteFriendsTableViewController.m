@@ -25,6 +25,23 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    self.array = [[NSMutableArray alloc] init];
+    
+    [FBRequestConnection startWithGraphPath:@"me/friends"
+                          completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                              if (!error) {
+                                  // Sucess! Include your code to handle the results here
+                                  NSLog(@"user events: %@", result);
+                                  for (NSDictionary * obj in result[@"data"]){
+                                      [self.array addObject:obj];
+                                  }
+                                  [self.tableView reloadData];
+                              } else {
+                                  // An error occurred, we need to handle the error
+                                  // See: https://developers.facebook.com/docs/ios/errors
+                              }
+                          }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,26 +52,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.array count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"inviteFriendCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.textLabel.text = [self.array objectAtIndex:indexPath.row][@"name"];
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

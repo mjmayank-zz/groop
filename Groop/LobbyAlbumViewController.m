@@ -27,8 +27,31 @@ static NSString * const reuseIdentifier = @"Cell";
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    self.array = [[NSMutableArray alloc] initWithArray:@[@"test", @"Test", @"Test"]];
+    
+    self.array = [[NSMutableArray alloc] init];
+    
+    PFRelation *relation = [self.lobby relationForKey:@"pictures"];
+    PFQuery *query = [relation query];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu lobbies.", (unsigned long)[objects count]);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                [self.array addObject:object];
+                NSLog(@"%@", object);
+            }
+            [self.collectionView reloadData];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
     // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +59,6 @@ static NSString * const reuseIdentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -44,7 +66,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -61,6 +83,14 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"image" forIndexPath:indexPath];
+    NSData * data = [[self.array objectAtIndex:indexPath.row][@"file"] getData];
+    UIImage *image = [UIImage imageWithData:data];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    CGRect frame = [imageView frame];
+    frame.size.width = 106;
+    frame.size.height = 106;
+    [imageView setFrame:frame];
+    [cell addSubview:imageView];
     
     // Configure the cell
     

@@ -72,7 +72,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ckE-u1-1z1" kind="show" id="MQm-mg-YFy"/>
+                                    <segue destination="ckE-u1-1z1" kind="show" identifier="lobbyToAlbum" id="MQm-mg-YFy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -246,7 +246,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VWR-tE-iqW">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="inviteFriendCell" id="VWR-tE-iqW">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VWR-tE-iqW" id="zpA-7M-EJ5">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -258,6 +258,8 @@
                             <outlet property="delegate" destination="Ax7-Ec-Aak" id="sEG-aH-7Yu"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="tpo-FJ-wyS" id="hq3-yT-iUx"/>
                     </connections>
@@ -303,13 +305,9 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mayankwithorphans.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Fzu-4T-zqS">
-                                            <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
-                                        </imageView>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" red="0.1728346795" green="0.75348377229999997" blue="0.032863564790000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="CAs-t7-ftK" kind="show" id="C5I-F2-0k8"/>
                                 </connections>
@@ -349,9 +347,6 @@
             <point key="canvasLocation" x="1399" y="5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="mayankwithorphans.jpeg" width="720" height="720"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nJs-YL-i8M"/>
     </inferredMetricsTieBreakers>

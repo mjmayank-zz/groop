@@ -53,8 +53,6 @@
     [users addObject:[PFUser currentUser]];
     
     [lobby saveInBackground];
-    
-    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"MainIdentifier"] animated:YES completion:nil];
 }
 
 - (void) dateChanged:(id)sender{

@@ -11,7 +11,9 @@
 
 @interface LobbyAlbumViewController : UICollectionViewController
 
-@property (strong, nonatomic) NSArray * array;
+@property (strong, nonatomic) NSMutableArray * array;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (strong, nonatomic) PFObject *lobby;
 
 @end
