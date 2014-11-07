@@ -15,7 +15,6 @@
 		8F040BBE19EF60D30066F2F4 /* GroopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F040BBD19EF60D30066F2F4 /* GroopTests.m */; };
 		8F040BC919EF62580066F2F4 /* LobbiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F040BC819EF62580066F2F4 /* LobbiesTableViewController.m */; };
 		8F040BCC19EF66790066F2F4 /* LobbyAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F040BCB19EF66790066F2F4 /* LobbyAlbumViewController.m */; };
-		8F040BCE19EF67370066F2F4 /* mayankwithorphans.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F040BCD19EF67370066F2F4 /* mayankwithorphans.jpeg */; };
 		8F629B0C1A0BF7280020C0CF /* FBEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */; };
 		8F629B0F1A0C19E00020C0CF /* CreateLobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0E1A0C19E00020C0CF /* CreateLobbyViewController.m */; };
 		8F7DB1621A0D58EC008A1C7E /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB1611A0D58EC008A1C7E /* CameraViewController.m */; };
@@ -74,7 +73,6 @@
 		8F040BC819EF62580066F2F4 /* LobbiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LobbiesTableViewController.m; sourceTree = "<group>"; };
 		8F040BCA19EF66790066F2F4 /* LobbyAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LobbyAlbumViewController.h; sourceTree = "<group>"; };
 		8F040BCB19EF66790066F2F4 /* LobbyAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LobbyAlbumViewController.m; sourceTree = "<group>"; };
-		8F040BCD19EF67370066F2F4 /* mayankwithorphans.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mayankwithorphans.jpeg; sourceTree = "<group>"; };
 		8F629B0A1A0BF7280020C0CF /* FBEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEventsTableViewController.h; sourceTree = "<group>"; };
 		8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEventsTableViewController.m; sourceTree = "<group>"; };
 		8F629B0D1A0C19E00020C0CF /* CreateLobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateLobbyViewController.h; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 			children = (
 				8F7DB1651A0D6932008A1C7E /* AVCamPreviewView.h */,
 				8F7DB1661A0D6932008A1C7E /* AVCamPreviewView.m */,
-				8F040BCD19EF67370066F2F4 /* mayankwithorphans.jpeg */,
 				8F040BA219EF60D20066F2F4 /* AppDelegate.h */,
 				8F040BA319EF60D20066F2F4 /* AppDelegate.m */,
 				8F040BAB19EF60D20066F2F4 /* Main.storyboard */,
@@ -347,7 +344,6 @@
 				8F040BAD19EF60D20066F2F4 /* Main.storyboard in Resources */,
 				8FD07F711A0D6E89002BD03C /* Images.xcassets in Resources */,
 				8F040BB219EF60D20066F2F4 /* LaunchScreen.xib in Resources */,
-				8F040BCE19EF67370066F2F4 /* mayankwithorphans.jpeg in Resources */,
 				8FD07F771A0D7017002BD03C /* goopIcon3x.png in Resources */,
 				8F9FE4BD1A0C45EE002FA17C /* groop.jpg in Resources */,
 				8FD07F751A0D6FDE002BD03C /* goopIcon2x.png in Resources */,
