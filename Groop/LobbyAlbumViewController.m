@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Mayank Jain. All rights reserved.
 //
 
-#import "EventCollectionViewController.h"
+#import "LobbyAlbumViewController.h"
 
-@interface EventCollectionViewController ()
+@interface LobbyAlbumViewController ()
 
 @end
 
-@implementation EventCollectionViewController
+@implementation LobbyAlbumViewController
 
 static NSString * const reuseIdentifier = @"Cell";
 

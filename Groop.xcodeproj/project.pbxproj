@@ -16,12 +16,14 @@
 		8F040BB219EF60D20066F2F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F040BB019EF60D20066F2F4 /* LaunchScreen.xib */; };
 		8F040BBE19EF60D30066F2F4 /* GroopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F040BBD19EF60D30066F2F4 /* GroopTests.m */; };
 		8F040BC919EF62580066F2F4 /* LobbiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F040BC819EF62580066F2F4 /* LobbiesTableViewController.m */; };
-		8F040BCC19EF66790066F2F4 /* EventCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F040BCB19EF66790066F2F4 /* EventCollectionViewController.m */; };
+		8F040BCC19EF66790066F2F4 /* LobbyAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F040BCB19EF66790066F2F4 /* LobbyAlbumViewController.m */; };
 		8F040BCE19EF67370066F2F4 /* mayankwithorphans.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F040BCD19EF67370066F2F4 /* mayankwithorphans.jpeg */; };
 		8F629B0C1A0BF7280020C0CF /* FBEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */; };
 		8F629B0F1A0C19E00020C0CF /* CreateLobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0E1A0C19E00020C0CF /* CreateLobbyViewController.m */; };
 		8F869F321A0B220400429432 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F869F311A0B220400429432 /* LoginViewController.m */; };
 		8F869F341A0B22BD00429432 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F869F331A0B22BD00429432 /* ParseFacebookUtils.framework */; };
+		8F9FE4BD1A0C45EE002FA17C /* groop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F9FE4BC1A0C45EE002FA17C /* groop.jpg */; };
+		8F9FE4C01A0C5C85002FA17C /* InviteFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9FE4BF1A0C5C85002FA17C /* InviteFriendsTableViewController.m */; };
 		8FFB4CE81A05E6A20048A5AC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4CE71A05E6A20048A5AC /* AudioToolbox.framework */; };
 		8FFB4CEB1A05E6D50048A5AC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4CEA1A05E6D50048A5AC /* Parse.framework */; };
 		8FFB4CED1A05E6E40048A5AC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4CEC1A05E6E40048A5AC /* Bolts.framework */; };
@@ -70,8 +72,8 @@
 		8F040BBD19EF60D30066F2F4 /* GroopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GroopTests.m; sourceTree = "<group>"; };
 		8F040BC719EF62580066F2F4 /* LobbiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LobbiesTableViewController.h; sourceTree = "<group>"; };
 		8F040BC819EF62580066F2F4 /* LobbiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LobbiesTableViewController.m; sourceTree = "<group>"; };
-		8F040BCA19EF66790066F2F4 /* EventCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCollectionViewController.h; sourceTree = "<group>"; };
-		8F040BCB19EF66790066F2F4 /* EventCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCollectionViewController.m; sourceTree = "<group>"; };
+		8F040BCA19EF66790066F2F4 /* LobbyAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LobbyAlbumViewController.h; sourceTree = "<group>"; };
+		8F040BCB19EF66790066F2F4 /* LobbyAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LobbyAlbumViewController.m; sourceTree = "<group>"; };
 		8F040BCD19EF67370066F2F4 /* mayankwithorphans.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mayankwithorphans.jpeg; sourceTree = "<group>"; };
 		8F629B0A1A0BF7280020C0CF /* FBEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEventsTableViewController.h; sourceTree = "<group>"; };
 		8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEventsTableViewController.m; sourceTree = "<group>"; };
@@ -80,6 +82,10 @@
 		8F869F301A0B220400429432 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		8F869F311A0B220400429432 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8F869F331A0B22BD00429432 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		8F9FE4BC1A0C45EE002FA17C /* groop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = groop.jpg; sourceTree = "<group>"; };
+		8F9FE4BE1A0C5C85002FA17C /* InviteFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendsTableViewController.h; sourceTree = "<group>"; };
+		8F9FE4BF1A0C5C85002FA17C /* InviteFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendsTableViewController.m; sourceTree = "<group>"; };
+		8F9FE4C11A0C5E9F002FA17C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8FFB4CE71A05E6A20048A5AC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8FFB4CEA1A05E6D50048A5AC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8FFB4CEC1A05E6E40048A5AC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 		8F040B9219EF60D20066F2F4 = {
 			isa = PBXGroup;
 			children = (
+				8F9FE4C11A0C5E9F002FA17C /* PrefixHeader.pch */,
 				8FFB4CE91A05E6BA0048A5AC /* Frameworks */,
 				8F040B9D19EF60D20066F2F4 /* Groop */,
 				8F040BBA19EF60D30066F2F4 /* GroopTests */,
@@ -167,12 +174,14 @@
 				8F040BA819EF60D20066F2F4 /* ViewController.h */,
 				8F040BA919EF60D20066F2F4 /* ViewController.m */,
 				8F040BAB19EF60D20066F2F4 /* Main.storyboard */,
+				8F9FE4BE1A0C5C85002FA17C /* InviteFriendsTableViewController.h */,
+				8F9FE4BF1A0C5C85002FA17C /* InviteFriendsTableViewController.m */,
 				8F629B0D1A0C19E00020C0CF /* CreateLobbyViewController.h */,
 				8F629B0E1A0C19E00020C0CF /* CreateLobbyViewController.m */,
 				8F869F301A0B220400429432 /* LoginViewController.h */,
 				8F869F311A0B220400429432 /* LoginViewController.m */,
-				8F040BCA19EF66790066F2F4 /* EventCollectionViewController.h */,
-				8F040BCB19EF66790066F2F4 /* EventCollectionViewController.m */,
+				8F040BCA19EF66790066F2F4 /* LobbyAlbumViewController.h */,
+				8F040BCB19EF66790066F2F4 /* LobbyAlbumViewController.m */,
 				8F629B0A1A0BF7280020C0CF /* FBEventsTableViewController.h */,
 				8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */,
 				8F040BC719EF62580066F2F4 /* LobbiesTableViewController.h */,
@@ -184,6 +193,7 @@
 				8FFB4D061A0740890048A5AC /* Photo.h */,
 				8FFB4D071A0740890048A5AC /* Photo.m */,
 				8F040BAE19EF60D20066F2F4 /* Images.xcassets */,
+				8F9FE4BC1A0C45EE002FA17C /* groop.jpg */,
 				8F040BB019EF60D20066F2F4 /* LaunchScreen.xib */,
 				8F040BA519EF60D20066F2F4 /* Groop.xcdatamodeld */,
 				8F040B9E19EF60D20066F2F4 /* Supporting Files */,
@@ -326,6 +336,7 @@
 				8F040BAD19EF60D20066F2F4 /* Main.storyboard in Resources */,
 				8F040BB219EF60D20066F2F4 /* LaunchScreen.xib in Resources */,
 				8F040BCE19EF67370066F2F4 /* mayankwithorphans.jpeg in Resources */,
+				8F9FE4BD1A0C45EE002FA17C /* groop.jpg in Resources */,
 				8F040BAF19EF60D20066F2F4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,12 +358,13 @@
 				8F040BA419EF60D20066F2F4 /* AppDelegate.m in Sources */,
 				8FFB4D021A073A600048A5AC /* User.m in Sources */,
 				8FFB4D051A0740610048A5AC /* Lobby.m in Sources */,
+				8F9FE4C01A0C5C85002FA17C /* InviteFriendsTableViewController.m in Sources */,
 				8FFB4D081A0740890048A5AC /* Photo.m in Sources */,
 				8F869F321A0B220400429432 /* LoginViewController.m in Sources */,
 				8F629B0C1A0BF7280020C0CF /* FBEventsTableViewController.m in Sources */,
 				8F040BA119EF60D20066F2F4 /* main.m in Sources */,
 				8F040BAA19EF60D20066F2F4 /* ViewController.m in Sources */,
-				8F040BCC19EF66790066F2F4 /* EventCollectionViewController.m in Sources */,
+				8F040BCC19EF66790066F2F4 /* LobbyAlbumViewController.m in Sources */,
 				8F629B0F1A0C19E00020C0CF /* CreateLobbyViewController.m in Sources */,
 				8F040BC919EF62580066F2F4 /* LobbiesTableViewController.m in Sources */,
 				8F040BA719EF60D20066F2F4 /* Groop.xcdatamodeld in Sources */,
@@ -477,12 +489,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mayank Jain (7UKHNS66GK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/mjmayank/Documents/FacebookSDK,
 					/Users/mjmayank/Documents/FacebookSDK/FBAudienceNetwork,
 				);
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Groop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -495,12 +509,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mayank Jain (7UKHNS66GK)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/mjmayank/Documents/FacebookSDK,
 					/Users/mjmayank/Documents/FacebookSDK/FBAudienceNetwork,
 				);
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = Groop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

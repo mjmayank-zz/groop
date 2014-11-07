@@ -7,6 +7,7 @@
 //
 
 #import "CreateLobbyViewController.h"
+#import "InviteFriendsTableViewController.h"
 
 @interface CreateLobbyViewController ()
 
@@ -43,15 +44,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (IBAction)saveButtonPressed:(id)sender {
     PFObject *lobby = [PFObject objectWithClassName:@"lobby"];
     lobby[@"name"] = self.nameTextField.text;
@@ -69,6 +61,31 @@
     [self.nameTextField resignFirstResponder];
 }
 
+#pragma mark - Navigation
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"createToFriends"]){
+        InviteFriendsTableViewController *vc = segue.destinationViewController;
+        
+        [FBRequestConnection startWithGraphPath:@"me/friends?fields=installed,id,name,picture"
+                              completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                                  if (!error) {
+                                      // Sucess! Include your code to handle the results here
+                                      NSLog(@"user events: %@", result);
+                                      for (NSDictionary * obj in result[@"data"]){
+                                          if([obj[@"installed"] isEqualToString:@"true"]){
+                                              [vc.array addObject:obj];
+                                          }
+                                      }
+                                  } else {
+                                      // An error occurred, we need to handle the error
+                                      // See: https://developers.facebook.com/docs/ios/errors
+                                  }
+                              }];
+    }
+}
 
 @end

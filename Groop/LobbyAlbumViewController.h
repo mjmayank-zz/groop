@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface EventCollectionViewController : UICollectionViewController
+@interface LobbyAlbumViewController : UICollectionViewController
 
 @property (strong, nonatomic) NSArray * array;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;

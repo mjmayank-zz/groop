@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NvL-5P-mGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="-653"/>
+            <point key="canvasLocation" x="944" y="-685"/>
         </scene>
         <!--Events Table View Controller-->
         <scene sceneID="kGL-A2-MY3">
@@ -220,6 +220,7 @@
                                 </state>
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="iLw-mP-g7Y" eventType="touchUpInside" id="CMn-Wl-LkQ"/>
+                                    <segue destination="Ax7-Ec-Aak" kind="show" identifier="createToFriends" id="3G1-Hg-8fd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -234,7 +235,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ida-U4-jdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2027" y="-889"/>
+            <point key="canvasLocation" x="1969" y="-889"/>
+        </scene>
+        <!--Invite Friends Table View Controller-->
+        <scene sceneID="Zms-0R-pN1">
+            <objects>
+                <tableViewController id="Ax7-Ec-Aak" customClass="InviteFriendsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tpo-FJ-wyS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VWR-tE-iqW">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VWR-tE-iqW" id="zpA-7M-EJ5">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ax7-Ec-Aak" id="uW6-R8-0hr"/>
+                            <outlet property="delegate" destination="Ax7-Ec-Aak" id="sEG-aH-7Yu"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="tpo-FJ-wyS" id="hq3-yT-iUx"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNK-bB-Kn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2491" y="-889"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OYL-Th-dAd">
@@ -255,7 +285,7 @@
         <!--Album-->
         <scene sceneID="fuX-cV-zbg">
             <objects>
-                <collectionViewController title="Album" id="ckE-u1-1z1" customClass="EventCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController title="Album" id="ckE-u1-1z1" customClass="LobbyAlbumViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bLW-Fr-LsE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -316,13 +346,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DL0-b8-16d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419" y="5"/>
+            <point key="canvasLocation" x="1399" y="5"/>
         </scene>
     </scenes>
     <resources>
         <image name="mayankwithorphans.jpeg" width="720" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="loA-Mk-D76"/>
+        <segue reference="nJs-YL-i8M"/>
     </inferredMetricsTieBreakers>
 </document>
