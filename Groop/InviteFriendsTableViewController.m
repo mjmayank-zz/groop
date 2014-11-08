@@ -121,7 +121,7 @@
         }
     }
     NSLog(@"%d entries selected", numEntries);
-    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*
