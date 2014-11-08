@@ -75,9 +75,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSLog([[NSString alloc] initWithFormat:@"%lu", (unsigned long)[self.array count] ]);
-    
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {    
     return [self.array count];
 }
 

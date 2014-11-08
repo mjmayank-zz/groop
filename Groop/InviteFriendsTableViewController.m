@@ -90,7 +90,7 @@
     NSLog(@"Button Pressed");
     
     int numEntries = 0;
-    NSMutableArray *cells = [self.tableView visibleCells];
+    NSArray *cells = [self.tableView visibleCells];
     for (UITableViewCell *cell in cells)
     {
         if (cell.accessoryType == UITableViewCellAccessoryCheckmark)

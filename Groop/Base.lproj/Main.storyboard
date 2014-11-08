@@ -85,11 +85,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="vnk-Ze-NeY">
-                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="FPB-1d-ns1">
-                            <connections>
-                                <segue destination="8BS-bV-9AW" kind="presentation" id="Zjl-j6-BlB"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zit-Zt-pwq">
                             <connections>
                                 <segue destination="aHa-Yj-N0C" kind="show" id="gBp-Lq-rft"/>
@@ -134,7 +129,7 @@
             </objects>
             <point key="canvasLocation" x="-1334" y="-131"/>
         </scene>
-        <!--Item-->
+        <!--Camera-->
         <scene sceneID="AEp-I9-u7c">
             <objects>
                 <viewController id="8BS-bV-9AW" customClass="CameraViewController" sceneMemberID="viewController">
@@ -149,7 +144,7 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8wd-hg-qcj" customClass="AVCamPreviewView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bp-5V-HTN">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bp-5V-HTN">
                                         <rect key="frame" x="174" y="483" width="50" height="30"/>
                                         <state key="normal" title="Record">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -158,16 +153,16 @@
                                             <action selector="toggleMovieRecording:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Q5d-3q-LnI"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-6u-W7O">
-                                        <rect key="frame" x="277" y="483" width="54" height="30"/>
-                                        <state key="normal" title="Camera">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-6u-W7O">
+                                        <rect key="frame" x="277" y="483" width="58" height="30"/>
+                                        <state key="normal" title="Take Pic">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="snapStillImage:" destination="8BS-bV-9AW" eventType="touchUpInside" id="DhP-2T-88v"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-0f-svP">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-0f-svP">
                                         <rect key="frame" x="386" y="483" width="30" height="30"/>
                                         <state key="normal" title="Flip">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -176,16 +171,11 @@
                                             <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Oat-do-cOg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XU-Uq-ZgA">
-                                        <rect key="frame" x="176" y="35" width="35" height="30"/>
-                                        <state key="normal" title="Back">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="7XU-Uq-ZgA" secondAttribute="centerX" constant="108.5" id="ZBe-re-gsH"/>
+                                    <constraint firstItem="Kd8-0f-svP" firstAttribute="bottom" secondItem="7Bp-5V-HTN" secondAttribute="bottom" id="0U1-RK-ZnE"/>
+                                    <constraint firstItem="Kd8-0f-svP" firstAttribute="bottom" secondItem="zqj-6u-W7O" secondAttribute="bottom" id="ZjO-Ht-mpu"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -194,7 +184,7 @@
                             <constraint firstAttribute="centerX" secondItem="8wd-hg-qcj" secondAttribute="centerX" id="ZD1-VQ-aj7"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Igh-zF-3OM"/>
+                    <tabBarItem key="tabBarItem" title="Camera" id="Igh-zF-3OM"/>
                     <connections>
                         <outlet property="cameraButton" destination="Kd8-0f-svP" id="ylr-ca-ioX"/>
                         <outlet property="previewView" destination="8wd-hg-qcj" id="Mj6-sk-LYV"/>
@@ -292,25 +282,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wAQ-aN-jpn">
-                                <rect key="frame" x="237" y="83" width="223" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wAQ-aN-jpn">
+                                <rect key="frame" x="237" y="80" width="223" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUz-3l-h33">
-                                <rect key="frame" x="143" y="87" width="46" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUz-3l-h33">
+                                <rect key="frame" x="143" y="84" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mAj-5d-mmJ">
-                                <rect key="frame" x="140" y="310" width="320" height="162"/>
+                                <rect key="frame" x="140" y="297" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="437000550.81056398">
                                     <!--2014-11-06 21:02:30 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXU-uh-h7B">
-                                <rect key="frame" x="283" y="508" width="34" height="30"/>
+                                <rect key="frame" x="283" y="487" width="34" height="30"/>
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -319,7 +309,7 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WCu-ns-Snn">
-                                <rect key="frame" x="140" y="126" width="320" height="162"/>
+                                <rect key="frame" x="140" y="124" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="437000546.057455">
                                     <!--2014-11-06 21:02:26 +0000-->
                                 </date>
@@ -329,7 +319,9 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="WCu-ns-Snn" secondAttribute="centerX" id="1et-Zt-MUd"/>
                             <constraint firstAttribute="centerX" secondItem="OXU-uh-h7B" secondAttribute="centerX" id="9sS-XC-GXm"/>
+                            <constraint firstAttribute="centerX" secondItem="OUz-3l-h33" secondAttribute="centerX" constant="134" id="HSb-AA-L9T"/>
                             <constraint firstAttribute="centerX" secondItem="mAj-5d-mmJ" secondAttribute="centerX" id="asB-N2-z6W"/>
+                            <constraint firstAttribute="centerX" secondItem="wAQ-aN-jpn" secondAttribute="centerX" constant="-48.5" id="u0G-5X-7FK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -386,11 +378,11 @@
             </objects>
             <point key="canvasLocation" x="3225" y="-889"/>
         </scene>
-        <!--Item-->
+        <!--Lobbies-->
         <scene sceneID="OYL-Th-dAd">
             <objects>
                 <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="eWd-Sa-GJO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="AdK-eJ-rKt"/>
+                    <tabBarItem key="tabBarItem" title="Lobbies" id="AdK-eJ-rKt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RPs-2W-dC3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -465,7 +457,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9R4-YK-hED"/>
         <segue reference="nJs-YL-i8M"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -127,7 +127,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
             [session addOutput:movieFileOutput];
             AVCaptureConnection *connection = [movieFileOutput connectionWithMediaType:AVMediaTypeVideo];
             if ([connection isVideoStabilizationSupported])
-                [connection setEnablesVideoStabilizationWhenAvailable:YES];
+                [connection setPreferredVideoStabilizationMode:AVCaptureVideoStabilizationModeAuto];
             [self setMovieFileOutput:movieFileOutput];
         }
         
@@ -358,22 +358,29 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
                 NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
                 UIImage *image = [[UIImage alloc] initWithData:imageData];
                 [[[ALAssetsLibrary alloc] init] writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:nil];
-                PFObject * photo = [PFObject objectWithClassName:@"picture"];
                 NSData *parseImageData = UIImageJPEGRepresentation(image, 0.05f);
                 PFFile *imageFile = [PFFile fileWithData:parseImageData];
-                [photo addObject:imageFile forKey:@"file"];
-                [photo addObject:[PFUser currentUser] forKey:@"photographer"];
                 
-                [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    if(!error){
-                        for(PFObject * lobby in [LobbyManager sharedLobbyManager].activeLobbies){
-                            PFRelation * relation = [lobby relationForKey:@"pictures"];
-                            [relation addObject:photo];
-                            [lobby saveInBackground];
-                        }
-                    }
-                    else{
-                        NSLog(error);
+                [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (!error) {
+                        PFObject * photo = [PFObject objectWithClassName:@"picture"];
+                        [photo setObject:imageFile forKey:@"file"];
+                        [photo setObject:[PFUser currentUser] forKey:@"photographer"];
+                        
+                        
+                        [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                            if(!error){
+                                for(PFObject * lobby in [LobbyManager sharedLobbyManager].activeLobbies){
+                                    PFRelation * relation = [lobby relationForKey:@"pictures"];
+                                    [relation addObject:photo];
+                                    [lobby saveInBackground];
+                                }
+                            }
+                            else{
+                                NSLog(error);
+                            }
+                        }];
+                        
                     }
                 }];
             }

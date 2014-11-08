@@ -216,18 +216,6 @@
     return YES;
 }
 
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    UIImage * image = [info objectForKey:UIImagePickerControllerEditedImage];
-    
-    // You have the image. You can use this to present the image in the next view like you require in `#3`.
-    
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
 -(void)promptLogin{
 //    if (![PFUser currentUser]) { // No user logged in
 //        // Create the log in view controller
