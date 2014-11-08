@@ -40,7 +40,7 @@
 		8FFB4CFD1A05E7290048A5AC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4CFC1A05E7290048A5AC /* StoreKit.framework */; };
 		8FFB4CFF1A05E7310048A5AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4CFE1A05E7310048A5AC /* SystemConfiguration.framework */; };
 		8FFB4D021A073A600048A5AC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFB4D011A073A600048A5AC /* User.m */; };
-		8FFB4D051A0740610048A5AC /* Lobby.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFB4D041A0740610048A5AC /* Lobby.m */; };
+		8FFB4D051A0740610048A5AC /* LobbyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFB4D041A0740610048A5AC /* LobbyManager.m */; };
 		8FFB4D081A0740890048A5AC /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFB4D071A0740890048A5AC /* Photo.m */; };
 		8FFB4D0A1A0753D90048A5AC /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4D091A0753D90048A5AC /* Twitter.framework */; };
 		8FFB4D0E1A07544A0048A5AC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4D0D1A07544A0048A5AC /* Social.framework */; };
@@ -106,8 +106,8 @@
 		8FFB4CFE1A05E7310048A5AC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8FFB4D001A073A600048A5AC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		8FFB4D011A073A600048A5AC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		8FFB4D031A0740610048A5AC /* Lobby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lobby.h; sourceTree = "<group>"; };
-		8FFB4D041A0740610048A5AC /* Lobby.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lobby.m; sourceTree = "<group>"; };
+		8FFB4D031A0740610048A5AC /* LobbyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LobbyManager.h; sourceTree = "<group>"; };
+		8FFB4D041A0740610048A5AC /* LobbyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LobbyManager.m; sourceTree = "<group>"; };
 		8FFB4D061A0740890048A5AC /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		8FFB4D071A0740890048A5AC /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		8FFB4D091A0753D90048A5AC /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -194,8 +194,8 @@
 				8F040BC819EF62580066F2F4 /* LobbiesTableViewController.m */,
 				8FFB4D001A073A600048A5AC /* User.h */,
 				8FFB4D011A073A600048A5AC /* User.m */,
-				8FFB4D031A0740610048A5AC /* Lobby.h */,
-				8FFB4D041A0740610048A5AC /* Lobby.m */,
+				8FFB4D031A0740610048A5AC /* LobbyManager.h */,
+				8FFB4D041A0740610048A5AC /* LobbyManager.m */,
 				8FFB4D061A0740890048A5AC /* Photo.h */,
 				8FFB4D071A0740890048A5AC /* Photo.m */,
 				8FD07F741A0D6FDE002BD03C /* goopIcon2x.png */,
@@ -366,7 +366,7 @@
 			files = (
 				8F040BA419EF60D20066F2F4 /* AppDelegate.m in Sources */,
 				8FFB4D021A073A600048A5AC /* User.m in Sources */,
-				8FFB4D051A0740610048A5AC /* Lobby.m in Sources */,
+				8FFB4D051A0740610048A5AC /* LobbyManager.m in Sources */,
 				8F9FE4C01A0C5C85002FA17C /* InviteFriendsTableViewController.m in Sources */,
 				8FFB4D081A0740890048A5AC /* Photo.m in Sources */,
 				8F7DB1621A0D58EC008A1C7E /* CameraViewController.m in Sources */,

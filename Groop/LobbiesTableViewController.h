@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray * array;
+@property (strong, nonatomic) NSMutableArray * activeLobbies;
 @property (strong, nonatomic) NSArray * searchResults;
 
 @end

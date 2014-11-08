@@ -115,7 +115,26 @@
             </objects>
             <point key="canvasLocation" x="264" y="-197"/>
         </scene>
-        <!--Camera View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="4cT-Wt-CF0">
+            <objects>
+                <tabBarController storyboardIdentifier="MainIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dbf-EA-qzU" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="iaS-rb-erO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eWd-Sa-GJO" kind="relationship" relationship="viewControllers" id="6Pu-z9-NEg"/>
+                        <segue destination="8BS-bV-9AW" kind="relationship" relationship="viewControllers" id="9R4-YK-hED"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gwl-Lk-ws7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1334" y="-131"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="AEp-I9-u7c">
             <objects>
                 <viewController id="8BS-bV-9AW" customClass="CameraViewController" sceneMemberID="viewController">
@@ -157,19 +176,17 @@
                                             <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Oat-do-cOg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XU-Uq-ZgA">
-                                        <rect key="frame" x="182" y="156" width="35" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XU-Uq-ZgA">
+                                        <rect key="frame" x="176" y="35" width="35" height="30"/>
                                         <state key="normal" title="Back">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="QkJ-i0-7jL" kind="popoverPresentation" popoverAnchorView="7XU-Uq-ZgA" id="BDH-W8-EmW">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="7XU-Uq-ZgA" secondAttribute="centerX" constant="108.5" id="ZBe-re-gsH"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -177,6 +194,7 @@
                             <constraint firstAttribute="centerX" secondItem="8wd-hg-qcj" secondAttribute="centerX" id="ZD1-VQ-aj7"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Igh-zF-3OM"/>
                     <connections>
                         <outlet property="cameraButton" destination="Kd8-0f-svP" id="ylr-ca-ioX"/>
                         <outlet property="previewView" destination="8wd-hg-qcj" id="Mj6-sk-LYV"/>
@@ -186,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VqI-2u-x1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="264" y="552"/>
+            <point key="canvasLocation" x="-418" y="610"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EcI-P7-dfK">
@@ -356,10 +374,11 @@
             </objects>
             <point key="canvasLocation" x="3225" y="-889"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="OYL-Th-dAd">
             <objects>
-                <navigationController storyboardIdentifier="MainIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eWd-Sa-GJO" sceneMemberID="viewController">
+                <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="eWd-Sa-GJO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="AdK-eJ-rKt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RPs-2W-dC3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -434,7 +453,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BDH-W8-EmW"/>
+        <segue reference="9R4-YK-hED"/>
         <segue reference="nJs-YL-i8M"/>
     </inferredMetricsTieBreakers>
 </document>

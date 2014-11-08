@@ -8,12 +8,20 @@
 
 #import "LobbiesTableViewController.h"
 #import "LobbyAlbumViewController.h"
+#import "LobbyManager.h"
 
 @interface LobbiesTableViewController ()
 
 @end
 
 @implementation LobbiesTableViewController
+
+- (id) init {
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,35 +32,42 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadData:)
+                                                 name:@"allLobbiesUpdated" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadData:)
+                                                 name:@"activeLobbiesUpdated" object:nil];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.array = [[NSMutableArray alloc] init];
-    
-//    PFObject *event = [PFObject objectWithClassName:@"lobby"];
-//    event[@"name"] = @"Mayank Bday Party";
-//    PFRelation *users = [event relationForKey:@"users"];
-//    [users addObject:[PFUser currentUser]];
-//    
-//    [event saveInBackground];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"lobby"];
-    [query whereKey:@"users" equalTo:[PFUser currentUser]];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu lobbies.", (unsigned long)[objects count]);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                [self.array addObject:object];
-                NSLog(@"%@", object);
-            }
-            [self.tableView reloadData];
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+    self.array = [LobbyManager sharedLobbyManager].allLobbies;
+//    PFQuery *query = [PFQuery queryWithClassName:@"lobby"];
+//    [query whereKey:@"users" equalTo:[PFUser currentUser]];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            // The find succeeded.
+//            NSLog(@"Successfully retrieved %lu lobbies.", (unsigned long)[objects count]);
+//            // Do something with the found objects
+//            for (PFObject *object in objects) {
+//                [self.array addObject:object];
+//                NSLog(@"%@", object);
+//            }
+//            [self.tableView reloadData];
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
 
+    
+    
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:@"eventsUpdated"
+                                                    object:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -69,11 +84,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)reloadData:(NSNotification *)notification{
+    self.array = notification.userInfo[@"allLobbies"];
+    self.activeLobbies = notification.userInfo[@"activeLobbies"];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    if([self.activeLobbies count] == 0){
+        return 1;
+    }
+    else return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -82,10 +106,23 @@
         return [self.searchResults count];
         
     } else {
-        return [self.array count];
+        if(section == 0){
+            return [self.array count];
+        }
+        else{
+            return [self.activeLobbies count];
+        }
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    if(section == 0)
+        return @"Past Lobbies";
+    else{
+        return @"Active Lobbies";
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"test"];
@@ -95,7 +132,12 @@
     if (tableView == self.searchDisplayController.searchResultsTableView)
         [cell.textLabel setText:self.searchResults[indexPath.row]];
     else
-        [cell.textLabel setText:self.array[indexPath.row][@"name"]];
+        if(indexPath.section == 0){
+            [cell.textLabel setText:self.array[indexPath.row][@"name"]];
+        }
+        else{
+            [cell.textLabel setText:self.activeLobbies[indexPath.row][@"name"]];
+        }
     return cell;
 }
 
