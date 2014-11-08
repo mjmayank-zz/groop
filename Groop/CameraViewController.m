@@ -9,6 +9,7 @@
 #import "CameraViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "LobbyManager.h"
 
 #import "AVCamPreviewView.h"
 
@@ -70,6 +71,8 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     
     // Check for device authorization
     [self checkDeviceAuthorizationStatus];
+    
+    [LobbyManager sharedLobbyManager];
     
     // In general it is not safe to mutate an AVCaptureSession or any of its inputs, outputs, or connections from multiple threads at the same time.
     // Why not do all of this on the main queue?
@@ -355,6 +358,24 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
                 NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
                 UIImage *image = [[UIImage alloc] initWithData:imageData];
                 [[[ALAssetsLibrary alloc] init] writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:nil];
+                PFObject * photo = [PFObject objectWithClassName:@"picture"];
+                NSData *parseImageData = UIImageJPEGRepresentation(image, 0.05f);
+                PFFile *imageFile = [PFFile fileWithData:parseImageData];
+                [photo addObject:imageFile forKey:@"file"];
+                [photo addObject:[PFUser currentUser] forKey:@"photographer"];
+                
+                [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if(!error){
+                        for(PFObject * lobby in [LobbyManager sharedLobbyManager].activeLobbies){
+                            PFRelation * relation = [lobby relationForKey:@"pictures"];
+                            [relation addObject:photo];
+                            [lobby saveInBackground];
+                        }
+                    }
+                    else{
+                        NSLog(error);
+                    }
+                }];
             }
         }];
     });

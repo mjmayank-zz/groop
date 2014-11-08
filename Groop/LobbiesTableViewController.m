@@ -186,7 +186,12 @@
     if([segue.identifier isEqualToString:@"lobbyToAlbum"]){
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         LobbyAlbumViewController *vc = segue.destinationViewController;
-        vc.lobby = [self.array objectAtIndex:path.row];
+        if(path.section == 0){
+            vc.lobby = [self.array objectAtIndex:path.row];
+        }
+        else{
+            vc.lobby = [self.activeLobbies objectAtIndex:path.row];
+        }
     }
 
 }
