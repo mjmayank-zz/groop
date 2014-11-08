@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 
 @interface InviteFriendsTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray * array;
 @property (strong, nonatomic) PFObject * lobby;

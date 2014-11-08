@@ -72,26 +72,56 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    PFRelation * relation = [self.lobby relationForKey:@"users"];
+    UITableViewCell *cell;
+    cell = [tableView cellForRowAtIndexPath: indexPath];
     
-    PFQuery *query = [PFUser query];
-    [query whereKey:@"fbID" equalTo:[self.array objectAtIndex:indexPath.row][@"id"]];
+    if (cell.accessoryType == UITableViewCellAccessoryCheckmark)
+    {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    else
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
     
-    __block PFUser *friend;
+}
+
+- (IBAction)submitButton:(id)sender {
+    NSLog(@"Button Pressed");
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu lobbies.", (unsigned long)[objects count]);
-            // Do something with the found objects
-            friend = [objects objectAtIndex:0];
-            [relation addObject:friend];
-            [self.lobby saveInBackground];
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
+    int numEntries = 0;
+    NSMutableArray *cells = [self.tableView visibleCells];
+    for (UITableViewCell *cell in cells)
+    {
+        if (cell.accessoryType == UITableViewCellAccessoryCheckmark)
+        {
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            
+            PFRelation * relation = [self.lobby relationForKey:@"users"];
+            
+            PFQuery *query = [PFUser query];
+            [query whereKey:@"fbID" equalTo:[self.array objectAtIndex:indexPath.row][@"id"]];
+            
+            __block PFUser *friend;
+            
+            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                if (!error) {
+                    // The find succeeded.
+                    NSLog(@"Successfully retrieved %lu lobbies.", (unsigned long)[objects count]);
+                    // Do something with the found objects
+                    friend = [objects objectAtIndex:0];
+                    [relation addObject:friend];
+                    [self.lobby saveInBackground];
+                    NSLog(@"Invited %@", cell.textLabel.text);
+                } else {
+                    // Log details of the failure
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                }
+            }];
         }
-    }];
+    }
+    NSLog(@"%d entries selected", numEntries);
+    
 }
 
 /*

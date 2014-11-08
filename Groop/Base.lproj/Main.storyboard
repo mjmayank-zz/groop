@@ -351,6 +351,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lGl-2u-ZV6">
+                            <rect key="frame" x="0.0" y="130" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.16862745100000001" green="0.75294117650000003" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Submit">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="submitButton:" destination="Ax7-Ec-Aak" eventType="touchUpInside" id="67o-Zi-wVV"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="inviteFriendCell" id="VWR-tE-iqW">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -367,6 +378,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="submitButton" destination="lGl-2u-ZV6" id="4qD-bA-8Fu"/>
                         <outlet property="tableView" destination="tpo-FJ-wyS" id="hq3-yT-iUx"/>
                     </connections>
                 </tableViewController>
