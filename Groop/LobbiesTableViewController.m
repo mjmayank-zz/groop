@@ -41,7 +41,7 @@
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:@"allLobbiesUpdated"
-                                                    object:nil];
+                                                  object:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -139,15 +139,17 @@
             // The find succeeded.
             NSLog(@"Successfully retrieved %lu pictures.", (unsigned long)[objects count]);
             // Do something with the found objects
+            
+            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+            
             for (PFObject *object in objects) {
-                NSData * data = [object[@"file"] getData];
-                UIImage *image = [UIImage imageWithData:data];
-                [self.photos addObject:[MWPhoto photoWithImage:image]];
+                PFFile * file = object[@"file"];
+                
+                [self.photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:file.url]]];
             }
             
             // Create browser (must be done each time photo browser is
             // displayed. Photo browser objects cannot be re-used)
-            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
             
             // Set options
             browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
@@ -161,6 +163,7 @@
             // Present
             [self.navigationController pushViewController:browser animated:YES];
             
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
             
         } else {
             // Log details of the failure
@@ -168,7 +171,7 @@
         }
     }];
     
-
+    
 }
 
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
@@ -186,38 +189,38 @@
     return nil;
 }
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 - (IBAction)refreshButtonPressed:(id)sender {
     [[LobbyManager sharedLobbyManager] queryLobbies];
 }
@@ -244,7 +247,7 @@
         LobbyAlbumViewController *vc = segue.destinationViewController;
         vc.lobby = [[self arrayForSection:path.section ] objectAtIndex:path.row];
     }
-
+    
 }
 
 
@@ -253,7 +256,7 @@
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"self.name contains[c] %@", searchText];
-//    self.searchResults = [self.array filteredArrayUsingPredicate:resultPredicate];
+    //    self.searchResults = [self.array filteredArrayUsingPredicate:resultPredicate];
     
 }
 
