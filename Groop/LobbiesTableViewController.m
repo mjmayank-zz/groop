@@ -9,6 +9,7 @@
 #import "LobbiesTableViewController.h"
 #import "LobbyAlbumViewController.h"
 #import "LobbyManager.h"
+#import "MWPhotoBrowser.h"
 
 @interface LobbiesTableViewController ()
 
@@ -123,7 +124,67 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    PFObject * lobby = [[self arrayForSection:indexPath.section ] objectAtIndex:indexPath.row];
+    
+    PFRelation *relation = [lobby relationForKey:@"pictures"];
+    PFQuery *query = [relation query];
+    
+    NSMutableArray * array = [NSMutableArray new];
+    
+    self.photos = [NSMutableArray new];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu pictures.", (unsigned long)[objects count]);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSData * data = [object[@"file"] getData];
+                UIImage *image = [UIImage imageWithData:data];
+                [self.photos addObject:[MWPhoto photoWithImage:image]];
+            }
+            
+            // Create browser (must be done each time photo browser is
+            // displayed. Photo browser objects cannot be re-used)
+            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+            
+            // Set options
+            browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
+            browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
+            browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
+            browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
+            browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
+            browser.enableGrid = YES; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
+            browser.startOnGrid = YES; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
+            
+            // Present
+            [self.navigationController pushViewController:browser animated:YES];
+            
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
 
+}
+
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return self.photos.count;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    if (index < self.photos.count)
+        return [self.photos objectAtIndex:index];
+    return nil;
+}
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser thumbPhotoAtIndex:(NSUInteger)index {
+    if (index < self.photos.count)
+        return [self.photos objectAtIndex:index];
+    return nil;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
