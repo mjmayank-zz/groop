@@ -52,21 +52,39 @@
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
 
+    // Validate the fields (name and date)
     if ([identifier isEqualToString:@"createToFriends"]){
-        BOOL isVerified = self.nameTextField.text.length > 0;
-        if (!isVerified)
+        // There's probably a better place to put these
+        NSString *nameError = @"Please fill in a name\n";
+        NSString *dateError = @"Please select a valid time range\n";
+        NSMutableString *totalErrors = [[NSMutableString alloc] init];
+        
+        BOOL isNameVerified = self.nameTextField.text.length > 0;
+        BOOL isDateVerified =
+            [[self.startDatePicker date] compare: [self.endDatePicker date]] == NSOrderedAscending;
+        if (!isNameVerified)
         {
-            NSLog(@"Please fill in name");
+            [totalErrors appendString: nameError];
+        }
+        if (!isDateVerified)
+        {
+            [totalErrors appendString: dateError];
+        }
+        
+        if (!(isNameVerified && isDateVerified))
+        {
             UIAlertView *alert = [[UIAlertView alloc]
                                   initWithTitle:@"Error"
-                                  message:@"Please fill in a name"
+                                  message:[totalErrors stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]]
                                   delegate:self
                                   cancelButtonTitle:@"Dismiss"
                                   otherButtonTitles:nil];
             
             [alert show];
         }
-        return isVerified;
+        
+        
+        return isNameVerified && isDateVerified;
     }
     
     return YES;
