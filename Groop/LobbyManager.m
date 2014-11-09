@@ -15,23 +15,20 @@
     self = [super init];
     if (self)
     {
-        self.allLobbies = [[NSMutableArray alloc] init];
+        self.pastLobbies = [[NSMutableArray alloc] init];
         self.activeLobbies = [[NSMutableArray alloc] init];
+        self.futureLobbies = [[NSMutableArray alloc] init];
         PFQuery *query = [PFQuery queryWithClassName:@"lobby"];
         [query whereKey:@"users" equalTo:[PFUser currentUser]];
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
                 // The find succeeded.
                 NSLog(@"Successfully retrieved %lu lobbies.", (unsigned long)[objects count]);
-                // Do something with the found objects
-                for (PFObject *object in objects) {
-                    [self.allLobbies addObject:object];
-//                    NSLog(@"%@", object);
-                }
-                NSDictionary *userInfo = @{@"allLobbies": self.allLobbies,
-                                           @"activeLobbies":self.activeLobbies};
+                [self calculateActiveLobbies:objects];
+                NSDictionary *userInfo = @{@"pastLobbies": self.pastLobbies,
+                                           @"activeLobbies":self.activeLobbies,
+                                           @"pastLobbies":self.pastLobbies};
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"allLobbiesUpdated" object:self userInfo:userInfo];
-                [self calculateActiveLobbies];
             } else {
                 // Log details of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -41,17 +38,53 @@
     return self;
 }
 
-- (void)calculateActiveLobbies{
-    for (PFObject *object in self.allLobbies){
-        NSDate * startTime = object[@"startTime"];
-        NSDate * endTime = object[@"endTime"];
-        if( [startTime compare:[NSDate date]] == NSOrderedAscending && [endTime compare:[NSDate date]] == NSOrderedDescending){
-            [self.activeLobbies addObject:object];
+- (DateCompare)sortLobby:(PFObject *)lobby{
+    NSDate * startTime = lobby[@"startTime"];
+    NSDate * endTime = lobby[@"endTime"];
+    if ([endTime compare:[NSDate date]] == NSOrderedAscending){
+        return kPastLobby;
+    }
+    else if( [startTime compare:[NSDate date]] == NSOrderedAscending && [endTime compare:[NSDate date]] == NSOrderedDescending){
+        return kActiveLobby;
+    }
+    else{
+        return kFutureLobby;
+    }
+}
+
+- (void)calculateActiveLobbies:(NSArray *) allLobbies{
+    NSMutableArray * pastLobbies = [[NSMutableArray alloc] init];
+    NSMutableArray * activeLobbies = [[NSMutableArray alloc] init];
+    NSMutableArray * futureLobbies = [[NSMutableArray alloc] init];
+    for (PFObject *object in allLobbies){
+        DateCompare date = [self sortLobby:object];
+        if(date == kPastLobby){
+            [pastLobbies addObject:object];
+        }
+        else if(date == kActiveLobby){
+            [activeLobbies addObject:object];
+        }
+        else{
+            [futureLobbies addObject:object];
         }
     }
+    
+    self.pastLobbies = pastLobbies;
+    self.activeLobbies = activeLobbies;
+    self.futureLobbies = futureLobbies;
+    
     NSDictionary *userInfo = @{@"activeLobbies": self.activeLobbies,
-                               @"allLobbies": self.allLobbies};
+                               @"pastLobbies": self.pastLobbies,
+                               @"futureLobbies": self.futureLobbies};
     [[NSNotificationCenter defaultCenter] postNotificationName:@"activeLobbiesUpdated" object:self userInfo:userInfo];
+}
+
+- (NSMutableArray *)getAllLobbies{
+    NSMutableArray * temp = [[NSMutableArray alloc] init];
+    [temp addObjectsFromArray:self.pastLobbies];
+    [temp addObjectsFromArray:self.activeLobbies];
+    [temp addObjectsFromArray:self.futureLobbies];
+    return temp;
 }
 
 #pragma mark - Singleton implementation in ARC

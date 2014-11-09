@@ -85,6 +85,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="vnk-Ze-NeY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="w17-Bd-lTK">
+                            <connections>
+                                <action selector="refreshButtonPressed:" destination="QkJ-i0-7jL" id="hVW-fh-BYA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zit-Zt-pwq">
                             <connections>
                                 <segue destination="aHa-Yj-N0C" kind="show" id="gBp-Lq-rft"/>

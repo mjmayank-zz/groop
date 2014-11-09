@@ -8,11 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, DateCompare) {
+    kPastLobby,
+    kActiveLobby,
+    kFutureLobby
+};
+
 @interface LobbyManager : NSObject
 
 @property (strong, nonatomic) NSMutableArray * activeLobbies;
-@property (strong, nonatomic) NSMutableArray * allLobbies;
+@property (strong, nonatomic) NSMutableArray * pastLobbies;
+@property (strong, nonatomic) NSMutableArray * futureLobbies;
 
 + (LobbyManager *)sharedLobbyManager;
+- (NSArray *)getAllLobbies;
+- (void)calculateActiveLobbies:(NSArray *)allLobbies;
 
 @end

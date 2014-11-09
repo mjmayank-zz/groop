@@ -377,7 +377,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
                                 }
                             }
                             else{
-                                NSLog(error);
+                                NSLog(@"%@", error);
                             }
                         }];
                         
