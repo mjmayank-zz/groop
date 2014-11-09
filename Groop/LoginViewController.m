@@ -90,8 +90,12 @@
                                   PFUser *currentUser = [PFUser currentUser];
                                   
                                   NSString * fbID = result[@"id"];
+                                  NSString * firstName = result[@"first_name"];
+                                  NSString * lastName = result[@"last_name"];
                                   
                                   [currentUser setObject:fbID forKey:@"fbID"];
+                                  [currentUser setObject:firstName forKey:@"first_name"];
+                                  [currentUser setObject:lastName forKey:@"last_name"];
                                   
                                   [currentUser saveInBackground];
                                 

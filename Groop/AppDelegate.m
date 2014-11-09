@@ -37,8 +37,6 @@
     self.window.rootViewController = initViewController;
     [self.window makeKeyAndVisible];
     
-    [LobbyManager sharedLobbyManager];
-    
     return YES;
 }
 

@@ -131,6 +131,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if([[self arrayForSection:indexPath.section ] count] == 0){
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        return;
+    }
+    
+    
     PFObject * lobby = [[self arrayForSection:indexPath.section ] objectAtIndex:indexPath.row];
     
     PFRelation *relation = [lobby relationForKey:@"pictures"];
@@ -139,6 +146,7 @@
     NSMutableArray * array = [NSMutableArray new];
     
     self.photos = [NSMutableArray new];
+    
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
