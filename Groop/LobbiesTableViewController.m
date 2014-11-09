@@ -44,6 +44,12 @@
                                                   object:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [self refreshLobbies];
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
 }
@@ -222,9 +228,12 @@
  }
  */
 - (IBAction)refreshButtonPressed:(id)sender {
-    [[LobbyManager sharedLobbyManager] queryLobbies];
+    [self refreshLobbies];
 }
 
+- (void)refreshLobbies{
+    [[LobbyManager sharedLobbyManager] queryLobbies];
+}
 
 #pragma mark - Navigation
 

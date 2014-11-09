@@ -61,6 +61,7 @@
         self.lobby[@"name"] = self.nameTextField.text;
         self.lobby[@"startTime"] = [self.startDatePicker date];
         self.lobby[@"endTime"] = [self.endDatePicker date];
+        self.lobby[@"creator"] = [PFUser currentUser];
         PFRelation *users = [self.lobby relationForKey:@"users"];
         [users addObject:[PFUser currentUser]];
         
