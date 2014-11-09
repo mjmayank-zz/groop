@@ -50,8 +50,28 @@
 
 #pragma mark - Navigation
 
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    BOOL isVerified = self.nameTextField.text.length > 0;
+    
+    if (!isVerified)
+    {
+        NSLog(@"Please fill in name");
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Error"
+                              message:@"Please fill in a name"
+                              delegate:self
+                              cancelButtonTitle:@"Dismiss"
+                              otherButtonTitles:nil];
+        
+        [alert show];
+    }
+    
+    return isVerified;
+}
+
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+   
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if([segue.identifier isEqualToString:@"createToFriends"]){

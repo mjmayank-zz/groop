@@ -98,9 +98,8 @@
                           otherButtonTitles:@"Ok", nil];
     
     [alert show];
-    
-
 }
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     NSLog(@"%d", (int)buttonIndex);
