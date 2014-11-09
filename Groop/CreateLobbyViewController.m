@@ -65,8 +65,7 @@
         PFRelation *users = [self.lobby relationForKey:@"users"];
         [users addObject:[PFUser currentUser]];
         
-        [self.lobby saveInBackground];
-        
+    
         vc.lobby = self.lobby;
         
         [FBRequestConnection startWithGraphPath:@"me/friends?fields=installed,id,name,picture"
