@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray * array;
+@property (strong, nonatomic) NSMutableArray * friendsAttendingArray;
 @property (strong, nonatomic) PFObject * lobby;
+@property (strong, nonatomic) NSString * eventId;
 @end

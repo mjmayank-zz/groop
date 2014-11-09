@@ -27,6 +27,7 @@
     self.tableView.dataSource = self;
     
     self.array = [[NSMutableArray alloc] init];
+    self.friendsAttendingArray = [[NSMutableArray alloc] init];
     
     [FBRequestConnection startWithGraphPath:@"me/friends"
                           completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -42,6 +43,31 @@
                                   // See: https://developers.facebook.com/docs/ios/errors
                               }
                           }];
+    
+    NSString * graphPath = [NSString stringWithFormat:@"/%@/attending", self.eventId];
+    
+    [FBRequestConnection startWithGraphPath:graphPath
+                                 parameters:nil
+                                 HTTPMethod:@"GET"
+                          completionHandler:^(
+                                              FBRequestConnection *connection,
+                                              id result,
+                                              NSError *error
+                                              ) {
+                              if (!error) {
+                                  // Sucess! Include your code to handle the results here
+                                  NSLog(@"user events: %@", result);
+                                  for (NSDictionary * obj in result[@"data"]){
+                                      [self.friendsAttendingArray addObject:obj[@"name"]];
+                                  }
+                                  
+                                  [self.tableView reloadData];
+                              } else {
+                                  // An error occurred, we need to handle the error
+                                  // See: https://developers.facebook.com/docs/ios/errors
+                              }
+                          }];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,6 +94,13 @@
     // Configure the cell...
     cell.textLabel.text = [self.array objectAtIndex:indexPath.row][@"name"];
     
+    for (NSString * name in self.friendsAttendingArray)
+    {
+        if ([cell.textLabel.text isEqualToString: name])
+        {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+    }
     return cell;
 }
 

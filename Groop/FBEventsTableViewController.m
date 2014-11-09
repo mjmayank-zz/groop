@@ -125,6 +125,7 @@
         [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZ"];
         NSDate *date = [df dateFromString:event[@"start_time"]];
         vc.startdate = date;
+        vc.eventId = event[@"id"];
         
         if(event[@"end_time"]){
             vc.enddate = [df dateFromString:event[@"end_time"]];

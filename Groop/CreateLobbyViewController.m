@@ -106,8 +106,8 @@
         PFRelation *users = [self.lobby relationForKey:@"users"];
         [users addObject:[PFUser currentUser]];
         
-    
         vc.lobby = self.lobby;
+        vc.eventId = self.eventId;
         
         [FBRequestConnection startWithGraphPath:@"me/friends?fields=installed,id,name,picture"
                               completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {

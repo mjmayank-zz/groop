@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSString * name;
 @property (strong, nonatomic) NSDate * startdate;
 @property (strong, nonatomic) NSDate * enddate;
+@property (strong, nonatomic) NSString * eventId;
 @property (strong, nonatomic) IBOutlet UIButton *saveButton;
 @property (strong, nonatomic) PFObject * lobby;
 
