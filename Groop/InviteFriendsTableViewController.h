@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface InviteFriendsTableViewController : UITableViewController
+@interface InviteFriendsTableViewController : UITableViewController<UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray * array;
