@@ -51,22 +51,25 @@
 #pragma mark - Navigation
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    BOOL isVerified = self.nameTextField.text.length > 0;
-    
-    if (!isVerified)
-    {
-        NSLog(@"Please fill in name");
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Error"
-                              message:@"Please fill in a name"
-                              delegate:self
-                              cancelButtonTitle:@"Dismiss"
-                              otherButtonTitles:nil];
-        
-        [alert show];
+
+    if ([identifier isEqualToString:@"createToFriends"]){
+        BOOL isVerified = self.nameTextField.text.length > 0;
+        if (!isVerified)
+        {
+            NSLog(@"Please fill in name");
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"Error"
+                                  message:@"Please fill in a name"
+                                  delegate:self
+                                  cancelButtonTitle:@"Dismiss"
+                                  otherButtonTitles:nil];
+            
+            [alert show];
+        }
+        return isVerified;
     }
     
-    return isVerified;
+    return YES;
 }
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
