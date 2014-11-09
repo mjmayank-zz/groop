@@ -83,7 +83,7 @@
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (IBAction)submitButton:(id)sender {
