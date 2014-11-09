@@ -23,5 +23,6 @@ typedef NS_ENUM(NSUInteger, DateCompare) {
 + (LobbyManager *)sharedLobbyManager;
 - (NSArray *)getAllLobbies;
 - (void)calculateActiveLobbies:(NSArray *)allLobbies;
+- (void)queryLobbies;
 
 @end

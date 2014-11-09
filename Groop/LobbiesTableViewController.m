@@ -27,9 +27,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadData:)
                                                  name:@"allLobbiesUpdated" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reloadData:)
-                                                 name:@"activeLobbiesUpdated" object:nil];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -44,9 +41,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:@"allLobbiesUpdated"
                                                     object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:@"activeLobbiesUpdated"
-                                                  object:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -164,8 +158,7 @@
 }
 */
 - (IBAction)refreshButtonPressed:(id)sender {
-    LobbyManager * lobbyM = [LobbyManager sharedLobbyManager];
-    [lobbyM calculateActiveLobbies:[lobbyM getAllLobbies]];
+    [[LobbyManager sharedLobbyManager] queryLobbies];
 }
 
 

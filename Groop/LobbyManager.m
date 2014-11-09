@@ -18,22 +18,8 @@
         self.pastLobbies = [[NSMutableArray alloc] init];
         self.activeLobbies = [[NSMutableArray alloc] init];
         self.futureLobbies = [[NSMutableArray alloc] init];
-        PFQuery *query = [PFQuery queryWithClassName:@"lobby"];
-        [query whereKey:@"users" equalTo:[PFUser currentUser]];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            if (!error) {
-                // The find succeeded.
-                NSLog(@"Successfully retrieved %lu lobbies.", (unsigned long)[objects count]);
-                [self calculateActiveLobbies:objects];
-                NSDictionary *userInfo = @{@"pastLobbies": self.pastLobbies,
-                                           @"activeLobbies":self.activeLobbies,
-                                           @"pastLobbies":self.pastLobbies};
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"allLobbiesUpdated" object:self userInfo:userInfo];
-            } else {
-                // Log details of the failure
-                NSLog(@"Error: %@ %@", error, [error userInfo]);
-            }
-        }];
+        
+        [self queryLobbies];
     }
     return self;
 }
@@ -76,7 +62,7 @@
     NSDictionary *userInfo = @{@"activeLobbies": self.activeLobbies,
                                @"pastLobbies": self.pastLobbies,
                                @"futureLobbies": self.futureLobbies};
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"activeLobbiesUpdated" object:self userInfo:userInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"allLobbiesUpdated" object:self userInfo:userInfo];
 }
 
 - (NSMutableArray *)getAllLobbies{
@@ -85,6 +71,21 @@
     [temp addObjectsFromArray:self.activeLobbies];
     [temp addObjectsFromArray:self.futureLobbies];
     return temp;
+}
+
+- (void) queryLobbies{
+    PFQuery *query = [PFQuery queryWithClassName:@"lobby"];
+    [query whereKey:@"users" equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu lobbies.", (unsigned long)[objects count]);
+            [self calculateActiveLobbies:objects];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 #pragma mark - Singleton implementation in ARC
