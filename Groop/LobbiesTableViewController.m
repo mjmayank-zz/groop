@@ -126,7 +126,6 @@
             [cell.lobbyName setText:@"No Lobbies"];
         }
         else{
-//            NSDate * date = [array[indexPath.row][@"startTime"] date];
             PFObject * lobby = array[indexPath.row];
             
             PFRelation *relation = [lobby relationForKey:@"pictures"];
@@ -142,8 +141,8 @@
                         
                         dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
                         dispatch_async(queue, ^{
-                            
-                            PFFile * file = objects[0][@"file"];
+                            NSUInteger randomIndex = arc4random() % [objects count];
+                            PFFile * file = objects[randomIndex][@"file"];
                             NSData * data = [file getData];
                             UIImage * image = [UIImage imageWithData:data];
                             
