@@ -127,8 +127,43 @@
         }
         else{
 //            NSDate * date = [array[indexPath.row][@"startTime"] date];
+            PFObject * lobby = array[indexPath.row];
             
-            [cell.lobbyName setText:array[indexPath.row][@"name"]];
+            PFRelation *relation = [lobby relationForKey:@"pictures"];
+            PFQuery *query = [relation query];
+            
+            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                if (!error) {
+                    // The find succeeded.
+                    NSLog(@"Successfully retrieved %lu pictures.", (unsigned long)[objects count]);
+                    // Do something with the found objects
+                    
+                    if([objects count] > 0){
+                        
+                        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+                        dispatch_async(queue, ^{
+                            
+                            PFFile * file = objects[0][@"file"];
+                            NSData * data = [file getData];
+                            UIImage * image = [UIImage imageWithData:data];
+                            
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [cell.backgroundImageView setImage:image];
+                            });
+                        });
+                    }
+                    else{
+                        [cell.backgroundImageView setImage:[UIImage imageNamed:@"humin.jpg"]];
+                    }
+                    
+                } else {
+                    // Log details of the failure
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                }
+            }];
+
+            
+            [cell.lobbyName setText:lobby[@"name"]];
 //            [cell.lobbyTime setText:date];
 //            [cell.backgroundImageView setImage:[UIImage imageNamed:@"goopIcon2x.png"]];
         }
