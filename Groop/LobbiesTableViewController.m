@@ -10,6 +10,7 @@
 #import "LobbyAlbumViewController.h"
 #import "LobbyManager.h"
 #import "MWPhotoBrowser.h"
+#import "LobbyCell.h"
 
 @interface LobbiesTableViewController ()
 
@@ -112,19 +113,24 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"test"];
+    LobbyCell *cell = (LobbyCell *)[tableView dequeueReusableCellWithIdentifier:@"test"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"test"];
+        cell = [[LobbyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"test"];
     }
+    
     if (tableView == self.searchDisplayController.searchResultsTableView)
         [cell.textLabel setText:self.searchResults[indexPath.row]];
     else{
         NSMutableArray * array = [self arrayForSection:indexPath.section];
         if([array count] == 0){
-            [cell.textLabel setText:@"No Lobbies"];
+            [cell.lobbyName setText:@"No Lobbies"];
         }
         else{
-            [cell.textLabel setText:array[indexPath.row][@"name"]];
+//            NSDate * date = [array[indexPath.row][@"startTime"] date];
+            
+            [cell.lobbyName setText:array[indexPath.row][@"name"]];
+//            [cell.lobbyTime setText:date];
+//            [cell.backgroundImageView setImage:[UIImage imageNamed:@"goopIcon2x.png"]];
         }
     }
     return cell;

@@ -11,6 +11,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import "LobbyManager.h"
+#import "CameraRollWorker.h"
 
 @interface AppDelegate ()
 
@@ -28,6 +29,8 @@
     
     BOOL hasPermissions =
     [[NSUserDefaults standardUserDefaults] boolForKey:@"hasPermissions"];
+    
+    [[CameraRollWorker alloc] init];
     
     NSString *storyboardId = hasPermissions ? @"MainIdentifier" : @"LoginIdentifier";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

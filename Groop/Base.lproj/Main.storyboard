@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4Jq-DR-dXd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -56,7 +57,7 @@
         <scene sceneID="9nm-Sp-fMb">
             <objects>
                 <tableViewController title="Events" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QkJ-i0-7jL" customClass="LobbiesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FCy-KW-c0n">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="22" sectionFooterHeight="22" id="FCy-KW-c0n">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -69,11 +70,47 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="test" selectionStyle="default" indentationWidth="10" reuseIdentifier="test" id="8dq-eb-ajO">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="test" selectionStyle="default" indentationWidth="10" reuseIdentifier="test" rowHeight="150" id="8dq-eb-ajO" customClass="LobbyCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8dq-eb-ajO" id="xrt-4T-mQe">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humin.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="35X-EY-8ao">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                        </imageView>
+                                        <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyA-yF-x7N">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mayank's 16th Party" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiS-zF-lXB">
+                                            <rect key="frame" x="15" y="8" width="191" height="31"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="October 17th, 9pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHM-eK-rL5">
+                                            <rect key="frame" x="15" y="120" width="146" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2s-ml-Za5">
+                                            <rect key="frame" x="-9" y="111" width="609" height="39"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="35X-EY-8ao" secondAttribute="trailing" constant="-8" id="3Jh-MJ-J0f"/>
+                                        <constraint firstItem="35X-EY-8ao" firstAttribute="leading" secondItem="xrt-4T-mQe" secondAttribute="leadingMargin" constant="-8" id="9l6-bt-mjH"/>
+                                        <constraint firstItem="35X-EY-8ao" firstAttribute="top" secondItem="xrt-4T-mQe" secondAttribute="topMargin" constant="-8" id="QF8-S2-2HS"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="35X-EY-8ao" secondAttribute="bottom" constant="-8" id="zVC-1W-wbz"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="backgroundImageView" destination="35X-EY-8ao" id="FEo-Wt-Bll"/>
+                                    <outlet property="lobbyName" destination="AiS-zF-lXB" id="NDo-Xi-tTI"/>
+                                    <outlet property="lobbyTime" destination="GHM-eK-rL5" id="93E-y1-8Mr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -155,15 +192,6 @@
                                             <action selector="toggleMovieRecording:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Q5d-3q-LnI"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-6u-W7O">
-                                        <rect key="frame" x="277" y="483" width="58" height="30"/>
-                                        <state key="normal" title="Take Pic">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="snapStillImage:" destination="8BS-bV-9AW" eventType="touchUpInside" id="DhP-2T-88v"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-0f-svP">
                                         <rect key="frame" x="386" y="483" width="30" height="30"/>
                                         <state key="normal" title="Flip">
@@ -173,11 +201,21 @@
                                             <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Oat-do-cOg"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-6u-W7O">
+                                        <rect key="frame" x="278" y="476" width="44" height="44"/>
+                                        <state key="normal" image="camerabutton.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="snapStillImage:" destination="8BS-bV-9AW" eventType="touchUpInside" id="DhP-2T-88v"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Kd8-0f-svP" firstAttribute="bottom" secondItem="7Bp-5V-HTN" secondAttribute="bottom" id="0U1-RK-ZnE"/>
                                     <constraint firstItem="Kd8-0f-svP" firstAttribute="bottom" secondItem="zqj-6u-W7O" secondAttribute="bottom" id="ZjO-Ht-mpu"/>
+                                    <constraint firstAttribute="centerX" secondItem="zqj-6u-W7O" secondAttribute="centerX" id="jsc-zq-Ruf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -458,6 +496,10 @@
             <point key="canvasLocation" x="1763" y="41"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camerabutton.png" width="90" height="93"/>
+        <image name="humin.jpg" width="640" height="395"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="loA-Mk-D76"/>
     </inferredMetricsTieBreakers>
