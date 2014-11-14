@@ -36,7 +36,20 @@
     self.pastLobbies = [LobbyManager sharedLobbyManager].pastLobbies;
     self.activeLobbies = [LobbyManager sharedLobbyManager].activeLobbies;
     self.futureLobbies = [LobbyManager sharedLobbyManager].futureLobbies;
+ 
     
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"firstTime"] == NULL) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              
+                              initWithTitle:@"FIRST TIME"
+                              message:@""
+                              delegate:self
+                              cancelButtonTitle:@"Dismiss"
+                              otherButtonTitles:@"Ok", nil];
+        
+        [alert show];
+        [[NSUserDefaults standardUserDefaults] setValue:@"Not" forKey:@"firstTime"];
+    }
 }
 
 - (void)dealloc {
