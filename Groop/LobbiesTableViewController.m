@@ -39,16 +39,30 @@
  
     
     if ([[NSUserDefaults standardUserDefaults] valueForKey:@"firstTime"] == NULL) {
-        UIAlertView *alert = [[UIAlertView alloc]
+        UIAlertView *createLobbiesAlert = [[UIAlertView alloc]
                               
-                              initWithTitle:@"FIRST TIME"
-                              message:@""
+                              initWithTitle:@"Welcome to Groop!"
+                              message:@"Create lobbies by hitting the plus sign."
                               delegate:self
                               cancelButtonTitle:@"Dismiss"
                               otherButtonTitles:@"Ok", nil];
         
-        [alert show];
+        
+        
+        UIAlertView *viewPicturesAlert = [[UIAlertView alloc]
+                              
+                              initWithTitle:@"Welcome to Groop!"
+                              message:@"Tap on lobbies to view the pictures that have been uploaded."
+                              delegate:self
+                              cancelButtonTitle:@"Dismiss"
+                              otherButtonTitles:@"Ok", nil];
+        
+        
+        [viewPicturesAlert show];
+        [createLobbiesAlert show];
+        
         [[NSUserDefaults standardUserDefaults] setValue:@"Not" forKey:@"firstTime"];
+        
     }
 }
 
