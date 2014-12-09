@@ -283,7 +283,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCi-Jh-ImO">
-                                        <rect key="frame" x="273" y="103" width="55" height="30"/>
+                                        <rect key="frame" x="465" y="95" width="55" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="5fn-FN-ft3"/>
                                             <constraint firstAttribute="height" constant="30" id="h9m-uP-128"/>
@@ -329,6 +329,11 @@
                             <constraint firstItem="zqj-6u-W7O" firstAttribute="leading" secondItem="UDi-dL-ksf" secondAttribute="leadingMargin" constant="262" id="npp-ml-8Hi"/>
                             <constraint firstItem="nxb-iA-bex" firstAttribute="top" secondItem="zqj-6u-W7O" secondAttribute="bottom" constant="180" id="qiG-P7-Lm2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZD1-VQ-aj7"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" id="Igh-zF-3OM"/>
                     <connections>
