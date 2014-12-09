@@ -66,7 +66,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     AVCaptureSession *session = [[AVCaptureSession alloc] init];
     [self setSession:session];
     
-    self.cameraButton.layer.cornerRadius = 22;
+    self.stillButton.layer.cornerRadius = 22;
     
     // Setup the preview view
     [[self previewView] setSession:session];

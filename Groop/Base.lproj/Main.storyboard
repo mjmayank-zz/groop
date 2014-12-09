@@ -209,7 +209,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="vnk-Ze-NeY">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="w17-Bd-lTK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="w17-Bd-lTK">
                             <connections>
                                 <action selector="refreshButtonPressed:" destination="QkJ-i0-7jL" id="hVW-fh-BYA"/>
                             </connections>
@@ -273,16 +273,7 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8wd-hg-qcj" customClass="AVCamPreviewView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bp-5V-HTN">
-                                        <rect key="frame" x="174" y="483" width="50" height="30"/>
-                                        <state key="normal" title="Record">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="toggleMovieRecording:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Q5d-3q-LnI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-0f-svP">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-0f-svP">
                                         <rect key="frame" x="496" y="32" width="30" height="30"/>
                                         <state key="normal" title="Flip">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -293,12 +284,10 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Kd8-0f-svP" firstAttribute="bottom" secondItem="7Bp-5V-HTN" secondAttribute="bottom" id="0U1-RK-ZnE"/>
-                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-6u-W7O">
-                                <rect key="frame" x="278" y="474" width="44" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-6u-W7O">
+                                <rect key="frame" x="278" y="327" width="44" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -309,20 +298,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="zqj-6u-W7O" secondAttribute="trailing" constant="262" id="9iM-md-ffQ"/>
                             <constraint firstAttribute="centerX" secondItem="8wd-hg-qcj" secondAttribute="centerX" id="ZD1-VQ-aj7"/>
+                            <constraint firstItem="zqj-6u-W7O" firstAttribute="leading" secondItem="UDi-dL-ksf" secondAttribute="leadingMargin" constant="262" id="npp-ml-8Hi"/>
+                            <constraint firstItem="nxb-iA-bex" firstAttribute="top" secondItem="zqj-6u-W7O" secondAttribute="bottom" constant="180" id="qiG-P7-Lm2"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" id="Igh-zF-3OM"/>
                     <connections>
                         <outlet property="cameraButton" destination="Kd8-0f-svP" id="ylr-ca-ioX"/>
                         <outlet property="previewView" destination="8wd-hg-qcj" id="Mj6-sk-LYV"/>
-                        <outlet property="recordButton" destination="7Bp-5V-HTN" id="V7l-Qa-njP"/>
                         <outlet property="stillButton" destination="zqj-6u-W7O" id="ik5-65-ZFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VqI-2u-x1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-418" y="610"/>
+            <point key="canvasLocation" x="-462" y="659"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EcI-P7-dfK">
@@ -425,7 +416,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mAj-5d-mmJ">
-                                <rect key="frame" x="140" y="297" width="320" height="162"/>
+                                <rect key="frame" x="140" y="276" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="437000550.81056398">
                                     <!--2014-11-06 21:02:30 +0000-->
                                 </date>
@@ -445,7 +436,7 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WCu-ns-Snn">
-                                <rect key="frame" x="140" y="124" width="320" height="162"/>
+                                <rect key="frame" x="140" y="117" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="437000546.057455">
                                     <!--2014-11-06 21:02:26 +0000-->
                                 </date>
@@ -578,7 +569,7 @@
                         </connections>
                     </collectionView>
                     <toolbarItems>
-                        <barButtonItem title="aADASDAS" id="Rav-Ep-OAt"/>
+                        <barButtonItem id="Rav-Ep-OAt"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

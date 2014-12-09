@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,17 +11,34 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="login_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="yEP-3P-OS7">
-                    <rect key="frame" x="0.0" y="-1" width="480" height="853"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="9jd-J8-Phf">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="9jd-J8-Phf" secondAttribute="height" multiplier="1:1" id="jSO-th-Skx"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="groop_logoMark.png" translatesAutoresizingMaskIntoConstraints="NO" id="vhx-tU-eEn">
+                    <rect key="frame" x="165" y="74" width="150" height="150"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.55294117647058827" green="0.22745098039215686" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="9jd-J8-Phf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="A68-0t-R6f"/>
+                <constraint firstItem="9jd-J8-Phf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KHq-0W-4nP"/>
+                <constraint firstAttribute="trailing" secondItem="9jd-J8-Phf" secondAttribute="trailing" id="MjI-80-5ho"/>
+                <constraint firstItem="vhx-tU-eEn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="165" id="Qdd-IK-1xy"/>
+                <constraint firstItem="vhx-tU-eEn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="74" id="a2H-iR-FQm"/>
+                <constraint firstAttribute="bottom" secondItem="9jd-J8-Phf" secondAttribute="bottom" id="g9O-KJ-vta"/>
+                <constraint firstAttribute="trailing" secondItem="vhx-tU-eEn" secondAttribute="trailing" constant="165" id="lgG-BO-k8I"/>
+                <constraint firstAttribute="bottom" secondItem="vhx-tU-eEn" secondAttribute="bottom" constant="256" id="mdi-IW-AgN"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
     <resources>
+        <image name="groop_logoMark.png" width="506" height="506"/>
         <image name="login_background.png" width="640" height="1135"/>
     </resources>
 </document>
