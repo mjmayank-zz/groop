@@ -262,28 +262,28 @@
                                     <action selector="snapStillImage:" destination="8BS-bV-9AW" eventType="touchUpInside" id="DhP-2T-88v"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-0f-svP">
+                                <rect key="frame" x="285" y="147" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="yzR-Dd-h1K"/>
+                                </constraints>
+                                <state key="normal" title="Flip">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="yzR-Dd-h1K"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Oat-do-cOg"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8wd-hg-qcj" customClass="AVCamPreviewView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-0f-svP">
-                                        <rect key="frame" x="488" y="96" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="yzR-Dd-h1K"/>
-                                        </constraints>
-                                        <state key="normal" title="Flip">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="yzR-Dd-h1K"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Oat-do-cOg"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCi-Jh-ImO">
-                                        <rect key="frame" x="476" y="408" width="55" height="30"/>
+                                        <rect key="frame" x="273" y="103" width="55" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="5fn-FN-ft3"/>
                                             <constraint firstAttribute="height" constant="30" id="h9m-uP-128"/>
@@ -305,43 +305,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kd8-0f-svP" secondAttribute="trailing" constant="74" id="GWp-Wd-tOC"/>
-                                    <constraint firstAttribute="trailing" secondItem="Kd8-0f-svP" secondAttribute="trailing" constant="82" id="LFU-h1-SD9"/>
                                     <constraint firstAttribute="trailing" secondItem="fCi-Jh-ImO" secondAttribute="trailing" constant="61" id="SRs-P0-HQi"/>
-                                    <constraint firstItem="Kd8-0f-svP" firstAttribute="top" secondItem="8wd-hg-qcj" secondAttribute="top" constant="32" id="Tqk-tW-q8R"/>
-                                    <constraint firstItem="fCi-Jh-ImO" firstAttribute="top" secondItem="Kd8-0f-svP" secondAttribute="bottom" constant="343" id="Xw7-Yd-lKE"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kd8-0f-svP" secondAttribute="bottom" constant="538" id="ajY-WT-Lkn"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="fCi-Jh-ImO" secondAttribute="bottom" constant="101" id="eoH-5l-c25"/>
-                                    <constraint firstItem="Kd8-0f-svP" firstAttribute="leading" secondItem="fCi-Jh-ImO" secondAttribute="trailing" constant="61" id="fVG-Aj-F5B"/>
-                                    <constraint firstAttribute="trailing" secondItem="Kd8-0f-svP" secondAttribute="trailing" constant="74" id="fcN-na-QZB"/>
-                                    <constraint firstItem="Kd8-0f-svP" firstAttribute="top" secondItem="8wd-hg-qcj" secondAttribute="top" constant="96" id="hG6-bj-I5a"/>
                                     <constraint firstAttribute="bottom" secondItem="fCi-Jh-ImO" secondAttribute="bottom" constant="165" id="hfs-1Y-dTG"/>
-                                    <constraint firstItem="Kd8-0f-svP" firstAttribute="top" secondItem="8wd-hg-qcj" secondAttribute="topMargin" constant="5" id="i8s-w9-aBR"/>
-                                    <constraint firstItem="Kd8-0f-svP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8wd-hg-qcj" secondAttribute="top" constant="32" id="ruS-A5-RhD"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="fCi-Jh-ImO" secondAttribute="trailing" constant="5" id="rxi-IL-Med"/>
-                                    <constraint firstItem="Kd8-0f-svP" firstAttribute="leading" secondItem="8wd-hg-qcj" secondAttribute="leading" constant="496" id="sIV-yS-xHe"/>
                                     <constraint firstItem="fCi-Jh-ImO" firstAttribute="leading" secondItem="8wd-hg-qcj" secondAttribute="leading" constant="484" id="tw0-W0-q8C"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="Kd8-0f-svP" secondAttribute="trailing" constant="5" id="uAP-s3-CYw"/>
-                                    <constraint firstItem="fCi-Jh-ImO" firstAttribute="top" secondItem="Kd8-0f-svP" secondAttribute="bottom" constant="343" id="z3d-5X-O1h"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="GWp-Wd-tOC"/>
-                                        <exclude reference="Tqk-tW-q8R"/>
-                                        <exclude reference="ajY-WT-Lkn"/>
-                                        <exclude reference="fVG-Aj-F5B"/>
-                                        <exclude reference="fcN-na-QZB"/>
-                                        <exclude reference="i8s-w9-aBR"/>
-                                        <exclude reference="ruS-A5-RhD"/>
-                                        <exclude reference="sIV-yS-xHe"/>
-                                        <exclude reference="uAP-s3-CYw"/>
                                         <exclude reference="SRs-P0-HQi"/>
-                                        <exclude reference="Xw7-Yd-lKE"/>
                                         <exclude reference="eoH-5l-c25"/>
                                         <exclude reference="hfs-1Y-dTG"/>
                                         <exclude reference="rxi-IL-Med"/>
                                         <exclude reference="tw0-W0-q8C"/>
-                                        <exclude reference="z3d-5X-O1h"/>
                                     </mask>
                                 </variation>
                             </view>
