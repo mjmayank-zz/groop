@@ -64,10 +64,11 @@
         
         [[NSUserDefaults standardUserDefaults] setValue:@"Not" forKey:@"firstTime"];
         
-        self.cache = [[NSCache alloc] init];
-        self.cache.countLimit = 20;
+        
         
     }
+    self.cache = [[NSCache alloc] init];
+    self.cache.countLimit = 50;
 }
 
 - (void)dealloc {
@@ -151,57 +152,62 @@
     
     if (tableView == self.searchDisplayController.searchResultsTableView)
         [cell.textLabel setText:self.searchResults[indexPath.row]];
-    else{
+    else {
         NSMutableArray * array = [self arrayForSection:indexPath.section];
+        
         if([array count] == 0){
             [cell.lobbyName setText:@"No Lobbies"];
         }
-        else if ([self.cache objectForKey:@"somekey"] == nil) {
-            PFObject * lobby = array[indexPath.row];
-            
-            PFRelation *relation = [lobby relationForKey:@"pictures"];
-            PFQuery *query = [relation query];
-            
-            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                if (!error) {
-                    // The find succeeded.
-                    NSLog(@"Successfully retrieved %lu pictures.", (unsigned long)[objects count]);
-                    // Do something with the found objects
-                    
-                    if([objects count] > 0){
-                        
-                        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-                        dispatch_async(queue, ^{
-                            NSUInteger randomIndex = arc4random() % [objects count];
-                            PFFile * file = objects[randomIndex][@"file"];
-                            NSData * data = [file getData];
-                            UIImage * image = [UIImage imageWithData:data];
-                            
-                            [self.cache setObject:image forKey:@"somekey"];
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                                [cell.backgroundImageView setImage:image];
-                            });
-                        });
-                    }
-                    else{
-                        [cell.backgroundImageView setImage:[UIImage imageNamed:@"humin.jpg"]];
-                    }
-                    
-                } else {
-                    // Log details of the failure
-                    NSLog(@"Error: %@ %@", error, [error userInfo]);
-                }
-            }];
-
-            
-            [cell.lobbyName setText:lobby[@"name"]];
-        }
         else {
-            UIImage *image = [self.cache objectForKey:@"somekey"];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [cell.backgroundImageView setImage:image];
-            });
+            PFObject * lobby = array[indexPath.row];
+            NSString * cell_key = lobby.objectId;
+            if ([self.cache objectForKey:cell_key] == nil) {
+                PFRelation *relation = [lobby relationForKey:@"pictures"];
+                PFQuery *query = [relation query];
+                
+                [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    if (!error) {
+                        // The find succeeded.
+                        NSLog(@"Successfully retrieved %lu pictures.", (unsigned long)[objects count]);
+                        // Do something with the found objects
+                        
+                        if([objects count] > 0){
+                            dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+                            dispatch_async(queue, ^{
+                                NSUInteger randomIndex = arc4random() % [objects count];
+                                PFFile * file = objects[randomIndex][@"file"];
+                                NSData * data = [file getData];
+                                UIImage * image = [UIImage imageWithData:data];
+                                
+                                [self.cache setObject:image forKey:cell_key];
+                                
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    [cell.backgroundImageView setImage:image];
+                                });
+                            });
+                        }
+                        else{
+                            [cell.backgroundImageView setImage:[UIImage imageNamed:@"humin.jpg"]];
+                        }
+                        
+                    } else {
+                        // Log details of the failure
+                        NSLog(@"Error: %@ %@", error, [error userInfo]);
+                    }
+                }];
+                
+                
+                [cell.lobbyName setText:lobby[@"name"]];
+            }
+            else {
+                NSLog(@"asda");
+                UIImage *image = [self.cache objectForKey:cell_key];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [cell.backgroundImageView setImage:image];
+                });
+            }
         }
+        
     }
     return cell;
 }
