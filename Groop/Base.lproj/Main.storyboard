@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4Jq-DR-dXd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eWd-Sa-GJO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -212,6 +212,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="w17-Bd-lTK">
                             <connections>
                                 <action selector="refreshButtonPressed:" destination="QkJ-i0-7jL" id="hVW-fh-BYA"/>
+                                <segue destination="8BS-bV-9AW" kind="presentation" id="GWm-l1-scb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zit-Zt-pwq">
@@ -238,25 +239,6 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="264" y="-197"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="4cT-Wt-CF0">
-            <objects>
-                <tabBarController storyboardIdentifier="MainIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dbf-EA-qzU" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="iaS-rb-erO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="eWd-Sa-GJO" kind="relationship" relationship="viewControllers" id="6Pu-z9-NEg"/>
-                        <segue destination="8BS-bV-9AW" kind="relationship" relationship="viewControllers" id="9R4-YK-hED"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gwl-Lk-ws7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1334" y="-131"/>
         </scene>
         <!--Camera-->
         <scene sceneID="AEp-I9-u7c">
@@ -520,7 +502,7 @@
         <!--Lobbies-->
         <scene sceneID="OYL-Th-dAd">
             <objects>
-                <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="eWd-Sa-GJO" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eWd-Sa-GJO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Lobbies" id="AdK-eJ-rKt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RPs-2W-dC3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
