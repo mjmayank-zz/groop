@@ -11,6 +11,7 @@
 #import "LobbyManager.h"
 #import "MWPhotoBrowser.h"
 #import "LobbyCell.h"
+#import "PhotoBrowserViewController.h"
 
 @interface LobbiesTableViewController ()
 
@@ -190,8 +191,6 @@
 
             
             [cell.lobbyName setText:lobby[@"name"]];
-//            [cell.lobbyTime setText:date];
-//            [cell.backgroundImageView setImage:[UIImage imageNamed:@"goopIcon2x.png"]];
         }
     }
     return cell;
@@ -207,50 +206,54 @@
     
     PFObject * lobby = [[self arrayForSection:indexPath.section ] objectAtIndex:indexPath.row];
     
-    PFRelation *relation = [lobby relationForKey:@"pictures"];
-    PFQuery *query = [relation query];
+    PhotoBrowserViewController * vc = [[PhotoBrowserViewController alloc] init];
+    vc.delegate = vc;
+    vc.lobby = lobby;
     
-    NSMutableArray * array = [NSMutableArray new];
-    
-    self.photos = [NSMutableArray new];
-    
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu pictures.", (unsigned long)[objects count]);
-            // Do something with the found objects
-            
-            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-            
-            for (PFObject *object in objects) {
-                PFFile * file = object[@"file"];
-                
-                [self.photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:file.url]]];
-            }
-            
-            // Create browser (must be done each time photo browser is
-            // displayed. Photo browser objects cannot be re-used)
-            
-            // Set options
-            browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
-            browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
-            browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
-            browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
-            browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
-            browser.enableGrid = YES; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
-            browser.startOnGrid = YES; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
-            
-            // Present
-            [self.navigationController pushViewController:browser animated:YES];
-            
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-            
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+    [self.navigationController pushViewController:vc animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    PFRelation *relation = [lobby relationForKey:@"pictures"];
+//    PFQuery *query = [relation query];
+//    
+//    self.photos = [NSMutableArray new];
+//    
+//    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            // The find succeeded.
+//            NSLog(@"Successfully retrieved %lu pictures.", (unsigned long)[objects count]);
+//            // Do something with the found objects
+//            
+//            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+//            
+//            for (PFObject *object in objects) {
+//                PFFile * file = object[@"file"];
+//                
+//                [self.photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:file.url]]];
+//            }
+//            
+//            // Create browser (must be done each time photo browser is
+//            // displayed. Photo browser objects cannot be re-used)
+//            
+//            // Set options
+//            browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
+//            browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
+//            browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
+//            browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
+//            browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
+//            browser.enableGrid = YES; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
+//            browser.startOnGrid = YES; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
+//            
+//            // Present
+//            [self.navigationController pushViewController:browser animated:YES];
+//            
+//            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//            
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
     
     
 }

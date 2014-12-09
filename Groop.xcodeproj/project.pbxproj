@@ -61,6 +61,18 @@
 		8F1189111A0F02B500873865 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1189101A0F02B500873865 /* MessageUI.framework */; };
 		8F1189131A0F02BD00873865 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1189121A0F02BD00873865 /* UIKit.framework */; };
 		8F1189151A0F02CD00873865 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1189141A0F02CD00873865 /* MapKit.framework */; };
+		8F16CD651A1324C600EF2243 /* PhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F16CD641A1324C600EF2243 /* PhotoBrowserViewController.m */; };
+		8F29D5171A3687CE005101E5 /* active_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D50C1A3687CE005101E5 /* active_icon.png */; };
+		8F29D5181A3687CE005101E5 /* add_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D50D1A3687CE005101E5 /* add_icon.png */; };
+		8F29D5191A3687CE005101E5 /* back_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D50E1A3687CE005101E5 /* back_icon.png */; };
+		8F29D51A1A3687CE005101E5 /* camera_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D50F1A3687CE005101E5 /* camera_icon.png */; };
+		8F29D51B1A3687CE005101E5 /* groop_app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D5101A3687CE005101E5 /* groop_app_icon.png */; };
+		8F29D51C1A3687CE005101E5 /* groop_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D5111A3687CE005101E5 /* groop_logo.png */; };
+		8F29D51D1A3687CE005101E5 /* groop_logoMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D5121A3687CE005101E5 /* groop_logoMark.png */; };
+		8F29D51E1A3687CE005101E5 /* login_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D5131A3687CE005101E5 /* login_background.png */; };
+		8F29D51F1A3687CE005101E5 /* members_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D5141A3687CE005101E5 /* members_icon.png */; };
+		8F29D5201A3687CE005101E5 /* photo_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D5151A3687CE005101E5 /* photo_icon.png */; };
+		8F29D5211A3687CE005101E5 /* settings_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D5161A3687CE005101E5 /* settings_icon.png */; };
 		8F305EC11A12B1B500959DE5 /* LobbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F305EC01A12B1B500959DE5 /* LobbyCell.m */; };
 		8F305EC31A12B67A00959DE5 /* humin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F305EC21A12B67A00959DE5 /* humin.jpg */; };
 		8F305EC61A12C6BD00959DE5 /* CameraRollWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F305EC51A12C6BD00959DE5 /* CameraRollWorker.m */; };
@@ -214,6 +226,19 @@
 		8F1189101A0F02B500873865 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8F1189121A0F02BD00873865 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8F1189141A0F02CD00873865 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8F16CD631A1324C600EF2243 /* PhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserViewController.h; sourceTree = "<group>"; };
+		8F16CD641A1324C600EF2243 /* PhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserViewController.m; sourceTree = "<group>"; };
+		8F29D50C1A3687CE005101E5 /* active_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = active_icon.png; path = images/active_icon.png; sourceTree = "<group>"; };
+		8F29D50D1A3687CE005101E5 /* add_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_icon.png; path = images/add_icon.png; sourceTree = "<group>"; };
+		8F29D50E1A3687CE005101E5 /* back_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_icon.png; path = images/back_icon.png; sourceTree = "<group>"; };
+		8F29D50F1A3687CE005101E5 /* camera_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_icon.png; path = images/camera_icon.png; sourceTree = "<group>"; };
+		8F29D5101A3687CE005101E5 /* groop_app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = groop_app_icon.png; path = images/groop_app_icon.png; sourceTree = "<group>"; };
+		8F29D5111A3687CE005101E5 /* groop_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = groop_logo.png; path = images/groop_logo.png; sourceTree = "<group>"; };
+		8F29D5121A3687CE005101E5 /* groop_logoMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = groop_logoMark.png; path = images/groop_logoMark.png; sourceTree = "<group>"; };
+		8F29D5131A3687CE005101E5 /* login_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_background.png; path = images/login_background.png; sourceTree = "<group>"; };
+		8F29D5141A3687CE005101E5 /* members_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = members_icon.png; path = images/members_icon.png; sourceTree = "<group>"; };
+		8F29D5151A3687CE005101E5 /* photo_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photo_icon.png; path = images/photo_icon.png; sourceTree = "<group>"; };
+		8F29D5161A3687CE005101E5 /* settings_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings_icon.png; path = images/settings_icon.png; sourceTree = "<group>"; };
 		8F305EBF1A12B1B500959DE5 /* LobbyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LobbyCell.h; sourceTree = "<group>"; };
 		8F305EC01A12B1B500959DE5 /* LobbyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LobbyCell.m; sourceTree = "<group>"; };
 		8F305EC21A12B67A00959DE5 /* humin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = humin.jpg; sourceTree = "<group>"; };
@@ -327,7 +352,7 @@
 		8F040B9D19EF60D20066F2F4 /* Groop */ = {
 			isa = PBXGroup;
 			children = (
-				8F817A061A11481100874A5D /* camerabutton.png */,
+				8F29D50B1A366DF3005101E5 /* images */,
 				8F305EC21A12B67A00959DE5 /* humin.jpg */,
 				8F7DB1651A0D6932008A1C7E /* AVCamPreviewView.h */,
 				8F7DB1661A0D6932008A1C7E /* AVCamPreviewView.m */,
@@ -350,6 +375,8 @@
 				8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */,
 				8F040BC719EF62580066F2F4 /* LobbiesTableViewController.h */,
 				8F040BC819EF62580066F2F4 /* LobbiesTableViewController.m */,
+				8F16CD631A1324C600EF2243 /* PhotoBrowserViewController.h */,
+				8F16CD641A1324C600EF2243 /* PhotoBrowserViewController.m */,
 				8FFB4D001A073A600048A5AC /* User.h */,
 				8FFB4D011A073A600048A5AC /* User.m */,
 				8FFB4D031A0740610048A5AC /* LobbyManager.h */,
@@ -535,6 +562,25 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		8F29D50B1A366DF3005101E5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8F29D50C1A3687CE005101E5 /* active_icon.png */,
+				8F29D50D1A3687CE005101E5 /* add_icon.png */,
+				8F29D50E1A3687CE005101E5 /* back_icon.png */,
+				8F29D50F1A3687CE005101E5 /* camera_icon.png */,
+				8F29D5101A3687CE005101E5 /* groop_app_icon.png */,
+				8F29D5111A3687CE005101E5 /* groop_logo.png */,
+				8F29D5121A3687CE005101E5 /* groop_logoMark.png */,
+				8F29D5131A3687CE005101E5 /* login_background.png */,
+				8F29D5141A3687CE005101E5 /* members_icon.png */,
+				8F29D5151A3687CE005101E5 /* photo_icon.png */,
+				8F29D5161A3687CE005101E5 /* settings_icon.png */,
+				8F817A061A11481100874A5D /* camerabutton.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		8FFB4CE91A05E6BA0048A5AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,15 +693,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F040BAD19EF60D20066F2F4 /* Main.storyboard in Resources */,
+				8F29D51A1A3687CE005101E5 /* camera_icon.png in Resources */,
+				8F29D5171A3687CE005101E5 /* active_icon.png in Resources */,
 				8FD07F711A0D6E89002BD03C /* Images.xcassets in Resources */,
+				8F29D5211A3687CE005101E5 /* settings_icon.png in Resources */,
 				8F040BB219EF60D20066F2F4 /* LaunchScreen.xib in Resources */,
+				8F29D51E1A3687CE005101E5 /* login_background.png in Resources */,
 				8F1188F81A0EFF7D00873865 /* LICENSE in Resources */,
+				8F29D5191A3687CE005101E5 /* back_icon.png in Resources */,
 				8FD07F771A0D7017002BD03C /* goopIcon3x.png in Resources */,
+				8F29D51C1A3687CE005101E5 /* groop_logo.png in Resources */,
 				8F817A071A11481100874A5D /* camerabutton.png in Resources */,
+				8F29D5201A3687CE005101E5 /* photo_icon.png in Resources */,
 				8F9FE4BD1A0C45EE002FA17C /* groop.jpg in Resources */,
+				8F29D51F1A3687CE005101E5 /* members_icon.png in Resources */,
+				8F29D5181A3687CE005101E5 /* add_icon.png in Resources */,
 				8FD07F751A0D6FDE002BD03C /* goopIcon2x.png in Resources */,
 				8F11890B1A0EFF8700873865 /* MWPhotoBrowser.bundle in Resources */,
 				8F305EC31A12B67A00959DE5 /* humin.jpg in Resources */,
+				8F29D51D1A3687CE005101E5 /* groop_logoMark.png in Resources */,
+				8F29D51B1A3687CE005101E5 /* groop_app_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +774,7 @@
 				8F1188E31A0EFF7D00873865 /* MWPhoto.m in Sources */,
 				8F1188E71A0EFF7D00873865 /* MWZoomingScrollView.m in Sources */,
 				8F1189041A0EFF7D00873865 /* UIImage+GIF.m in Sources */,
+				8F16CD651A1324C600EF2243 /* PhotoBrowserViewController.m in Sources */,
 				8F1188E61A0EFF7D00873865 /* MWTapDetectingView.m in Sources */,
 				8F1188FA1A0EFF7D00873865 /* MKAnnotationView+WebCache.m in Sources */,
 				8F1188E81A0EFF7D00873865 /* DACircularProgressView.m in Sources */,

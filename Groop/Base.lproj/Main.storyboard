@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4Jq-DR-dXd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4Jq-DR-dXd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -37,6 +37,9 @@
                                     <action selector="cameraPermissionsButtonPressed:" destination="4Jq-DR-dXd" eventType="touchUpInside" id="e0D-YX-K4Q"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="login_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="GDh-MA-P8E">
+                                <rect key="frame" x="-1" y="0.0" width="601" height="1067"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -51,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GS1-bl-ZiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-205" y="-975"/>
+            <point key="canvasLocation" x="-205" y="-964"/>
         </scene>
         <!--Events-->
         <scene sceneID="9nm-Sp-fMb">
@@ -96,6 +99,26 @@
                                         </label>
                                         <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2s-ml-Za5">
                                             <rect key="frame" x="0.0" y="111" width="600" height="40"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="members_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="qzs-bC-diP">
+                                                    <rect key="frame" x="428" y="8" width="27" height="24"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="lo2-LP-dnN">
+                                                    <rect key="frame" x="515" y="8" width="27" height="24"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gac-dn-fOW">
+                                                    <rect key="frame" x="550" y="9" width="29" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFI-nE-iq5">
+                                                    <rect key="frame" x="463" y="9" width="20" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
@@ -193,7 +216,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-0f-svP">
-                                        <rect key="frame" x="386" y="483" width="30" height="30"/>
+                                        <rect key="frame" x="496" y="32" width="30" height="30"/>
                                         <state key="normal" title="Flip">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -201,23 +224,21 @@
                                             <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Oat-do-cOg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-6u-W7O">
-                                        <rect key="frame" x="278" y="476" width="44" height="44"/>
-                                        <state key="normal" image="camerabutton.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="snapStillImage:" destination="8BS-bV-9AW" eventType="touchUpInside" id="DhP-2T-88v"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Kd8-0f-svP" firstAttribute="bottom" secondItem="7Bp-5V-HTN" secondAttribute="bottom" id="0U1-RK-ZnE"/>
-                                    <constraint firstItem="Kd8-0f-svP" firstAttribute="bottom" secondItem="zqj-6u-W7O" secondAttribute="bottom" id="ZjO-Ht-mpu"/>
-                                    <constraint firstAttribute="centerX" secondItem="zqj-6u-W7O" secondAttribute="centerX" id="jsc-zq-Ruf"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-6u-W7O">
+                                <rect key="frame" x="278" y="474" width="44" height="44"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="snapStillImage:" destination="8BS-bV-9AW" eventType="touchUpInside" id="DhP-2T-88v"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -249,8 +270,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pq-pb-NkP">
-                                <rect key="frame" x="249" y="166" width="102" height="30"/>
+                                <rect key="frame" x="-6" y="298" width="606" height="253"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.19607843137254902" blue="0.39215686274509803" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="From FB Event">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -258,8 +282,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-KU-Z9n">
-                                <rect key="frame" x="285" y="267" width="31" height="30"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="243"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="New">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -501,10 +528,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camerabutton.png" width="90" height="93"/>
         <image name="humin.jpg" width="640" height="395"/>
+        <image name="login_background.png" width="640" height="1135"/>
+        <image name="members_icon.png" width="92" height="86"/>
+        <image name="photo_icon.png" width="98" height="98"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="loA-Mk-D76"/>
+        <segue reference="nJs-YL-i8M"/>
     </inferredMetricsTieBreakers>
 </document>

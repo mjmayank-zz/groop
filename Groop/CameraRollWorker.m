@@ -23,7 +23,7 @@
     return self;
 }
 
-- (void) getImagesBetweenDatesStartDate:(NSDate*)startDate endDate:(NSDate *)endDate{
+- (NSArray *) getImagesBetweenDatesStartDate:(NSDate*)startDate endDate:(NSDate *)endDate{
     PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil];
     PHAssetCollection *assetCollection = (PHAssetCollection *)smartAlbums[0];
     PHFetchResult *assetsFetchResult = [PHAsset fetchAssetsInAssetCollection:assetCollection options:nil];
@@ -35,6 +35,7 @@
             [results addObject:asset];
         }
     }
+    return results;
 }
 
 -(void)saveAssets:(NSArray *)array ToLobby:(PFObject *)lobby{
