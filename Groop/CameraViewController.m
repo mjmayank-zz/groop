@@ -343,6 +343,12 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     });
 }
 
+
+- (IBAction)lobbiesButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 - (IBAction)snapStillImage:(id)sender
 {
     dispatch_async([self sessionQueue], ^{

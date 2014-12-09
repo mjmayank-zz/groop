@@ -212,7 +212,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="w17-Bd-lTK">
                             <connections>
                                 <action selector="refreshButtonPressed:" destination="QkJ-i0-7jL" id="hVW-fh-BYA"/>
-                                <segue destination="8BS-bV-9AW" kind="presentation" id="GWm-l1-scb"/>
+                                <segue destination="8BS-bV-9AW" kind="presentation" id="woj-pB-Hif"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zit-Zt-pwq">
@@ -264,6 +264,16 @@
                                             <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Oat-do-cOg"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCi-Jh-ImO">
+                                        <rect key="frame" x="380" y="32" width="55" height="30"/>
+                                        <state key="normal" title="Lobbies">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="UiQ-oV-GDL"/>
+                                            <action selector="lobbiesButton:" destination="8BS-bV-9AW" eventType="touchUpInside" id="trn-IS-fT8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -289,6 +299,7 @@
                     <tabBarItem key="tabBarItem" title="Camera" id="Igh-zF-3OM"/>
                     <connections>
                         <outlet property="cameraButton" destination="Kd8-0f-svP" id="ylr-ca-ioX"/>
+                        <outlet property="lobbiesButton" destination="fCi-Jh-ImO" id="hsS-T5-Btb"/>
                         <outlet property="previewView" destination="8wd-hg-qcj" id="Mj6-sk-LYV"/>
                         <outlet property="stillButton" destination="zqj-6u-W7O" id="ik5-65-ZFT"/>
                     </connections>
@@ -321,7 +332,7 @@
                                     <segue destination="cEd-fe-w9y" kind="show" id="Lpk-7W-mC1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-KU-Z9n">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-KU-Z9n">
                                 <rect key="frame" x="0.0" y="64" width="600" height="243"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="19"/>
@@ -403,7 +414,7 @@
                                     <!--2014-11-06 21:02:30 +0000-->
                                 </date>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXU-uh-h7B">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXU-uh-h7B">
                                 <rect key="frame" x="-5" y="487" width="605" height="64"/>
                                 <color key="backgroundColor" red="0.24313725490196078" green="0.75686274509803919" blue="0.72941176470588232" alpha="0.60999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

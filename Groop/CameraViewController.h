@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CameraViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *lobbiesButton;
 
 @end
