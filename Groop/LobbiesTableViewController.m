@@ -14,7 +14,7 @@
 #import "PhotoBrowserViewController.h"
 
 @interface LobbiesTableViewController ()
-
+@property(nonatomic, strong) NSCache *cache;
 @end
 
 @implementation LobbiesTableViewController
@@ -63,6 +63,9 @@
         [createLobbiesAlert show];
         
         [[NSUserDefaults standardUserDefaults] setValue:@"Not" forKey:@"firstTime"];
+        
+        self.cache = [[NSCache alloc] init];
+        self.cache.countLimit = 20;
         
     }
 }
@@ -153,7 +156,7 @@
         if([array count] == 0){
             [cell.lobbyName setText:@"No Lobbies"];
         }
-        else{
+        else if ([self.cache objectForKey:@"somekey"] == nil) {
             PFObject * lobby = array[indexPath.row];
             
             PFRelation *relation = [lobby relationForKey:@"pictures"];
@@ -174,6 +177,7 @@
                             NSData * data = [file getData];
                             UIImage * image = [UIImage imageWithData:data];
                             
+                            [self.cache setObject:image forKey:@"somekey"];
                             dispatch_async(dispatch_get_main_queue(), ^{
                                 [cell.backgroundImageView setImage:image];
                             });
@@ -191,6 +195,12 @@
 
             
             [cell.lobbyName setText:lobby[@"name"]];
+        }
+        else {
+            UIImage *image = [self.cache objectForKey:@"somekey"];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [cell.backgroundImageView setImage:image];
+            });
         }
     }
     return cell;
