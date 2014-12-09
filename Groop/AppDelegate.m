@@ -30,7 +30,7 @@
     BOOL hasPermissions =
     [[NSUserDefaults standardUserDefaults] boolForKey:@"hasPermissions"];
     
-    [[CameraRollWorker alloc] init];
+//    [[CameraRollWorker alloc] init];
     
     NSString *storyboardId = hasPermissions ? @"MainIdentifier" : @"LoginIdentifier";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
