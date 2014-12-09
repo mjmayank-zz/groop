@@ -452,6 +452,9 @@
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="LOBBY TITLE" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wAQ-aN-jpn">
                                 <rect key="frame" x="16" y="80" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aa4-UD-fmr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -460,13 +463,12 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="WCu-ns-Snn" secondAttribute="centerX" id="1et-Zt-MUd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OXU-uh-h7B" secondAttribute="trailing" constant="-16" id="6dp-e8-Djw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wAQ-aN-jpn" secondAttribute="trailing" constant="124" id="8ZN-qr-clA"/>
                             <constraint firstAttribute="centerX" secondItem="OXU-uh-h7B" secondAttribute="centerX" id="9sS-XC-GXm"/>
                             <constraint firstItem="OXU-uh-h7B" firstAttribute="leading" secondItem="60W-UN-nVO" secondAttribute="leadingMargin" constant="-21" id="CxH-bA-Msy"/>
                             <constraint firstItem="3C4-5b-03Q" firstAttribute="top" secondItem="OXU-uh-h7B" secondAttribute="bottom" id="IYt-yB-oWX"/>
-                            <constraint firstItem="wAQ-aN-jpn" firstAttribute="leading" secondItem="60W-UN-nVO" secondAttribute="leadingMargin" constant="124" id="aoa-dB-Zb9"/>
+                            <constraint firstItem="wAQ-aN-jpn" firstAttribute="leading" secondItem="60W-UN-nVO" secondAttribute="leadingMargin" id="Mjy-6K-hwJ"/>
                             <constraint firstAttribute="centerX" secondItem="mAj-5d-mmJ" secondAttribute="centerX" id="asB-N2-z6W"/>
-                            <constraint firstAttribute="centerX" secondItem="wAQ-aN-jpn" secondAttribute="centerX" constant="-48.5" id="u0G-5X-7FK"/>
+                            <constraint firstItem="wAQ-aN-jpn" firstAttribute="trailing" secondItem="60W-UN-nVO" secondAttribute="trailingMargin" id="uZa-ur-6vb"/>
                         </constraints>
                     </view>
                     <connections>
