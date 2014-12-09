@@ -200,6 +200,8 @@
                                     <outlet property="backgroundImageView" destination="35X-EY-8ao" id="FEo-Wt-Bll"/>
                                     <outlet property="lobbyName" destination="AiS-zF-lXB" id="NDo-Xi-tTI"/>
                                     <outlet property="lobbyTime" destination="GHM-eK-rL5" id="93E-y1-8Mr"/>
+                                    <outlet property="numPeople" destination="KFI-nE-iq5" id="pcu-OU-mYe"/>
+                                    <outlet property="numPhotos" destination="gac-dn-fOW" id="JtM-cA-fUc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

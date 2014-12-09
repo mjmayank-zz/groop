@@ -194,10 +194,19 @@
                         // Log details of the failure
                         NSLog(@"Error: %@ %@", error, [error userInfo]);
                     }
+                    
+                    [cell.numPhotos setText:[NSString stringWithFormat:@"%d", (int)[objects count]]];
                 }];
                 
                 
                 [cell.lobbyName setText:lobby[@"name"]];
+                
+                PFRelation *people_relation = [lobby relationForKey:@"users"];
+                PFQuery *people_query = [people_relation query];
+                [people_query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                        [cell.numPeople setText:[NSString stringWithFormat:@"%d", (int) [objects count]]];
+                }];
+                
             }
             else {
                 NSLog(@"asda");

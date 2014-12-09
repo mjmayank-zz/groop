@@ -12,5 +12,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (strong, nonatomic) IBOutlet UILabel *lobbyName;
 @property (strong, nonatomic) IBOutlet UILabel *lobbyTime;
+@property (strong, nonatomic) IBOutlet UILabel *numPeople;
+@property (strong, nonatomic) IBOutlet UILabel *numPhotos;
 
 @end
