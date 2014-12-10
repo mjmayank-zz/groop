@@ -40,6 +40,9 @@
     self.window.rootViewController = initViewController;
     [self.window makeKeyAndVisible];
     
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"GillsansSTD" size:15.0]];
+    [[[UIButton appearance] titleLabel] setFont:[UIFont fontWithName:@"GillsansSTD" size:15.0]];
+    
     return YES;
 }
 

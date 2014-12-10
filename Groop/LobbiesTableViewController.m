@@ -37,26 +37,26 @@
     self.pastLobbies = [LobbyManager sharedLobbyManager].pastLobbies;
     self.activeLobbies = [LobbyManager sharedLobbyManager].activeLobbies;
     self.futureLobbies = [LobbyManager sharedLobbyManager].futureLobbies;
- 
+    
     
     if ([[NSUserDefaults standardUserDefaults] valueForKey:@"firstTime"] == NULL) {
         UIAlertView *createLobbiesAlert = [[UIAlertView alloc]
-                              
-                              initWithTitle:@"Welcome to Groop!"
-                              message:@"Create lobbies by hitting the plus sign."
-                              delegate:self
-                              cancelButtonTitle:@"Dismiss"
-                              otherButtonTitles:@"Ok", nil];
+                                           
+                                           initWithTitle:@"Welcome to Groop!"
+                                           message:@"Create lobbies by hitting the plus sign."
+                                           delegate:self
+                                           cancelButtonTitle:@"Dismiss"
+                                           otherButtonTitles:@"Ok", nil];
         
         
         
         UIAlertView *viewPicturesAlert = [[UIAlertView alloc]
-                              
-                              initWithTitle:@"Welcome to Groop!"
-                              message:@"Tap on lobbies to view the pictures that have been uploaded."
-                              delegate:self
-                              cancelButtonTitle:@"Dismiss"
-                              otherButtonTitles:@"Ok", nil];
+                                          
+                                          initWithTitle:@"Welcome to Groop!"
+                                          message:@"Tap on lobbies to view the pictures that have been uploaded."
+                                          delegate:self
+                                          cancelButtonTitle:@"Dismiss"
+                                          otherButtonTitles:@"Ok", nil];
         
         
         [viewPicturesAlert show];
@@ -67,6 +67,14 @@
         
         
     }
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"GillSansStd-BOLD" size:18],
+      NSFontAttributeName, nil]];
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:62.0/255 green:162.0/255 blue:183.0/255 alpha:1];
+    
     self.cache = [[NSCache alloc] init];
     self.cache.countLimit = 50;
 }
@@ -134,13 +142,13 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
     if(section == 0){
-        return @"Active Lobbies";
+        return [@"Active Lobbies" uppercaseString];
     }
     else if(section == 1){
-        return @"Past Lobbies";
+        return [@"Past Lobbies" uppercaseString];
     }
     else{
-        return @"Future Lobbies";
+        return [@"Future Lobbies" uppercaseString];
     }
 }
 
@@ -161,7 +169,16 @@
         else {
             PFObject * lobby = array[indexPath.row];
             NSString * cell_key = lobby.objectId;
-            if ([self.cache objectForKey:cell_key] == nil) {
+            
+            if ([self.cache objectForKey:cell_key] != nil)
+            {
+                NSLog(@"asda");
+                UIImage *image = [self.cache objectForKey:cell_key];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [cell.backgroundImageView setImage:image];
+                });
+            }
+            else{
                 PFRelation *relation = [lobby relationForKey:@"pictures"];
                 PFQuery *query = [relation query];
                 
@@ -197,24 +214,16 @@
                     
                     [cell.numPhotos setText:[NSString stringWithFormat:@"%d", (int)[objects count]]];
                 }];
-                
-                
-                [cell.lobbyName setText:lobby[@"name"]];
-                
-                PFRelation *people_relation = [lobby relationForKey:@"users"];
-                PFQuery *people_query = [people_relation query];
-                [people_query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                        [cell.numPeople setText:[NSString stringWithFormat:@"%d", (int) [objects count]]];
-                }];
-                
             }
-            else {
-                NSLog(@"asda");
-                UIImage *image = [self.cache objectForKey:cell_key];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [cell.backgroundImageView setImage:image];
-                });
-            }
+            
+            [cell.lobbyName setText:lobby[@"name"]];
+            
+            PFRelation *people_relation = [lobby relationForKey:@"users"];
+            PFQuery *people_query = [people_relation query];
+            [people_query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                [cell.numPeople setText:[NSString stringWithFormat:@"%d", (int) [objects count]]];
+            }];
+            
         }
         
     }
@@ -237,48 +246,48 @@
     
     [self.navigationController pushViewController:vc animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    PFRelation *relation = [lobby relationForKey:@"pictures"];
-//    PFQuery *query = [relation query];
-//    
-//    self.photos = [NSMutableArray new];
-//    
-//    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error) {
-//            // The find succeeded.
-//            NSLog(@"Successfully retrieved %lu pictures.", (unsigned long)[objects count]);
-//            // Do something with the found objects
-//            
-//            MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-//            
-//            for (PFObject *object in objects) {
-//                PFFile * file = object[@"file"];
-//                
-//                [self.photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:file.url]]];
-//            }
-//            
-//            // Create browser (must be done each time photo browser is
-//            // displayed. Photo browser objects cannot be re-used)
-//            
-//            // Set options
-//            browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
-//            browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
-//            browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
-//            browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
-//            browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
-//            browser.enableGrid = YES; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
-//            browser.startOnGrid = YES; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
-//            
-//            // Present
-//            [self.navigationController pushViewController:browser animated:YES];
-//            
-//            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//            
-//        } else {
-//            // Log details of the failure
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
+        PFRelation *relation = [lobby relationForKey:@"pictures"];
+        PFQuery *query = [relation query];
+    
+        self.photos = [NSMutableArray new];
+    
+    
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                NSLog(@"Successfully retrieved %lu pictures.", (unsigned long)[objects count]);
+                // Do something with the found objects
+    
+                MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    
+                for (PFObject *object in objects) {
+                    PFFile * file = object[@"file"];
+    
+                    [self.photos addObject:[MWPhoto photoWithURL:[NSURL URLWithString:file.url]]];
+                }
+    
+                // Create browser (must be done each time photo browser is
+                // displayed. Photo browser objects cannot be re-used)
+    
+                // Set options
+                browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
+                browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
+                browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
+                browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
+                browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
+                browser.enableGrid = YES; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
+                browser.startOnGrid = YES; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
+    
+                // Present
+                [self.navigationController pushViewController:browser animated:YES];
+    
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
     
     
 }

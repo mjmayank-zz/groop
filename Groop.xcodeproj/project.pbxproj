@@ -88,6 +88,8 @@
 		8F869F341A0B22BD00429432 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F869F331A0B22BD00429432 /* ParseFacebookUtils.framework */; };
 		8F9FE4BD1A0C45EE002FA17C /* groop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F9FE4BC1A0C45EE002FA17C /* groop.jpg */; };
 		8F9FE4C01A0C5C85002FA17C /* InviteFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9FE4BF1A0C5C85002FA17C /* InviteFriendsTableViewController.m */; };
+		8FBCDBA31A37C0AC00173591 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBCDBA21A37C0AC00173591 /* UILabel+Extension.m */; };
+		8FBCDBA51A37CCD800173591 /* switch_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FBCDBA41A37CCD800173591 /* switch_camera.png */; };
 		8FD07F711A0D6E89002BD03C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD07F701A0D6E89002BD03C /* Images.xcassets */; };
 		8FD07F751A0D6FDE002BD03C /* goopIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FD07F741A0D6FDE002BD03C /* goopIcon2x.png */; };
 		8FD07F771A0D7017002BD03C /* goopIcon3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FD07F761A0D7017002BD03C /* goopIcon3x.png */; };
@@ -265,6 +267,9 @@
 		8F9FE4BE1A0C5C85002FA17C /* InviteFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendsTableViewController.h; sourceTree = "<group>"; };
 		8F9FE4BF1A0C5C85002FA17C /* InviteFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendsTableViewController.m; sourceTree = "<group>"; };
 		8F9FE4C11A0C5E9F002FA17C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
+		8FBCDBA11A37C0AC00173591 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
+		8FBCDBA21A37C0AC00173591 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
+		8FBCDBA41A37CCD800173591 /* switch_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = switch_camera.png; path = images/switch_camera.png; sourceTree = "<group>"; };
 		8FD07F701A0D6E89002BD03C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8FD07F741A0D6FDE002BD03C /* goopIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goopIcon2x.png; sourceTree = "<group>"; };
 		8FD07F761A0D7017002BD03C /* goopIcon3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goopIcon3x.png; sourceTree = "<group>"; };
@@ -388,6 +393,8 @@
 				8F305EC51A12C6BD00959DE5 /* CameraRollWorker.m */,
 				8FFB4D061A0740890048A5AC /* Photo.h */,
 				8FFB4D071A0740890048A5AC /* Photo.m */,
+				8FBCDBA11A37C0AC00173591 /* UILabel+Extension.h */,
+				8FBCDBA21A37C0AC00173591 /* UILabel+Extension.m */,
 				8FD07F741A0D6FDE002BD03C /* goopIcon2x.png */,
 				8FD07F761A0D7017002BD03C /* goopIcon3x.png */,
 				8FD07F701A0D6E89002BD03C /* Images.xcassets */,
@@ -568,6 +575,7 @@
 		8F29D50B1A366DF3005101E5 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8FBCDBA41A37CCD800173591 /* switch_camera.png */,
 				8F29D5221A369141005101E5 /* GillSansStd-Bold.otf */,
 				8F29D50C1A3687CE005101E5 /* active_icon.png */,
 				8F29D50D1A3687CE005101E5 /* add_icon.png */,
@@ -704,6 +712,7 @@
 				8FD07F711A0D6E89002BD03C /* Images.xcassets in Resources */,
 				8F29D5211A3687CE005101E5 /* settings_icon.png in Resources */,
 				8F040BB219EF60D20066F2F4 /* LaunchScreen.xib in Resources */,
+				8FBCDBA51A37CCD800173591 /* switch_camera.png in Resources */,
 				8F29D51E1A3687CE005101E5 /* login_background.png in Resources */,
 				8F1188F81A0EFF7D00873865 /* LICENSE in Resources */,
 				8F29D5191A3687CE005101E5 /* back_icon.png in Resources */,
@@ -762,6 +771,7 @@
 				8F7DB1621A0D58EC008A1C7E /* CameraViewController.m in Sources */,
 				8F1188F01A0EFF7D00873865 /* PSTCollectionViewFlowLayout.m in Sources */,
 				8F1188FF1A0EFF7D00873865 /* SDWebImageDownloader.m in Sources */,
+				8FBCDBA31A37C0AC00173591 /* UILabel+Extension.m in Sources */,
 				8F869F321A0B220400429432 /* LoginViewController.m in Sources */,
 				8F629B0C1A0BF7280020C0CF /* FBEventsTableViewController.m in Sources */,
 				8F040BA119EF60D20066F2F4 /* main.m in Sources */,

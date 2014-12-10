@@ -24,6 +24,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 @property (nonatomic, weak) IBOutlet UIButton *recordButton;
 @property (nonatomic, weak) IBOutlet UIButton *cameraButton;
 @property (nonatomic, weak) IBOutlet UIButton *stillButton;
+@property (strong, nonatomic) IBOutlet UIButton *activeButton;
 
 - (IBAction)toggleMovieRecording:(id)sender;
 - (IBAction)changeCamera:(id)sender;
@@ -62,19 +63,26 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 {
     [super viewDidLoad];
     
-    // Create the AVCaptureSession
-    AVCaptureSession *session = [[AVCaptureSession alloc] init];
-    [self setSession:session];
-    
-    self.stillButton.layer.cornerRadius = 22;
-    
-    // Setup the preview view
-    [[self previewView] setSession:session];
+    self.stillButton.layer.cornerRadius = 25;
+    self.activeButton.layer.cornerRadius = 22;
+    self.lobbiesButton.layer.cornerRadius = 22;
     
     // Check for device authorization
     [self checkDeviceAuthorizationStatus];
     
     [LobbyManager sharedLobbyManager];
+    
+    
+    AVCamPreviewView *cameraView = [[AVCamPreviewView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    // Create the AVCaptureSession
+    AVCaptureSession *session = [[AVCaptureSession alloc] init];
+    [self setSession:session];
+    
+    // Setup the preview view
+    [cameraView setSession:session];
+    [self.view insertSubview:cameraView atIndex:0];
+    
     
     // In general it is not safe to mutate an AVCaptureSession or any of its inputs, outputs, or connections from multiple threads at the same time.
     // Why not do all of this on the main queue?
