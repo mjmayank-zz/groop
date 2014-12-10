@@ -76,24 +76,24 @@
 		8F29D5231A369141005101E5 /* GillSansStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D5221A369141005101E5 /* GillSansStd-Bold.otf */; };
 		8F29D5251A369667005101E5 /* GillSansStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D5241A369667005101E5 /* GillSansStd.otf */; };
 		8F305EC11A12B1B500959DE5 /* LobbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F305EC01A12B1B500959DE5 /* LobbyCell.m */; };
-		8F305EC31A12B67A00959DE5 /* humin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F305EC21A12B67A00959DE5 /* humin.jpg */; };
 		8F305EC61A12C6BD00959DE5 /* CameraRollWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F305EC51A12C6BD00959DE5 /* CameraRollWorker.m */; };
 		8F629B0C1A0BF7280020C0CF /* FBEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */; };
 		8F629B0F1A0C19E00020C0CF /* CreateLobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0E1A0C19E00020C0CF /* CreateLobbyViewController.m */; };
 		8F7DB1621A0D58EC008A1C7E /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB1611A0D58EC008A1C7E /* CameraViewController.m */; };
 		8F7DB1641A0D5C28008A1C7E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7DB1631A0D5C28008A1C7E /* FacebookSDK.framework */; };
 		8F7DB1671A0D6932008A1C7E /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB1661A0D6932008A1C7E /* AVCamPreviewView.m */; };
-		8F817A071A11481100874A5D /* camerabutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F817A061A11481100874A5D /* camerabutton.png */; };
 		8F869F321A0B220400429432 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F869F311A0B220400429432 /* LoginViewController.m */; };
 		8F869F341A0B22BD00429432 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F869F331A0B22BD00429432 /* ParseFacebookUtils.framework */; };
-		8F9FE4BD1A0C45EE002FA17C /* groop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F9FE4BC1A0C45EE002FA17C /* groop.jpg */; };
 		8F9FE4C01A0C5C85002FA17C /* InviteFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9FE4BF1A0C5C85002FA17C /* InviteFriendsTableViewController.m */; };
+		8FB98E5E1A38B25900A489E0 /* camerabutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB98E591A38B25900A489E0 /* camerabutton.png */; };
+		8FB98E5F1A38B25900A489E0 /* goopIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB98E5A1A38B25900A489E0 /* goopIcon2x.png */; };
+		8FB98E601A38B25900A489E0 /* goopIcon3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB98E5B1A38B25900A489E0 /* goopIcon3x.png */; };
+		8FB98E611A38B25900A489E0 /* groop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB98E5C1A38B25900A489E0 /* groop.jpg */; };
+		8FB98E621A38B25900A489E0 /* humin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB98E5D1A38B25900A489E0 /* humin.jpg */; };
 		8FBCDBA31A37C0AC00173591 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBCDBA21A37C0AC00173591 /* UILabel+Extension.m */; };
 		8FBCDBA51A37CCD800173591 /* switch_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FBCDBA41A37CCD800173591 /* switch_camera.png */; };
 		8FBCDBA81A37D32100173591 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBCDBA71A37D32100173591 /* PageViewController.m */; };
 		8FD07F711A0D6E89002BD03C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD07F701A0D6E89002BD03C /* Images.xcassets */; };
-		8FD07F751A0D6FDE002BD03C /* goopIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FD07F741A0D6FDE002BD03C /* goopIcon2x.png */; };
-		8FD07F771A0D7017002BD03C /* goopIcon3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FD07F761A0D7017002BD03C /* goopIcon3x.png */; };
 		8FFB4CE81A05E6A20048A5AC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4CE71A05E6A20048A5AC /* AudioToolbox.framework */; };
 		8FFB4CEB1A05E6D50048A5AC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4CEA1A05E6D50048A5AC /* Parse.framework */; };
 		8FFB4CED1A05E6E40048A5AC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4CEC1A05E6E40048A5AC /* Bolts.framework */; };
@@ -248,7 +248,6 @@
 		8F29D5241A369667005101E5 /* GillSansStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GillSansStd.otf; path = images/GillSansStd.otf; sourceTree = "<group>"; };
 		8F305EBF1A12B1B500959DE5 /* LobbyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LobbyCell.h; sourceTree = "<group>"; };
 		8F305EC01A12B1B500959DE5 /* LobbyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LobbyCell.m; sourceTree = "<group>"; };
-		8F305EC21A12B67A00959DE5 /* humin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = humin.jpg; sourceTree = "<group>"; };
 		8F305EC41A12C6BD00959DE5 /* CameraRollWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraRollWorker.h; sourceTree = "<group>"; };
 		8F305EC51A12C6BD00959DE5 /* CameraRollWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraRollWorker.m; sourceTree = "<group>"; };
 		8F629B0A1A0BF7280020C0CF /* FBEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEventsTableViewController.h; sourceTree = "<group>"; };
@@ -260,22 +259,23 @@
 		8F7DB1631A0D5C28008A1C7E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		8F7DB1651A0D6932008A1C7E /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
 		8F7DB1661A0D6932008A1C7E /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
-		8F817A061A11481100874A5D /* camerabutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camerabutton.png; sourceTree = "<group>"; };
 		8F869F301A0B220400429432 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		8F869F311A0B220400429432 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8F869F331A0B22BD00429432 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		8F9FE4BC1A0C45EE002FA17C /* groop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = groop.jpg; sourceTree = "<group>"; };
 		8F9FE4BE1A0C5C85002FA17C /* InviteFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendsTableViewController.h; sourceTree = "<group>"; };
 		8F9FE4BF1A0C5C85002FA17C /* InviteFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendsTableViewController.m; sourceTree = "<group>"; };
 		8F9FE4C11A0C5E9F002FA17C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; };
+		8FB98E591A38B25900A489E0 /* camerabutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camerabutton.png; path = images/camerabutton.png; sourceTree = "<group>"; };
+		8FB98E5A1A38B25900A489E0 /* goopIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goopIcon2x.png; path = images/goopIcon2x.png; sourceTree = "<group>"; };
+		8FB98E5B1A38B25900A489E0 /* goopIcon3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goopIcon3x.png; path = images/goopIcon3x.png; sourceTree = "<group>"; };
+		8FB98E5C1A38B25900A489E0 /* groop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = groop.jpg; path = images/groop.jpg; sourceTree = "<group>"; };
+		8FB98E5D1A38B25900A489E0 /* humin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = humin.jpg; path = images/humin.jpg; sourceTree = "<group>"; };
 		8FBCDBA11A37C0AC00173591 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		8FBCDBA21A37C0AC00173591 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		8FBCDBA41A37CCD800173591 /* switch_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = switch_camera.png; path = images/switch_camera.png; sourceTree = "<group>"; };
 		8FBCDBA61A37D32100173591 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		8FBCDBA71A37D32100173591 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		8FD07F701A0D6E89002BD03C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8FD07F741A0D6FDE002BD03C /* goopIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goopIcon2x.png; sourceTree = "<group>"; };
-		8FD07F761A0D7017002BD03C /* goopIcon3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goopIcon3x.png; sourceTree = "<group>"; };
 		8FFB4CE71A05E6A20048A5AC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8FFB4CEA1A05E6D50048A5AC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8FFB4CEC1A05E6E40048A5AC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -372,10 +372,12 @@
 				8F040BAB19EF60D20066F2F4 /* Main.storyboard */,
 				8FBCDBA61A37D32100173591 /* PageViewController.h */,
 				8FBCDBA71A37D32100173591 /* PageViewController.m */,
-				8F305EBF1A12B1B500959DE5 /* LobbyCell.h */,
-				8F305EC01A12B1B500959DE5 /* LobbyCell.m */,
 				8F7DB1601A0D58EC008A1C7E /* CameraViewController.h */,
 				8F7DB1611A0D58EC008A1C7E /* CameraViewController.m */,
+				8F040BC719EF62580066F2F4 /* LobbiesTableViewController.h */,
+				8F040BC819EF62580066F2F4 /* LobbiesTableViewController.m */,
+				8F305EBF1A12B1B500959DE5 /* LobbyCell.h */,
+				8F305EC01A12B1B500959DE5 /* LobbyCell.m */,
 				8F9FE4BE1A0C5C85002FA17C /* InviteFriendsTableViewController.h */,
 				8F9FE4BF1A0C5C85002FA17C /* InviteFriendsTableViewController.m */,
 				8F629B0D1A0C19E00020C0CF /* CreateLobbyViewController.h */,
@@ -386,8 +388,6 @@
 				8F040BCB19EF66790066F2F4 /* LobbyAlbumViewController.m */,
 				8F629B0A1A0BF7280020C0CF /* FBEventsTableViewController.h */,
 				8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */,
-				8F040BC719EF62580066F2F4 /* LobbiesTableViewController.h */,
-				8F040BC819EF62580066F2F4 /* LobbiesTableViewController.m */,
 				8F16CD631A1324C600EF2243 /* PhotoBrowserViewController.h */,
 				8F16CD641A1324C600EF2243 /* PhotoBrowserViewController.m */,
 				8FFB4D001A073A600048A5AC /* User.h */,
@@ -400,10 +400,7 @@
 				8FFB4D071A0740890048A5AC /* Photo.m */,
 				8FBCDBA11A37C0AC00173591 /* UILabel+Extension.h */,
 				8FBCDBA21A37C0AC00173591 /* UILabel+Extension.m */,
-				8FD07F741A0D6FDE002BD03C /* goopIcon2x.png */,
-				8FD07F761A0D7017002BD03C /* goopIcon3x.png */,
 				8FD07F701A0D6E89002BD03C /* Images.xcassets */,
-				8F9FE4BC1A0C45EE002FA17C /* groop.jpg */,
 				8F040BB019EF60D20066F2F4 /* LaunchScreen.xib */,
 				8F040BA519EF60D20066F2F4 /* Groop.xcdatamodeld */,
 				8F040B9E19EF60D20066F2F4 /* Supporting Files */,
@@ -593,9 +590,12 @@
 				8F29D5141A3687CE005101E5 /* members_icon.png */,
 				8F29D5151A3687CE005101E5 /* photo_icon.png */,
 				8F29D5161A3687CE005101E5 /* settings_icon.png */,
-				8F817A061A11481100874A5D /* camerabutton.png */,
+				8FB98E591A38B25900A489E0 /* camerabutton.png */,
+				8FB98E5A1A38B25900A489E0 /* goopIcon2x.png */,
+				8FB98E5B1A38B25900A489E0 /* goopIcon3x.png */,
+				8FB98E5C1A38B25900A489E0 /* groop.jpg */,
+				8FB98E5D1A38B25900A489E0 /* humin.jpg */,
 				8F29D5241A369667005101E5 /* GillSansStd.otf */,
-				8F305EC21A12B67A00959DE5 /* humin.jpg */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -712,6 +712,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F040BAD19EF60D20066F2F4 /* Main.storyboard in Resources */,
+				8FB98E5F1A38B25900A489E0 /* goopIcon2x.png in Resources */,
 				8F29D51A1A3687CE005101E5 /* camera_icon.png in Resources */,
 				8F29D5171A3687CE005101E5 /* active_icon.png in Resources */,
 				8FD07F711A0D6E89002BD03C /* Images.xcassets in Resources */,
@@ -721,17 +722,16 @@
 				8F29D51E1A3687CE005101E5 /* login_background.png in Resources */,
 				8F1188F81A0EFF7D00873865 /* LICENSE in Resources */,
 				8F29D5191A3687CE005101E5 /* back_icon.png in Resources */,
-				8FD07F771A0D7017002BD03C /* goopIcon3x.png in Resources */,
 				8F29D51C1A3687CE005101E5 /* groop_logo.png in Resources */,
-				8F817A071A11481100874A5D /* camerabutton.png in Resources */,
 				8F29D5201A3687CE005101E5 /* photo_icon.png in Resources */,
-				8F9FE4BD1A0C45EE002FA17C /* groop.jpg in Resources */,
 				8F29D51F1A3687CE005101E5 /* members_icon.png in Resources */,
+				8FB98E5E1A38B25900A489E0 /* camerabutton.png in Resources */,
 				8F29D5231A369141005101E5 /* GillSansStd-Bold.otf in Resources */,
+				8FB98E611A38B25900A489E0 /* groop.jpg in Resources */,
 				8F29D5181A3687CE005101E5 /* add_icon.png in Resources */,
-				8FD07F751A0D6FDE002BD03C /* goopIcon2x.png in Resources */,
+				8FB98E601A38B25900A489E0 /* goopIcon3x.png in Resources */,
+				8FB98E621A38B25900A489E0 /* humin.jpg in Resources */,
 				8F11890B1A0EFF8700873865 /* MWPhotoBrowser.bundle in Resources */,
-				8F305EC31A12B67A00959DE5 /* humin.jpg in Resources */,
 				8F29D5251A369667005101E5 /* GillSansStd.otf in Resources */,
 				8F29D51D1A3687CE005101E5 /* groop_logoMark.png in Resources */,
 				8F29D51B1A3687CE005101E5 /* groop_app_icon.png in Resources */,

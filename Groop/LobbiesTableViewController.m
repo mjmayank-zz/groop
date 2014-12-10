@@ -77,6 +77,16 @@
     
     self.cache = [[NSCache alloc] init];
     self.cache.countLimit = 50;
+    
+    // Initialize the refresh control.
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor colorWithRed:62.0/255 green:162.0/255 blue:183.0/255 alpha:1];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(refreshLobbies)
+                  forControlEvents:UIControlEventValueChanged];
+
+    [self refreshLobbies];
 }
 
 - (void)dealloc {
@@ -88,7 +98,6 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self refreshLobbies];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -346,6 +355,7 @@
 
 - (void)refreshLobbies{
     [[LobbyManager sharedLobbyManager] queryLobbies];
+    [self.refreshControl endRefreshing];
 }
 
 #pragma mark - Navigation

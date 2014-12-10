@@ -412,20 +412,6 @@
                                     <action selector="lobbiesButton:" destination="8BS-bV-9AW" eventType="touchUpInside" id="sUA-4X-qPE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxv-Di-IP9" userLabel="Camera">
-                                <rect key="frame" x="275" y="506" width="50" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6y8-dO-NZg"/>
-                                    <constraint firstAttribute="width" constant="50" id="ABE-6p-eGL"/>
-                                </constraints>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="snapStillImage:" destination="8BS-bV-9AW" eventType="touchUpInside" id="DeN-xO-0Ab"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-0f-svP">
                                 <rect key="frame" x="518" y="37" width="37" height="37"/>
                                 <constraints>
@@ -451,12 +437,28 @@
                                     <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Oat-do-cOg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxv-Di-IP9" userLabel="Camera">
+                                <rect key="frame" x="270" y="501" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="0.75" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="5EG-8r-doq"/>
+                                    <constraint firstAttribute="height" constant="60" id="6y8-dO-NZg"/>
+                                    <constraint firstAttribute="width" constant="60" id="ABE-6p-eGL"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="BGQ-nc-qVT"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="snapStillImage:" destination="8BS-bV-9AW" eventType="touchUpInside" id="DeN-xO-0Ab"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Kd8-0f-svP" firstAttribute="top" secondItem="hIb-hS-cgt" secondAttribute="bottom" constant="17" id="82t-lW-2kb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X3s-M7-mFP" secondAttribute="trailing" constant="29" id="Ipu-uG-BPu"/>
-                            <constraint firstItem="nxb-iA-bex" firstAttribute="top" secondItem="Hxv-Di-IP9" secondAttribute="bottom" constant="44" id="ZiY-O2-VYo"/>
+                            <constraint firstItem="nxb-iA-bex" firstAttribute="top" secondItem="Hxv-Di-IP9" secondAttribute="bottom" constant="39" id="ZiY-O2-VYo"/>
                             <constraint firstItem="nxb-iA-bex" firstAttribute="top" secondItem="X3s-M7-mFP" secondAttribute="bottom" constant="47" id="aTp-30-VtE"/>
                             <constraint firstItem="nxb-iA-bex" firstAttribute="top" secondItem="fCi-Jh-ImO" secondAttribute="bottom" constant="47" id="ntC-6s-Is1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kd8-0f-svP" secondAttribute="trailing" constant="29" id="pTj-mk-wQZ"/>

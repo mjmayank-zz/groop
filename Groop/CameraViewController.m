@@ -63,7 +63,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 {
     [super viewDidLoad];
     
-    self.stillButton.layer.cornerRadius = 25;
+    self.stillButton.layer.cornerRadius = 30;
     self.activeButton.layer.cornerRadius = 22;
     self.lobbiesButton.layer.cornerRadius = 22;
     
