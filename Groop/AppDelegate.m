@@ -32,7 +32,7 @@
     
 //    [[CameraRollWorker alloc] init];
     
-    NSString *storyboardId = hasPermissions ? @"MainIdentifier" : @"LoginIdentifier";
+    NSString *storyboardId = hasPermissions ? @"PageViewIdentifier" : @"LoginIdentifier";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:storyboardId];
     

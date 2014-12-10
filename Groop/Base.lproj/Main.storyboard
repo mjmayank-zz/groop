@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eWd-Sa-GJO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eVw-1S-OtA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GS1-bl-ZiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-149" y="-1216"/>
+            <point key="canvasLocation" x="-2028" y="-1596"/>
         </scene>
         <!--EVENTS-->
         <scene sceneID="9nm-Sp-fMb">
@@ -272,7 +272,6 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="camera" id="w17-Bd-lTK">
                             <connections>
                                 <action selector="refreshButtonPressed:" destination="QkJ-i0-7jL" id="hVW-fh-BYA"/>
-                                <segue destination="8BS-bV-9AW" kind="presentation" id="woj-pB-Hif"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zit-Zt-pwq">
@@ -300,10 +299,44 @@
             </objects>
             <point key="canvasLocation" x="110" y="-220"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="pRu-df-6rG">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewIdentifier" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="eVw-1S-OtA" customClass="PageViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YU9-kW-SWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1524" y="-905"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="apY-G8-3mx">
+            <objects>
+                <tableViewController id="E7y-pW-48Q" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eq8-Zd-tTQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gbx-OT-kVj">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gbx-OT-kVj" id="NqK-JP-Ny3">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="E7y-pW-48Q" id="wqQ-jb-GiK"/>
+                            <outlet property="delegate" destination="E7y-pW-48Q" id="40i-i2-o63"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q0W-u8-NWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-784" y="-1586"/>
+        </scene>
         <!--Camera-->
         <scene sceneID="AEp-I9-u7c">
             <objects>
-                <viewController id="8BS-bV-9AW" customClass="CameraViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraIdentifier" id="8BS-bV-9AW" customClass="CameraViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hIb-hS-cgt"/>
                         <viewControllerLayoutGuide type="bottom" id="nxb-iA-bex"/>
@@ -336,7 +369,7 @@
                                 <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="107" y="384" width="55" height="30"/>
                                 </variation>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="65" y="494" width="55" height="30"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
@@ -359,14 +392,14 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Hwz-5L-3Sg"/>
                                         <exclude reference="9TJ-Qj-zbh"/>
+                                        <exclude reference="Hwz-5L-3Sg"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="107" y="384" width="55" height="30"/>
                                 </variation>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="65" y="494" width="55" height="30"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
@@ -406,7 +439,7 @@
                                         <exclude reference="yzR-Dd-h1K"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="328" y="49" width="30" height="30"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
@@ -439,7 +472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VqI-2u-x1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1119" y="769"/>
+            <point key="canvasLocation" x="-784" y="-905"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EcI-P7-dfK">
@@ -569,7 +602,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jG8-BU-vGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="-889"/>
+            <point key="canvasLocation" x="1811" y="-16"/>
         </scene>
         <!--Create Lobby View Controller-->
         <scene sceneID="v6R-Ap-veh">
@@ -842,6 +875,6 @@
         <image name="switch_camera.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nJs-YL-i8M"/>
+        <segue reference="loA-Mk-D76"/>
     </inferredMetricsTieBreakers>
 </document>

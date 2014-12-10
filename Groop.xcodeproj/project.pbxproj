@@ -90,6 +90,7 @@
 		8F9FE4C01A0C5C85002FA17C /* InviteFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9FE4BF1A0C5C85002FA17C /* InviteFriendsTableViewController.m */; };
 		8FBCDBA31A37C0AC00173591 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBCDBA21A37C0AC00173591 /* UILabel+Extension.m */; };
 		8FBCDBA51A37CCD800173591 /* switch_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FBCDBA41A37CCD800173591 /* switch_camera.png */; };
+		8FBCDBA81A37D32100173591 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBCDBA71A37D32100173591 /* PageViewController.m */; };
 		8FD07F711A0D6E89002BD03C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD07F701A0D6E89002BD03C /* Images.xcassets */; };
 		8FD07F751A0D6FDE002BD03C /* goopIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FD07F741A0D6FDE002BD03C /* goopIcon2x.png */; };
 		8FD07F771A0D7017002BD03C /* goopIcon3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FD07F761A0D7017002BD03C /* goopIcon3x.png */; };
@@ -270,6 +271,8 @@
 		8FBCDBA11A37C0AC00173591 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		8FBCDBA21A37C0AC00173591 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		8FBCDBA41A37CCD800173591 /* switch_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = switch_camera.png; path = images/switch_camera.png; sourceTree = "<group>"; };
+		8FBCDBA61A37D32100173591 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		8FBCDBA71A37D32100173591 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		8FD07F701A0D6E89002BD03C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8FD07F741A0D6FDE002BD03C /* goopIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goopIcon2x.png; sourceTree = "<group>"; };
 		8FD07F761A0D7017002BD03C /* goopIcon3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goopIcon3x.png; sourceTree = "<group>"; };
@@ -367,6 +370,8 @@
 				8F040BA219EF60D20066F2F4 /* AppDelegate.h */,
 				8F040BA319EF60D20066F2F4 /* AppDelegate.m */,
 				8F040BAB19EF60D20066F2F4 /* Main.storyboard */,
+				8FBCDBA61A37D32100173591 /* PageViewController.h */,
+				8FBCDBA71A37D32100173591 /* PageViewController.m */,
 				8F305EBF1A12B1B500959DE5 /* LobbyCell.h */,
 				8F305EC01A12B1B500959DE5 /* LobbyCell.m */,
 				8F7DB1601A0D58EC008A1C7E /* CameraViewController.h */,
@@ -750,6 +755,7 @@
 				8F1189031A0EFF7D00873865 /* UIButton+WebCache.m in Sources */,
 				8F040BA419EF60D20066F2F4 /* AppDelegate.m in Sources */,
 				8F305EC11A12B1B500959DE5 /* LobbyCell.m in Sources */,
+				8FBCDBA81A37D32100173591 /* PageViewController.m in Sources */,
 				8F1188EC1A0EFF7D00873865 /* PSTCollectionView.m in Sources */,
 				8F1188E11A0EFF7D00873865 /* MWGridCell.m in Sources */,
 				8FFB4D021A073A600048A5AC /* User.m in Sources */,
