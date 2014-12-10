@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "MWPhotoBrowser.h"
+#import "PageViewController.h"
 
 @interface LobbiesTableViewController : UITableViewController<UISearchBarDelegate, UISearchDisplayDelegate, MWPhotoBrowserDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -19,5 +20,6 @@
 @property (strong, nonatomic) NSMutableArray * futureLobbies;
 @property (strong, nonatomic) NSArray * searchResults;
 @property (strong, nonatomic) NSMutableArray * photos;
+@property (strong, nonatomic) PageViewController * pageController;
 
 @end

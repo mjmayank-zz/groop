@@ -8,6 +8,7 @@
 
 #import "PageViewController.h"
 #import "CameraViewController.h"
+#import "LobbiesTableViewController.h"
 
 @interface PageViewController ()
 
@@ -21,11 +22,14 @@
     // Do any additional setup after loading the view.
     
     CameraViewController * cameraVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CameraIdentifier"];
+    cameraVC.pageController = self;
+    
+    UINavigationController * lobbiesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"MainIdentifier"];
+    ((LobbiesTableViewController *) lobbiesVC.viewControllers[0]).pageController = self;
     
     self.vcs = @[[self.storyboard instantiateViewControllerWithIdentifier:@"ActiveIdentifier"],
                  cameraVC,
-                 [self.storyboard instantiateViewControllerWithIdentifier:@"MainIdentifier"]];
-    cameraVC.pageController = self;
+                 lobbiesVC];
     
     [self setViewControllers:@[self.vcs[1]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }

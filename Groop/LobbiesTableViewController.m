@@ -340,7 +340,8 @@
  }
  */
 - (IBAction)refreshButtonPressed:(id)sender {
-    [self refreshLobbies];
+//    [self refreshLobbies];
+    [self.pageController setViewControllers:@[[self.pageController pageViewController:self.pageController viewControllerBeforeViewController:self.navigationController]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
 }
 
 - (void)refreshLobbies{

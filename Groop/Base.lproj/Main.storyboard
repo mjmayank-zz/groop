@@ -375,6 +375,9 @@
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="70" y="700" width="55" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="activeButton:" destination="8BS-bV-9AW" eventType="touchUpInside" id="uPZ-Om-T3Q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3s-M7-mFP" userLabel="Groop">
                                 <rect key="frame" x="511" y="509" width="44" height="44"/>

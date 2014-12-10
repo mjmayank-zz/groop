@@ -356,6 +356,10 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     [self.pageController setViewControllers:@[[self.pageController pageViewController:self.pageController viewControllerAfterViewController:self]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
 
+- (IBAction)activeButton:(id)sender {
+    [self.pageController setViewControllers:@[[self.pageController pageViewController:self.pageController viewControllerBeforeViewController:self]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+}
+
 
 - (IBAction)snapStillImage:(id)sender
 {
