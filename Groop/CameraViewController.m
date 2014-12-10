@@ -353,7 +353,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 
 - (IBAction)lobbiesButton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.pageController setViewControllers:@[[self.pageController pageViewController:self.pageController viewControllerAfterViewController:self]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
 
 

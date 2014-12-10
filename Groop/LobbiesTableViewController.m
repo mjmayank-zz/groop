@@ -244,7 +244,7 @@
     vc.delegate = vc;
     vc.lobby = lobby;
     
-    [self.navigationController pushViewController:vc animated:YES];
+//    [self.navigationController pushViewController:vc animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
         PFRelation *relation = [lobby relationForKey:@"pictures"];
         PFQuery *query = [relation query];

@@ -7,6 +7,7 @@
 //
 
 #import "PageViewController.h"
+#import "CameraViewController.h"
 
 @interface PageViewController ()
 
@@ -19,9 +20,14 @@
     self.dataSource = self;
     // Do any additional setup after loading the view.
     
-    self.vcs = @[[self.storyboard instantiateViewControllerWithIdentifier:@"MainIdentifier"],
-                 [self.storyboard instantiateViewControllerWithIdentifier:@"CameraIdentifier"]];
-    [self setViewControllers:@[self.vcs[0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    CameraViewController * cameraVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CameraIdentifier"];
+    
+    self.vcs = @[[self.storyboard instantiateViewControllerWithIdentifier:@"ActiveIdentifier"],
+                 cameraVC,
+                 [self.storyboard instantiateViewControllerWithIdentifier:@"MainIdentifier"]];
+    cameraVC.pageController = self;
+    
+    [self setViewControllers:@[self.vcs[1]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +53,10 @@
     
     // Create a new view controller and pass suitable data.
     return self.vcs[index];
+}
+
++(void)viewControllerAfter:(UIViewController *)vc{
+    
 }
 
 #pragma mark - Page View Controller Data Source

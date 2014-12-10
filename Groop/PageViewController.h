@@ -13,4 +13,7 @@
 @property (strong, nonatomic) NSArray *vcs;
 @property (assign, nonatomic) NSUInteger index;
 
++(void)viewControllerAfter:(UIViewController *)vc;
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController;
+
 @end

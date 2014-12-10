@@ -307,10 +307,10 @@
             </objects>
             <point key="canvasLocation" x="-1524" y="-905"/>
         </scene>
-        <!--Table View Controller-->
+        <!--ACTIVE LOBBIES-->
         <scene sceneID="apY-G8-3mx">
             <objects>
-                <tableViewController id="E7y-pW-48Q" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ActiveIdentifier" title="ACTIVE LOBBIES" id="E7y-pW-48Q" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eq8-Zd-tTQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -406,7 +406,6 @@
                                     <rect key="frame" x="70" y="700" width="55" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="gpR-Dt-LmD"/>
                                     <action selector="lobbiesButton:" destination="8BS-bV-9AW" eventType="touchUpInside" id="sUA-4X-qPE"/>
                                 </connections>
                             </button>
@@ -662,7 +661,7 @@
                                     <constraint firstAttribute="height" constant="30" id="aa4-UD-fmr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="aa4-UD-fmr"/>

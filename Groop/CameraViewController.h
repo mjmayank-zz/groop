@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PageViewController.h"
 
 @interface CameraViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *lobbiesButton;
-
+@property (weak, nonatomic) PageViewController *pageController;
 @end
