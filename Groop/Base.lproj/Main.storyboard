@@ -365,7 +365,7 @@
         <scene sceneID="apY-G8-3mx">
             <objects>
                 <tableViewController storyboardIdentifier="ActiveIdentifier" title="ACTIVE LOBBIES" id="E7y-pW-48Q" customClass="ActiveLobbiesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eq8-Zd-tTQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eq8-Zd-tTQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -383,13 +383,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOBBY TITLE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3Q-2p-1Vz">
-                                            <rect key="frame" x="8" y="16" width="202" height="21"/>
+                                            <rect key="frame" x="10" y="16" width="202" height="21"/>
                                             <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="October 7th, 2014 at 9pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAW-fL-mZk">
-                                            <rect key="frame" x="8" y="37" width="198" height="21"/>
+                                            <rect key="frame" x="10" y="37" width="198" height="21"/>
                                             <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -535,13 +535,22 @@
                                     <action selector="changeCamera:" destination="8BS-bV-9AW" eventType="touchUpInside" id="Oat-do-cOg"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flash.png" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-EB-arH">
+                                <rect key="frame" x="16" y="14" width="41" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7Oy-P6-fnG"/>
+                                    <constraint firstAttribute="width" constant="41" id="Qpd-Xv-VBP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nxb-iA-bex" firstAttribute="top" secondItem="Hxv-Di-IP9" secondAttribute="bottom" constant="20" id="5o8-HG-rht"/>
                             <constraint firstItem="Kd8-0f-svP" firstAttribute="top" secondItem="hIb-hS-cgt" secondAttribute="bottom" constant="20" id="82t-lW-2kb"/>
+                            <constraint firstItem="5NY-EB-arH" firstAttribute="top" secondItem="hIb-hS-cgt" secondAttribute="bottom" constant="14" id="9v8-oy-Xzl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X3s-M7-mFP" secondAttribute="trailing" constant="8" id="Ipu-uG-BPu"/>
                             <constraint firstItem="nxb-iA-bex" firstAttribute="top" secondItem="X3s-M7-mFP" secondAttribute="bottom" constant="20" id="aTp-30-VtE"/>
+                            <constraint firstItem="5NY-EB-arH" firstAttribute="leading" secondItem="UDi-dL-ksf" secondAttribute="leadingMargin" id="gc8-RU-EmA"/>
                             <constraint firstAttribute="centerX" secondItem="Hxv-Di-IP9" secondAttribute="centerX" id="ka5-3Z-zmu"/>
                             <constraint firstItem="nxb-iA-bex" firstAttribute="top" secondItem="fCi-Jh-ImO" secondAttribute="bottom" constant="20" id="ntC-6s-Is1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kd8-0f-svP" secondAttribute="trailing" constant="8" id="pTj-mk-wQZ"/>
@@ -967,6 +976,7 @@
     </scenes>
     <resources>
         <image name="active_icon.png" width="265" height="265"/>
+        <image name="flash.png" width="256" height="256"/>
         <image name="groop_logoMark.png" width="506" height="506"/>
         <image name="humin.jpg" width="640" height="395"/>
         <image name="login_background.png" width="640" height="1135"/>

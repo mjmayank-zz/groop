@@ -92,6 +92,7 @@
 		8FB98E621A38B25900A489E0 /* humin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FB98E5D1A38B25900A489E0 /* humin.jpg */; };
 		8FBB294F1A392C5000099330 /* ActiveLobbiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB294E1A392C5000099330 /* ActiveLobbiesTableViewCell.m */; };
 		8FBB29531A392D8300099330 /* ActiveLobbiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBB29521A392D8300099330 /* ActiveLobbiesTableViewController.m */; };
+		8FBB29551A393A6900099330 /* flash.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FBB29541A393A6900099330 /* flash.png */; };
 		8FBCDBA31A37C0AC00173591 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBCDBA21A37C0AC00173591 /* UILabel+Extension.m */; };
 		8FBCDBA51A37CCD800173591 /* switch_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FBCDBA41A37CCD800173591 /* switch_camera.png */; };
 		8FBCDBA81A37D32100173591 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FBCDBA71A37D32100173591 /* PageViewController.m */; };
@@ -276,6 +277,7 @@
 		8FBB294E1A392C5000099330 /* ActiveLobbiesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveLobbiesTableViewCell.m; sourceTree = "<group>"; };
 		8FBB29511A392D8300099330 /* ActiveLobbiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveLobbiesTableViewController.h; sourceTree = "<group>"; };
 		8FBB29521A392D8300099330 /* ActiveLobbiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveLobbiesTableViewController.m; sourceTree = "<group>"; };
+		8FBB29541A393A6900099330 /* flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flash.png; path = images/flash.png; sourceTree = "<group>"; };
 		8FBCDBA11A37C0AC00173591 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		8FBCDBA21A37C0AC00173591 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
 		8FBCDBA41A37CCD800173591 /* switch_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = switch_camera.png; path = images/switch_camera.png; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 		8F29D50B1A366DF3005101E5 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8FBB29541A393A6900099330 /* flash.png */,
 				8FBCDBA41A37CCD800173591 /* switch_camera.png */,
 				8F29D5221A369141005101E5 /* GillSansStd-Bold.otf */,
 				8F29D50C1A3687CE005101E5 /* active_icon.png */,
@@ -752,6 +755,7 @@
 				8F11890B1A0EFF8700873865 /* MWPhotoBrowser.bundle in Resources */,
 				8F29D5251A369667005101E5 /* GillSansStd.otf in Resources */,
 				8F29D51D1A3687CE005101E5 /* groop_logoMark.png in Resources */,
+				8FBB29551A393A6900099330 /* flash.png in Resources */,
 				8F29D51B1A3687CE005101E5 /* groop_app_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,7 +21,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
+//    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -58,6 +58,32 @@
     cell.titleLabel.text = [LobbyManager sharedLobbyManager].activeLobbies[indexPath.row][@"name"];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 60.0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 60.0)];
+    [view setBackgroundColor:[UIColor colorWithRed:62.0/255 green:162.0/255 blue:183.0/255 alpha:1]];
+    /* Create custom view to display section header... */
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, tableView.frame.size.width, 40)];
+    [label setFont:[UIFont fontWithName:@"GillSansSTD-Bold" size:20]];
+    [label setTextColor:[UIColor whiteColor]];
+    /* Section header is in 0th index... */
+    [label setText:[@"Active Groops" uppercaseString]];
+    [view addSubview:label];
+    return view;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [@"Active Lobbies" uppercaseString];
 }
 
 /*
