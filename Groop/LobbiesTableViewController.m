@@ -203,7 +203,14 @@
                                 NSData * data = [file getData];
                                 UIImage * image = [UIImage imageWithData:data];
                                 
-                                [self.cache setObject:image forKey:cell_key];
+                                if (image)
+                                {
+                                    [self.cache setObject:image forKey:cell_key];
+                                }
+                                else
+                                {
+                                    NSLog(@"Tried to add a nil image to the cache!!");
+                                }
                                 
                                 dispatch_async(dispatch_get_main_queue(), ^{
                                     [cell.backgroundImageView setImage:image];
