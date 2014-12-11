@@ -42,6 +42,7 @@
             <string>GillSansStd</string>
             <string>GillSansStd</string>
             <string>GillSansStd</string>
+            <string>GillSansStd</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -555,7 +556,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVp-OX-d3X">
-                                <rect key="frame" x="518" y="511" width="60" height="60"/>
+                                <rect key="frame" x="513" y="506" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.75686274509999996" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eVp-OX-d3X" secondAttribute="height" multiplier="1:1" id="9yF-Wd-w8G"/>
@@ -564,14 +565,15 @@
                                     <constraint firstAttribute="height" constant="44" id="cdJ-ow-7s0"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="61" id="cws-Tg-B6e"/>
                                     <constraint firstAttribute="width" constant="60" id="h6B-81-H3d"/>
-                                    <constraint firstAttribute="height" constant="60" id="jHp-xf-Wpj"/>
+                                    <constraint firstAttribute="height" constant="70" id="jHp-xf-Wpj"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="61" id="uFx-Di-NNm"/>
-                                    <constraint firstAttribute="width" constant="60" id="ueR-Nn-gqW"/>
+                                    <constraint firstAttribute="width" constant="70" id="ueR-Nn-gqW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="28"/>
                                 <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <size key="titleShadowOffset" width="3" height="3"/>
                                 <state key="normal" image="inbox.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -589,13 +591,12 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzX-pz-MeA">
-                                <rect key="frame" x="559" y="503" width="25" height="25"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="535" y="528" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="YXR-jv-c0C"/>
                                     <constraint firstAttribute="width" constant="25" id="jtM-Qq-TVJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -604,15 +605,15 @@
                         <constraints>
                             <constraint firstItem="GAs-39-1dM" firstAttribute="top" secondItem="ivg-HU-cu4" secondAttribute="bottom" id="55A-7g-qEe"/>
                             <constraint firstAttribute="trailing" secondItem="ivg-HU-cu4" secondAttribute="trailing" id="6Rw-FT-6FO"/>
-                            <constraint firstAttribute="trailing" secondItem="eVp-OX-d3X" secondAttribute="trailing" constant="22" id="LU1-2f-7rt"/>
+                            <constraint firstAttribute="trailing" secondItem="eVp-OX-d3X" secondAttribute="trailing" constant="17" id="LU1-2f-7rt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eVp-OX-d3X" secondAttribute="trailing" constant="20" id="NBV-Ul-KF7"/>
                             <constraint firstItem="ivg-HU-cu4" firstAttribute="leading" secondItem="nFU-YW-u1L" secondAttribute="leadingMargin" constant="-20" id="NMa-zI-Lng"/>
                             <constraint firstItem="GAs-39-1dM" firstAttribute="top" secondItem="eVp-OX-d3X" secondAttribute="bottom" constant="33" id="QBo-rZ-RBJ"/>
                             <constraint firstItem="ivg-HU-cu4" firstAttribute="top" secondItem="nFU-YW-u1L" secondAttribute="topMargin" id="SiX-qS-Itk"/>
-                            <constraint firstItem="GAs-39-1dM" firstAttribute="top" secondItem="eVp-OX-d3X" secondAttribute="bottom" constant="29" id="UzX-j0-k8a"/>
+                            <constraint firstItem="GAs-39-1dM" firstAttribute="top" secondItem="eVp-OX-d3X" secondAttribute="bottom" constant="24" id="UzX-j0-k8a"/>
                             <constraint firstItem="ivg-HU-cu4" firstAttribute="leading" secondItem="nFU-YW-u1L" secondAttribute="leading" id="adZ-YJ-Ua9"/>
-                            <constraint firstItem="GAs-39-1dM" firstAttribute="top" secondItem="LzX-pz-MeA" secondAttribute="bottom" constant="72" id="f6S-ab-0JE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LzX-pz-MeA" secondAttribute="trailing" id="lQw-Ak-vJ2"/>
+                            <constraint firstItem="GAs-39-1dM" firstAttribute="top" secondItem="LzX-pz-MeA" secondAttribute="bottom" constant="47" id="f6S-ab-0JE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LzX-pz-MeA" secondAttribute="trailing" constant="24" id="lQw-Ak-vJ2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ivg-HU-cu4" secondAttribute="trailing" constant="-16" id="soV-OT-Yzj"/>
                         </constraints>
                         <variation key="default">
@@ -656,155 +657,191 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection id="3ow-PL-ee4">
+                            <tableViewSection id="R9D-3b-Mcx">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="4cX-ee-vDs">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4cX-ee-vDs" id="uuP-I7-4H8">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="October 7th, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xQ-jM-wdq">
-                                                    <rect key="frame" x="13" y="49" width="198" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October 7th, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xQ-jM-wdq">
+                                                    <rect key="frame" x="8" y="49" width="105.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOBBY TITLE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-Z3-Gvn">
-                                                    <rect key="frame" x="13" y="20" width="202" height="21"/>
-                                                    <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lia-r3-Wq8">
-                                                    <rect key="frame" x="518" y="0.0" width="82" height="78.5"/>
-                                                    <color key="backgroundColor" red="0.24313725489999999" green="0.75686274509999996" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="522" y="0.0" width="78" height="78.5"/>
+                                                    <color key="backgroundColor" red="0.22352941176470589" green="0.75294117647058822" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="82" id="xRo-Kc-b5F"/>
+                                                        <constraint firstAttribute="width" constant="78" id="xRo-Kc-b5F"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="18"/>
-                                                    <state key="normal" title="ACCEPT">
+                                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                                    <state key="normal" image="check.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P40-Ve-teu">
-                                                    <rect key="frame" x="436" y="0.0" width="82" height="78.5"/>
-                                                    <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="444" y="0.0" width="78" height="78.5"/>
+                                                    <color key="backgroundColor" red="0.84313725490196079" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="82" id="ARA-4c-OTG"/>
+                                                        <constraint firstAttribute="width" constant="78" id="Ft7-4C-L71"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="18"/>
-                                                    <state key="normal" title="DECLINE">
+                                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                                    <state key="normal" image="cancel.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="ARA-4c-OTG"/>
+                                                        </mask>
+                                                    </variation>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAYANK'S BDAY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-Z3-Gvn">
+                                                    <rect key="frame" x="8" y="24" width="144" height="17"/>
+                                                    <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="P40-Ve-teu" secondAttribute="bottom" id="5UI-GH-NSR"/>
                                                 <constraint firstItem="P40-Ve-teu" firstAttribute="top" secondItem="uuP-I7-4H8" secondAttribute="top" id="70J-oj-heg"/>
+                                                <constraint firstItem="5xQ-jM-wdq" firstAttribute="top" secondItem="WXK-Z3-Gvn" secondAttribute="bottom" constant="8" id="ABx-Jc-2QJ"/>
+                                                <constraint firstItem="WXK-Z3-Gvn" firstAttribute="top" secondItem="uuP-I7-4H8" secondAttribute="topMargin" constant="16" id="ElA-ll-qo4"/>
                                                 <constraint firstItem="lia-r3-Wq8" firstAttribute="top" secondItem="uuP-I7-4H8" secondAttribute="top" id="IDa-6P-OPG"/>
+                                                <constraint firstItem="WXK-Z3-Gvn" firstAttribute="leading" secondItem="uuP-I7-4H8" secondAttribute="leadingMargin" id="SZl-Vr-zsB"/>
                                                 <constraint firstItem="lia-r3-Wq8" firstAttribute="leading" secondItem="P40-Ve-teu" secondAttribute="trailing" id="gwc-2x-3Wk"/>
+                                                <constraint firstItem="5xQ-jM-wdq" firstAttribute="leading" secondItem="uuP-I7-4H8" secondAttribute="leadingMargin" id="icc-Pm-GhB"/>
                                                 <constraint firstAttribute="trailing" secondItem="lia-r3-Wq8" secondAttribute="trailing" id="qQJ-nT-JSZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="lia-r3-Wq8" secondAttribute="bottom" id="sn0-oB-FGw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="6Ki-Qk-OLn">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="abL-RD-hsH">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Ki-Qk-OLn" id="MvT-7T-KqE">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="abL-RD-hsH" id="KEo-VW-ziS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="October 7th, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9O-03-S5H">
-                                                    <rect key="frame" x="13" y="49" width="198" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October 7th, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9a-qS-sgI">
+                                                    <rect key="frame" x="8" y="49" width="105.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOBBY TITLE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAR-tB-rc9">
-                                                    <rect key="frame" x="13" y="20" width="202" height="21"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5Y-hk-EYU">
+                                                    <rect key="frame" x="522" y="0.0" width="78" height="78.5"/>
+                                                    <color key="backgroundColor" red="0.22352941179999999" green="0.75294117650000003" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="78" id="d6r-Yb-WmG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="18"/>
+                                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                                    <state key="normal" image="check.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDg-Bm-Z6C">
+                                                    <rect key="frame" x="444" y="0.0" width="78" height="78.5"/>
+                                                    <color key="backgroundColor" red="0.84313725490000002" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="78" id="Ff8-PU-gY9"/>
+                                                        <constraint firstAttribute="width" constant="82" id="WRg-4F-vsy"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="18"/>
+                                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                                    <state key="normal" image="cancel.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="WRg-4F-vsy"/>
+                                                        </mask>
+                                                    </variation>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAYANK'S BDAY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdQ-KZ-aRO">
+                                                    <rect key="frame" x="8" y="24" width="144" height="17"/>
                                                     <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXd-va-Jw7">
-                                                    <rect key="frame" x="518" y="0.0" width="82" height="78.5"/>
-                                                    <color key="backgroundColor" red="0.24313725489999999" green="0.75686274509999996" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="82" id="gxp-Uc-sxx"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="18"/>
-                                                    <state key="normal" title="ACCEPT">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-is-dTc">
-                                                    <rect key="frame" x="436" y="0.0" width="82" height="78.5"/>
-                                                    <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="82" id="L1K-0w-z1w"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="18"/>
-                                                    <state key="normal" title="DECLINE">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="qXd-va-Jw7" firstAttribute="leading" secondItem="8PD-is-dTc" secondAttribute="trailing" id="98z-vd-hx2"/>
-                                                <constraint firstItem="qXd-va-Jw7" firstAttribute="top" secondItem="MvT-7T-KqE" secondAttribute="top" id="Vik-YG-KXu"/>
-                                                <constraint firstAttribute="bottom" secondItem="8PD-is-dTc" secondAttribute="bottom" id="Vkb-2d-0Fv"/>
-                                                <constraint firstAttribute="trailing" secondItem="qXd-va-Jw7" secondAttribute="trailing" id="fKx-OG-zo7"/>
-                                                <constraint firstItem="8PD-is-dTc" firstAttribute="top" secondItem="MvT-7T-KqE" secondAttribute="top" id="tRu-8C-xhw"/>
-                                                <constraint firstAttribute="bottom" secondItem="qXd-va-Jw7" secondAttribute="bottom" id="yd3-eW-CeM"/>
+                                                <constraint firstAttribute="bottom" secondItem="FDg-Bm-Z6C" secondAttribute="bottom" id="7FO-iO-YgE"/>
+                                                <constraint firstItem="E5Y-hk-EYU" firstAttribute="top" secondItem="KEo-VW-ziS" secondAttribute="top" id="AYV-hn-JJm"/>
+                                                <constraint firstItem="E5Y-hk-EYU" firstAttribute="leading" secondItem="FDg-Bm-Z6C" secondAttribute="trailing" id="Hwf-PL-dN2"/>
+                                                <constraint firstItem="wdQ-KZ-aRO" firstAttribute="top" secondItem="KEo-VW-ziS" secondAttribute="topMargin" constant="16" id="J7V-bh-gki"/>
+                                                <constraint firstAttribute="trailing" secondItem="E5Y-hk-EYU" secondAttribute="trailing" id="JXM-CO-zd4"/>
+                                                <constraint firstAttribute="bottom" secondItem="E5Y-hk-EYU" secondAttribute="bottom" id="SbL-lD-e9o"/>
+                                                <constraint firstItem="k9a-qS-sgI" firstAttribute="top" secondItem="wdQ-KZ-aRO" secondAttribute="bottom" constant="8" id="XaU-f9-b8X"/>
+                                                <constraint firstItem="k9a-qS-sgI" firstAttribute="leading" secondItem="KEo-VW-ziS" secondAttribute="leadingMargin" id="jJR-bS-7Lm"/>
+                                                <constraint firstItem="wdQ-KZ-aRO" firstAttribute="leading" secondItem="KEo-VW-ziS" secondAttribute="leadingMargin" id="keu-2Q-hqe"/>
+                                                <constraint firstItem="FDg-Bm-Z6C" firstAttribute="top" secondItem="KEo-VW-ziS" secondAttribute="top" id="qq7-Kr-ZA9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="CXR-gO-snh">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="79" id="bqe-EC-hJp">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CXR-gO-snh" id="kr7-0y-B6Y">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bqe-EC-hJp" id="wsm-ZJ-dZ4">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="October 7th, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZb-vv-aiC">
-                                                    <rect key="frame" x="13" y="49" width="198" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October 7th, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Uz-fG-YPv">
+                                                    <rect key="frame" x="8" y="49" width="105.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOBBY TITLE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qC-f0-seL">
-                                                    <rect key="frame" x="13" y="20" width="202" height="21"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwC-90-a9t">
+                                                    <rect key="frame" x="522" y="0.0" width="78" height="78.5"/>
+                                                    <color key="backgroundColor" red="0.22352941179999999" green="0.75294117650000003" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="78" id="MmY-6X-KyT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="18"/>
+                                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                                    <state key="normal" image="check.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAl-oc-Kc1">
+                                                    <rect key="frame" x="444" y="0.0" width="78" height="78.5"/>
+                                                    <color key="backgroundColor" red="0.84313725490000002" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="82" id="eL5-wL-9MK"/>
+                                                        <constraint firstAttribute="width" constant="78" id="j9P-44-uft"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="18"/>
+                                                    <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                                    <state key="normal" image="cancel.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="eL5-wL-9MK"/>
+                                                        </mask>
+                                                    </variation>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAYANK'S BDAY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhl-Jt-pyO">
+                                                    <rect key="frame" x="8" y="24" width="144" height="17"/>
                                                     <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ds-H8-MKA">
-                                                    <rect key="frame" x="518" y="0.0" width="82" height="78.5"/>
-                                                    <color key="backgroundColor" red="0.24313725489999999" green="0.75686274509999996" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="82" id="vWo-1D-GKP"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="18"/>
-                                                    <state key="normal" title="ACCEPT">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewa-Td-Ptv">
-                                                    <rect key="frame" x="436" y="0.0" width="82" height="78.5"/>
-                                                    <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="82" id="4r6-OQ-dFe"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="18"/>
-                                                    <state key="normal" title="DECLINE">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0Ds-H8-MKA" firstAttribute="leading" secondItem="ewa-Td-Ptv" secondAttribute="trailing" id="BDr-Fv-KoR"/>
-                                                <constraint firstItem="0Ds-H8-MKA" firstAttribute="top" secondItem="kr7-0y-B6Y" secondAttribute="top" id="LF0-Bd-n1t"/>
-                                                <constraint firstAttribute="trailing" secondItem="0Ds-H8-MKA" secondAttribute="trailing" id="Sae-kf-5k4"/>
-                                                <constraint firstAttribute="bottom" secondItem="ewa-Td-Ptv" secondAttribute="bottom" id="a0l-0c-aNI"/>
-                                                <constraint firstItem="ewa-Td-Ptv" firstAttribute="top" secondItem="kr7-0y-B6Y" secondAttribute="top" id="c2R-Wh-Kw4"/>
-                                                <constraint firstAttribute="bottom" secondItem="0Ds-H8-MKA" secondAttribute="bottom" id="dd2-HL-hRc"/>
+                                                <constraint firstItem="cwC-90-a9t" firstAttribute="top" secondItem="wsm-ZJ-dZ4" secondAttribute="top" id="0vU-n8-HqY"/>
+                                                <constraint firstItem="7Uz-fG-YPv" firstAttribute="top" secondItem="Zhl-Jt-pyO" secondAttribute="bottom" constant="8" id="3HR-rQ-9k7"/>
+                                                <constraint firstItem="Zhl-Jt-pyO" firstAttribute="top" secondItem="wsm-ZJ-dZ4" secondAttribute="topMargin" constant="16" id="93T-Pk-hfT"/>
+                                                <constraint firstAttribute="bottom" secondItem="CAl-oc-Kc1" secondAttribute="bottom" id="EfD-3U-TJK"/>
+                                                <constraint firstItem="cwC-90-a9t" firstAttribute="leading" secondItem="CAl-oc-Kc1" secondAttribute="trailing" id="Fd7-Qt-QQc"/>
+                                                <constraint firstItem="7Uz-fG-YPv" firstAttribute="leading" secondItem="wsm-ZJ-dZ4" secondAttribute="leadingMargin" id="MS5-RS-eX7"/>
+                                                <constraint firstAttribute="trailing" secondItem="cwC-90-a9t" secondAttribute="trailing" id="RNv-0m-cXe"/>
+                                                <constraint firstItem="Zhl-Jt-pyO" firstAttribute="leading" secondItem="wsm-ZJ-dZ4" secondAttribute="leadingMargin" id="b1K-zR-lGI"/>
+                                                <constraint firstItem="CAl-oc-Kc1" firstAttribute="top" secondItem="wsm-ZJ-dZ4" secondAttribute="top" id="g8s-EB-6e2"/>
+                                                <constraint firstAttribute="bottom" secondItem="cwC-90-a9t" secondAttribute="bottom" id="jhU-bg-2Gg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1057,7 +1094,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-KU-Z9n">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-KU-Z9n">
                                 <rect key="frame" x="0.0" y="64" width="600" height="268"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="19"/>
@@ -1069,7 +1106,7 @@
                                     <segue destination="iLw-mP-g7Y" kind="show" id="nJs-YL-i8M"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pq-pb-NkP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pq-pb-NkP">
                                 <rect key="frame" x="0.0" y="332" width="600" height="268"/>
                                 <color key="backgroundColor" red="0.14117647058823529" green="0.19607843137254902" blue="0.39215686274509803" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="19"/>
@@ -1469,6 +1506,8 @@
     </scenes>
     <resources>
         <image name="active_icon.png" width="265" height="265"/>
+        <image name="cancel.png" width="96" height="96"/>
+        <image name="check.png" width="96" height="96"/>
         <image name="flash.png" width="256" height="256"/>
         <image name="groop_logo.png" width="1035" height="976"/>
         <image name="groop_logoMark.png" width="506" height="506"/>

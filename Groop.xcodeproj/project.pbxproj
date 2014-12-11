@@ -79,6 +79,8 @@
 		8F305EC61A12C6BD00959DE5 /* CameraRollWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F305EC51A12C6BD00959DE5 /* CameraRollWorker.m */; };
 		8F5F9EB11A3A3939007CCBDC /* Dismiss.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F9EB01A3A3939007CCBDC /* Dismiss.m */; };
 		8F5F9EB31A3A4667007CCBDC /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5F9EB21A3A4667007CCBDC /* inbox.png */; };
+		8F5F9EB61A3A4DC4007CCBDC /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5F9EB41A3A4DC4007CCBDC /* cancel.png */; };
+		8F5F9EB71A3A4DC4007CCBDC /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5F9EB51A3A4DC4007CCBDC /* check.png */; };
 		8F629B0C1A0BF7280020C0CF /* FBEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */; };
 		8F629B0F1A0C19E00020C0CF /* CreateLobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0E1A0C19E00020C0CF /* CreateLobbyViewController.m */; };
 		8F7DB1621A0D58EC008A1C7E /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB1611A0D58EC008A1C7E /* CameraViewController.m */; };
@@ -258,6 +260,8 @@
 		8F5F9EAF1A3A3939007CCBDC /* Dismiss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dismiss.h; sourceTree = "<group>"; };
 		8F5F9EB01A3A3939007CCBDC /* Dismiss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dismiss.m; sourceTree = "<group>"; };
 		8F5F9EB21A3A4667007CCBDC /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inbox.png; path = images/inbox.png; sourceTree = "<group>"; };
+		8F5F9EB41A3A4DC4007CCBDC /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel.png; path = images/cancel.png; sourceTree = "<group>"; };
+		8F5F9EB51A3A4DC4007CCBDC /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check.png; path = images/check.png; sourceTree = "<group>"; };
 		8F629B0A1A0BF7280020C0CF /* FBEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEventsTableViewController.h; sourceTree = "<group>"; };
 		8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEventsTableViewController.m; sourceTree = "<group>"; };
 		8F629B0D1A0C19E00020C0CF /* CreateLobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateLobbyViewController.h; sourceTree = "<group>"; };
@@ -614,6 +618,8 @@
 				8FB98E5C1A38B25900A489E0 /* groop.jpg */,
 				8FB98E5D1A38B25900A489E0 /* humin.jpg */,
 				8F29D5241A369667005101E5 /* GillSansStd.otf */,
+				8F5F9EB41A3A4DC4007CCBDC /* cancel.png */,
+				8F5F9EB51A3A4DC4007CCBDC /* check.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -742,10 +748,12 @@
 			files = (
 				8F5F9EB31A3A4667007CCBDC /* inbox.png in Resources */,
 				8F040BAD19EF60D20066F2F4 /* Main.storyboard in Resources */,
+				8F5F9EB71A3A4DC4007CCBDC /* check.png in Resources */,
 				8FB98E5F1A38B25900A489E0 /* goopIcon2x.png in Resources */,
 				8F29D51A1A3687CE005101E5 /* camera_icon.png in Resources */,
 				8F29D5171A3687CE005101E5 /* active_icon.png in Resources */,
 				8FD07F711A0D6E89002BD03C /* Images.xcassets in Resources */,
+				8F5F9EB61A3A4DC4007CCBDC /* cancel.png in Resources */,
 				8F29D5211A3687CE005101E5 /* settings_icon.png in Resources */,
 				8F040BB219EF60D20066F2F4 /* LaunchScreen.xib in Resources */,
 				8FBCDBA51A37CCD800173591 /* switch_camera.png in Resources */,

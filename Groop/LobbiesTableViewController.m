@@ -53,7 +53,13 @@
                   forControlEvents:UIControlEventValueChanged];
     tableViewController.refreshControl = self.refreshControl;
     
-    self.inboxButton.layer.cornerRadius = 30.0;
+    self.inboxButton.layer.cornerRadius = 35.0;
+    self.inboxButton.layer.masksToBounds = NO;
+    
+    self.inboxButton.layer.shadowOpacity = 0.8;
+    self.inboxButton.layer.shadowRadius = 5;
+    self.inboxButton.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
+    
     self.inboxNotificationLabel.layer.masksToBounds = YES;
     self.inboxNotificationLabel.layer.cornerRadius = 12.5;
     
