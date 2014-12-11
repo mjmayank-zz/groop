@@ -20,7 +20,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 @interface CameraViewController () <AVCaptureFileOutputRecordingDelegate>
 
 // For use in the storyboards.
-@property (nonatomic, weak) IBOutlet AVCamPreviewView *previewView;
+@property (nonatomic, strong) IBOutlet AVCamPreviewView *previewView;
 @property (nonatomic, weak) IBOutlet UIButton *recordButton;
 @property (nonatomic, weak) IBOutlet UIButton *cameraButton;
 @property (nonatomic, weak) IBOutlet UIButton *stillButton;
@@ -81,15 +81,15 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     [LobbyManager sharedLobbyManager];
     
     
-    AVCamPreviewView *cameraView = [[AVCamPreviewView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.previewView = [[AVCamPreviewView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     // Create the AVCaptureSession
     AVCaptureSession *session = [[AVCaptureSession alloc] init];
     [self setSession:session];
     
     // Setup the preview view
-    [cameraView setSession:session];
-    [self.view insertSubview:cameraView atIndex:0];
+    [self.previewView setSession:session];
+    [self.view insertSubview:self.previewView atIndex:0];
     
     
     // In general it is not safe to mutate an AVCaptureSession or any of its inputs, outputs, or connections from multiple threads at the same time.
@@ -377,6 +377,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
         
         // Flash set to Auto for Still Capture
         [CameraViewController setFlashMode:AVCaptureFlashModeAuto forDevice:[[self videoDeviceInput] device]];
+        
         
         // Capture a still image.
         [[self stillImageOutput] captureStillImageAsynchronouslyFromConnection:[[self stillImageOutput] connectionWithMediaType:AVMediaTypeVideo] completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {

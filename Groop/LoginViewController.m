@@ -62,7 +62,7 @@
     [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
         switch (status) {
             case PHAuthorizationStatusAuthorized:
-                [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"MainIdentifier"] animated:YES completion:nil];
+                [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"PageViewIdentifier"] animated:YES completion:nil];
                 [[NSUserDefaults standardUserDefaults] setObject:@YES forKey:@"hasPermissions"];
                 break;
             case PHAuthorizationStatusRestricted:

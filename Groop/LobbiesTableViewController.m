@@ -38,36 +38,6 @@
     self.activeLobbies = [LobbyManager sharedLobbyManager].activeLobbies;
     self.futureLobbies = [LobbyManager sharedLobbyManager].futureLobbies;
     
-    
-    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"firstTime"] == NULL) {
-        UIAlertView *createLobbiesAlert = [[UIAlertView alloc]
-                                           
-                                           initWithTitle:@"Welcome to Groop!"
-                                           message:@"Create lobbies by hitting the plus sign."
-                                           delegate:self
-                                           cancelButtonTitle:@"Dismiss"
-                                           otherButtonTitles:@"Ok", nil];
-        
-        
-        
-        UIAlertView *viewPicturesAlert = [[UIAlertView alloc]
-                                          
-                                          initWithTitle:@"Welcome to Groop!"
-                                          message:@"Tap on lobbies to view the pictures that have been uploaded."
-                                          delegate:self
-                                          cancelButtonTitle:@"Dismiss"
-                                          otherButtonTitles:@"Ok", nil];
-        
-        
-        [viewPicturesAlert show];
-        [createLobbiesAlert show];
-        
-        [[NSUserDefaults standardUserDefaults] setValue:@"Not" forKey:@"firstTime"];
-        
-        
-        
-    }
-    
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIFont fontWithName:@"GillSansStd-BOLD" size:18],
@@ -97,11 +67,39 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"firstTime"] == NULL) {
+        UIAlertView *createLobbiesAlert = [[UIAlertView alloc]
+                                           
+                                           initWithTitle:@"Welcome to Groop!"
+                                           message:@"Create lobbies by hitting the plus sign."
+                                           delegate:self
+                                           cancelButtonTitle:@"Dismiss"
+                                           otherButtonTitles:@"Ok", nil];
+        
+        
+        
+        UIAlertView *viewPicturesAlert = [[UIAlertView alloc]
+                                          
+                                          initWithTitle:@"Welcome to Groop!"
+                                          message:@"Tap on lobbies to view the pictures that have been uploaded."
+                                          delegate:self
+                                          cancelButtonTitle:@"Dismiss"
+                                          otherButtonTitles:@"Ok", nil];
+        
+        
+        [viewPicturesAlert show];
+        [createLobbiesAlert show];
+        
+        [[NSUserDefaults standardUserDefaults] setValue:@"Not" forKey:@"firstTime"];
+        
+        
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
