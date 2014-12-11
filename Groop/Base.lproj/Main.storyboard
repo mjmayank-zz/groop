@@ -20,8 +20,10 @@
             <string>GillSansStd-Bold</string>
             <string>GillSansStd-Bold</string>
             <string>GillSansStd-Bold</string>
+            <string>GillSansStd-Bold</string>
         </mutableArray>
         <mutableArray key="GillSansStd.otf">
+            <string>GillSansStd</string>
             <string>GillSansStd</string>
         </mutableArray>
     </customFonts>
@@ -362,17 +364,47 @@
         <!--ACTIVE LOBBIES-->
         <scene sceneID="apY-G8-3mx">
             <objects>
-                <tableViewController storyboardIdentifier="ActiveIdentifier" title="ACTIVE LOBBIES" id="E7y-pW-48Q" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eq8-Zd-tTQ">
+                <tableViewController storyboardIdentifier="ActiveIdentifier" title="ACTIVE LOBBIES" id="E7y-pW-48Q" customClass="ActiveLobbiesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" id="Eq8-Zd-tTQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activeLobbyCell" id="gbx-OT-kVj">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activeLobbyCell" rowHeight="73" id="gbx-OT-kVj" customClass="ActiveLobbiesTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gbx-OT-kVj" id="NqK-JP-Ny3">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="HrZ-YH-G9g">
+                                            <rect key="frame" x="550" y="15" width="42" height="42.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="42.5" id="Dub-XB-oVr"/>
+                                                <constraint firstAttribute="width" constant="42" id="zmm-RV-nzq"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOBBY TITLE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3Q-2p-1Vz">
+                                            <rect key="frame" x="8" y="16" width="202" height="21"/>
+                                            <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="October 7th, 2014 at 9pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAW-fL-mZk">
+                                            <rect key="frame" x="8" y="37" width="198" height="21"/>
+                                            <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="HrZ-YH-G9g" secondAttribute="bottom" constant="7" id="DFE-6T-S5J"/>
+                                        <constraint firstItem="HrZ-YH-G9g" firstAttribute="top" secondItem="NqK-JP-Ny3" secondAttribute="topMargin" constant="7" id="MoS-SU-SJ7"/>
+                                        <constraint firstItem="HrZ-YH-G9g" firstAttribute="trailing" secondItem="NqK-JP-Ny3" secondAttribute="trailingMargin" id="jrp-xd-A1T"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="fAW-fL-mZk" id="c3T-Lg-KDr"/>
+                                    <outlet property="titleLabel" destination="C3Q-2p-1Vz" id="GMb-hU-aSx"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -934,6 +966,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="active_icon.png" width="265" height="265"/>
         <image name="groop_logoMark.png" width="506" height="506"/>
         <image name="humin.jpg" width="640" height="395"/>
         <image name="login_background.png" width="640" height="1135"/>
