@@ -38,15 +38,11 @@
     self.activeLobbies = [LobbyManager sharedLobbyManager].activeLobbies;
     self.futureLobbies = [LobbyManager sharedLobbyManager].futureLobbies;
     
-    [self.navigationController.navigationBar setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIFont fontWithName:@"GillSansStd-BOLD" size:18],
-      NSFontAttributeName, nil]];
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:62.0/255 green:162.0/255 blue:183.0/255 alpha:1];
-    
     self.cache = [[NSCache alloc] init];
     self.cache.countLimit = 50;
+    
+    UITableViewController *tableViewController = [[UITableViewController alloc] init];
+    tableViewController.tableView = self.tableView;
     
     // Initialize the refresh control.
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -55,7 +51,12 @@
     [self.refreshControl addTarget:self
                             action:@selector(refreshLobbies)
                   forControlEvents:UIControlEventValueChanged];
-
+    tableViewController.refreshControl = self.refreshControl;
+    
+    self.inboxButton.layer.cornerRadius = 30.0;
+    self.inboxNotificationLabel.layer.masksToBounds = YES;
+    self.inboxNotificationLabel.layer.cornerRadius = 12.5;
+    
     [self refreshLobbies];
 }
 
@@ -67,6 +68,8 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+//    self.navigationController.navigationBar.topItem.title = @"EVENTS";
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -157,6 +160,10 @@
     else{
         return [@"Future Lobbies" uppercaseString];
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 150.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

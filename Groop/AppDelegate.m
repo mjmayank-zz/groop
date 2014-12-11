@@ -32,7 +32,7 @@
     
 //    [[CameraRollWorker alloc] init];
     
-    NSString *storyboardId = hasPermissions ? @"PageViewIdentifier" : @"LoginIdentifier";
+    NSString *storyboardId = hasPermissions ? @"PageViewIdentifier" : @"CameraPermissionIdentifier";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:storyboardId];
     
@@ -40,8 +40,18 @@
     self.window.rootViewController = initViewController;
     [self.window makeKeyAndVisible];
     
-    [[UILabel appearance] setFont:[UIFont fontWithName:@"GillsansSTD" size:15.0]];
+//    [[UILabel appearance] setFont:[UIFont fontWithName:@"GillsansSTD" size:15.0]];
     [[[UIButton appearance] titleLabel] setFont:[UIFont fontWithName:@"GillsansSTD" size:15.0]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:62.0/255 green:162.0/255 blue:183.0/255 alpha:1]];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIFont fontWithName:@"GillSansStd-BOLD" size:18],
+                                                          NSFontAttributeName, nil]];
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:
+     @{
+       NSFontAttributeName: [UIFont fontWithName:@"GillsansSTD-Bold" size:15.0]
+       }
+    forState:UIControlStateNormal];
     
     return YES;
 }
@@ -158,6 +168,7 @@
          annotation:(id)annotation {
     // attempt to extract a token from the url
     return [PFFacebookUtils handleOpenURL:url];
+//    [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
 }
 
 @end

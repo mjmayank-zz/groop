@@ -77,6 +77,8 @@
 		8F29D5251A369667005101E5 /* GillSansStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F29D5241A369667005101E5 /* GillSansStd.otf */; };
 		8F305EC11A12B1B500959DE5 /* LobbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F305EC01A12B1B500959DE5 /* LobbyCell.m */; };
 		8F305EC61A12C6BD00959DE5 /* CameraRollWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F305EC51A12C6BD00959DE5 /* CameraRollWorker.m */; };
+		8F5F9EB11A3A3939007CCBDC /* Dismiss.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5F9EB01A3A3939007CCBDC /* Dismiss.m */; };
+		8F5F9EB31A3A4667007CCBDC /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F5F9EB21A3A4667007CCBDC /* inbox.png */; };
 		8F629B0C1A0BF7280020C0CF /* FBEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */; };
 		8F629B0F1A0C19E00020C0CF /* CreateLobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F629B0E1A0C19E00020C0CF /* CreateLobbyViewController.m */; };
 		8F7DB1621A0D58EC008A1C7E /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DB1611A0D58EC008A1C7E /* CameraViewController.m */; };
@@ -253,6 +255,9 @@
 		8F305EC01A12B1B500959DE5 /* LobbyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LobbyCell.m; sourceTree = "<group>"; };
 		8F305EC41A12C6BD00959DE5 /* CameraRollWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraRollWorker.h; sourceTree = "<group>"; };
 		8F305EC51A12C6BD00959DE5 /* CameraRollWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraRollWorker.m; sourceTree = "<group>"; };
+		8F5F9EAF1A3A3939007CCBDC /* Dismiss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dismiss.h; sourceTree = "<group>"; };
+		8F5F9EB01A3A3939007CCBDC /* Dismiss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dismiss.m; sourceTree = "<group>"; };
+		8F5F9EB21A3A4667007CCBDC /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inbox.png; path = images/inbox.png; sourceTree = "<group>"; };
 		8F629B0A1A0BF7280020C0CF /* FBEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEventsTableViewController.h; sourceTree = "<group>"; };
 		8F629B0B1A0BF7280020C0CF /* FBEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEventsTableViewController.m; sourceTree = "<group>"; };
 		8F629B0D1A0C19E00020C0CF /* CreateLobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateLobbyViewController.h; sourceTree = "<group>"; };
@@ -378,6 +383,8 @@
 				8F040BA219EF60D20066F2F4 /* AppDelegate.h */,
 				8F040BA319EF60D20066F2F4 /* AppDelegate.m */,
 				8F040BAB19EF60D20066F2F4 /* Main.storyboard */,
+				8F5F9EAF1A3A3939007CCBDC /* Dismiss.h */,
+				8F5F9EB01A3A3939007CCBDC /* Dismiss.m */,
 				8FBB29511A392D8300099330 /* ActiveLobbiesTableViewController.h */,
 				8FBB29521A392D8300099330 /* ActiveLobbiesTableViewController.m */,
 				8FBCDBA61A37D32100173591 /* PageViewController.h */,
@@ -586,6 +593,7 @@
 		8F29D50B1A366DF3005101E5 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8F5F9EB21A3A4667007CCBDC /* inbox.png */,
 				8FBB29541A393A6900099330 /* flash.png */,
 				8FBCDBA41A37CCD800173591 /* switch_camera.png */,
 				8F29D5221A369141005101E5 /* GillSansStd-Bold.otf */,
@@ -732,6 +740,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F5F9EB31A3A4667007CCBDC /* inbox.png in Resources */,
 				8F040BAD19EF60D20066F2F4 /* Main.storyboard in Resources */,
 				8FB98E5F1A38B25900A489E0 /* goopIcon2x.png in Resources */,
 				8F29D51A1A3687CE005101E5 /* camera_icon.png in Resources */,
@@ -800,6 +809,7 @@
 				8F7DB1621A0D58EC008A1C7E /* CameraViewController.m in Sources */,
 				8F1188F01A0EFF7D00873865 /* PSTCollectionViewFlowLayout.m in Sources */,
 				8F1188FF1A0EFF7D00873865 /* SDWebImageDownloader.m in Sources */,
+				8F5F9EB11A3A3939007CCBDC /* Dismiss.m in Sources */,
 				8FBCDBA31A37C0AC00173591 /* UILabel+Extension.m in Sources */,
 				8F869F321A0B220400429432 /* LoginViewController.m in Sources */,
 				8FBB29531A392D8300099330 /* ActiveLobbiesTableViewController.m in Sources */,
