@@ -63,9 +63,17 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 {
     [super viewDidLoad];
     
-    self.stillButton.layer.cornerRadius = 30;
+    self.stillButton.layer.cornerRadius = 40;
+    self.stillButton.layer.borderWidth=3.0f;
+    self.stillButton.layer.borderColor=[[UIColor colorWithRed:62.0/255 green:162.0/255 blue:183.0/255 alpha:1] CGColor];
+    
     self.activeButton.layer.cornerRadius = 22;
+    self.activeButton.layer.borderWidth=3.0f;
+    self.activeButton.layer.borderColor=[[UIColor whiteColor] CGColor];
+    
     self.lobbiesButton.layer.cornerRadius = 22;
+    self.lobbiesButton.layer.borderWidth=3.0f;
+    self.lobbiesButton.layer.borderColor=[[UIColor whiteColor] CGColor];
     
     // Check for device authorization
     [self checkDeviceAuthorizationStatus];

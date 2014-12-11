@@ -11,26 +11,25 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="9jd-J8-Phf">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="MoX-XK-h1s">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="groop_logoMark.png" translatesAutoresizingMaskIntoConstraints="NO" id="4lf-jB-IZ4">
+                    <rect key="frame" x="206" y="180" width="69" height="69"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="9jd-J8-Phf" secondAttribute="height" multiplier="1:1" id="jSO-th-Skx"/>
+                        <constraint firstAttribute="height" constant="69" id="5bX-sF-kQR"/>
+                        <constraint firstAttribute="width" constant="69" id="KCV-ZR-9bA"/>
+                        <constraint firstAttribute="width" secondItem="4lf-jB-IZ4" secondAttribute="height" multiplier="1:1" id="pZB-vh-InY"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="groop_logoMark.png" translatesAutoresizingMaskIntoConstraints="NO" id="vhx-tU-eEn">
-                    <rect key="frame" x="165" y="74" width="150" height="150"/>
-                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.55294117647058827" green="0.22745098039215686" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="9jd-J8-Phf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="A68-0t-R6f"/>
-                <constraint firstItem="9jd-J8-Phf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KHq-0W-4nP"/>
-                <constraint firstAttribute="trailing" secondItem="9jd-J8-Phf" secondAttribute="trailing" id="MjI-80-5ho"/>
-                <constraint firstItem="vhx-tU-eEn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="165" id="Qdd-IK-1xy"/>
-                <constraint firstItem="vhx-tU-eEn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="74" id="a2H-iR-FQm"/>
-                <constraint firstAttribute="bottom" secondItem="9jd-J8-Phf" secondAttribute="bottom" id="g9O-KJ-vta"/>
-                <constraint firstAttribute="trailing" secondItem="vhx-tU-eEn" secondAttribute="trailing" constant="165" id="lgG-BO-k8I"/>
-                <constraint firstAttribute="bottom" secondItem="vhx-tU-eEn" secondAttribute="bottom" constant="256" id="mdi-IW-AgN"/>
+                <constraint firstAttribute="centerY" secondItem="4lf-jB-IZ4" secondAttribute="centerY" constant="25.5" id="DF9-qn-aYq"/>
+                <constraint firstAttribute="bottom" secondItem="MoX-XK-h1s" secondAttribute="bottom" id="cFw-i2-RH2"/>
+                <constraint firstItem="MoX-XK-h1s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gvG-3C-s8T"/>
+                <constraint firstItem="MoX-XK-h1s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i6m-Gm-2Oa"/>
+                <constraint firstAttribute="centerX" secondItem="4lf-jB-IZ4" secondAttribute="centerX" id="t1X-Tt-GEC"/>
+                <constraint firstAttribute="trailing" secondItem="MoX-XK-h1s" secondAttribute="trailing" id="tlA-nE-BPB"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

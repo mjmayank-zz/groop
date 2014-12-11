@@ -23,6 +23,14 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+//    if ([self.nameTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+//        UIColor *color = [UIColor whiteColor];
+//        self.nameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"LOBBY TITLE" attributes:@{NSForegroundColorAttributeName: color}];
+//    } else {
+//        NSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
+//        // TODO: Add fall-back code to set placeholder color.
+//    }
+    
     if(self.name){
         self.nameTextField.text = self.name;
     }

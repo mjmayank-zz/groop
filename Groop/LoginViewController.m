@@ -50,7 +50,7 @@
         logInViewController.fields = PFLogInFieldsFacebook; // Show Twitter login, Facebook login, and a Dismiss button.
         
         // Present Log In View Controller
-        [self presentViewController:logInViewController animated:YES completion:NULL];
+        [self presentViewController:logInViewController animated:NO completion:NULL];
     }
 
 }
