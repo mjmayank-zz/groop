@@ -1,2 +1,9 @@
 groop
 =====
+Groop is a Photo Sharing App for Events.
+
+If you've never used the app before, the app will detect so and begin the onboarding process after prompting you to sign into Facebook as part of our integration. There will be a short series of popups describing some basics of the app. The camera view should initially be open. Swiping right will open up a list of all active Groops. This list shows which Groops will have your photos automatically pushed to upon taking. Swiping left will bring you back to the camera screen. Here you can take pictures and have them be sent to your active Groops. Swiping left or tapping on the G icon at the bottom will bring you to the Lobby Page. This page will show you all active lobbies, past lobbies, and future lobbies that you are a part of. Swiping right or tapping on the camera icon will bring you back to the camera view. Also shown is our Inbox button that will take you to a view showing you invitations to new lobbies. Each lobby has a name and two numbers associated with it that tell you how many people are in the lobby and how many photos are shared inside. Tapping on the plus sign will let you create a lobby from scratch or by importing from existing events you are the admin of on Facebook. Both flows work as intended.
+
+Aside from possible glitchy UI elements and some unresolved crashes, some features have not been fully implemented as of now. While the Inbox page exists, it provides no functionality and only demonstrates our vision for how accepting and declining invites to Groops should work.
+
+Running should be as easy as compiling in XCode and running on the simulator (camera will not work on simulators) or deploying to phone. The "executable" is Groop.app which can be deployed to phones or simulators as well through XCode.
