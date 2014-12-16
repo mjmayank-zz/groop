@@ -32,11 +32,6 @@
     self.futureLobbies = [LobbyManager sharedLobbyManager].futureLobbies;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [[UIApplication sharedApplication] setStatusBarHidden:NO
-                                            withAnimation:UIStatusBarAnimationFade];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

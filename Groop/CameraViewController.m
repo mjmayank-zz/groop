@@ -185,6 +185,9 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO
+                                            withAnimation:UIStatusBarAnimationFade];
     dispatch_async([self sessionQueue], ^{
         [[self session] stopRunning];
         
