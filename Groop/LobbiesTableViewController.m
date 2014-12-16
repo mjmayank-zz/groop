@@ -74,6 +74,8 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO
+                                            withAnimation:UIStatusBarAnimationFade];
     
 //    self.navigationController.navigationBar.topItem.title = @"EVENTS";
 }
