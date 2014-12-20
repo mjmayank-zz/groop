@@ -169,7 +169,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 150.0;
+    return 125.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -184,7 +184,7 @@
         NSMutableArray * array = [self arrayForSection:indexPath.section];
         
         if([array count] == 0){
-            [cell.lobbyName setText:@"No Lobbies"];
+            [cell.lobbyName setText:[@"No Lobbies" uppercaseString]];
         }
         else {
             PFObject * lobby = array[indexPath.row];
@@ -192,7 +192,6 @@
             
             if ([self.cache objectForKey:cell_key] != nil)
             {
-                NSLog(@"asda");
                 UIImage *image = [self.cache objectForKey:cell_key];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [cell.backgroundImageView setImage:image];
@@ -243,7 +242,7 @@
                 }];
             }
             
-            [cell.lobbyName setText:lobby[@"name"]];
+            [cell.lobbyName setText:[lobby[@"name"] uppercaseString]];
             
             PFRelation *people_relation = [lobby relationForKey:@"users"];
             PFQuery *people_query = [people_relation query];
@@ -263,7 +262,6 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         return;
     }
-    
     
     PFObject * lobby = [[self arrayForSection:indexPath.section ] objectAtIndex:indexPath.row];
     

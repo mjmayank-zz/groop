@@ -405,7 +405,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
                         
                         [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                             if(!error){
-                                for(PFObject * lobby in [LobbyManager sharedLobbyManager].activeLobbies){
+                                for(PFObject * lobby in [[LobbyManager sharedLobbyManager] postingLobbies]){
                                     PFRelation * relation = [lobby relationForKey:@"pictures"];
                                     [relation addObject:photo];
                                     [lobby saveInBackground];

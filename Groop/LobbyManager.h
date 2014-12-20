@@ -19,10 +19,15 @@ typedef NS_ENUM(NSUInteger, DateCompare) {
 @property (strong, nonatomic) NSMutableArray * activeLobbies;
 @property (strong, nonatomic) NSMutableArray * pastLobbies;
 @property (strong, nonatomic) NSMutableArray * futureLobbies;
+@property (strong, nonatomic) NSMutableArray * pausedLobbies;
 
 + (LobbyManager *)sharedLobbyManager;
 - (NSArray *)getAllLobbies;
 - (void)calculateActiveLobbies:(NSArray *)allLobbies;
 - (void)queryLobbies;
+- (void) toggleLobby:(PFObject *)lobby;
+- (NSArray *) postingLobbies;
+- (BOOL) isPaused:(PFObject *)lobby;
+
 
 @end

@@ -10,8 +10,4 @@
 
 @interface ActiveLobbiesTableViewController : UITableViewController
 
-@property (strong, nonatomic) NSMutableArray * pastLobbies;
-@property (strong, nonatomic) NSMutableArray * activeLobbies;
-@property (strong, nonatomic) NSMutableArray * futureLobbies;
-
 @end

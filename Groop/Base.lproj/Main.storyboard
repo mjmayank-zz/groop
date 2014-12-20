@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eVw-1S-OtA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eVw-1S-OtA">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -398,163 +398,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ivg-HU-cu4">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="test" selectionStyle="default" indentationWidth="10" reuseIdentifier="test" rowHeight="150" id="O2k-h4-eF6" customClass="LobbyCell">
-                                        <rect key="frame" x="0.0" y="225" width="600" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O2k-h4-eF6" id="QbP-Zl-OxJ">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humin.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BgV-py-8cq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
-                                                </imageView>
-                                                <view alpha="0.34999999403953552" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mQW-5i-pPn">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Eb-NP-cn0">
-                                                    <rect key="frame" x="0.0" y="104" width="600" height="47"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="October 17th, 9pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDa-rd-rkr">
-                                                            <rect key="frame" x="10" y="25" width="146" height="21"/>
-                                                            <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="12"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="23" y="23" width="146" height="21"/>
-                                                            </variation>
-                                                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                                                <rect key="frame" x="12" y="28" width="146" height="21"/>
-                                                            </variation>
-                                                        </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="members_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="X8H-Yl-Nu1">
-                                                            <rect key="frame" x="465" y="12" width="27" height="24"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="27" id="Mlz-5b-Dxh"/>
-                                                                <constraint firstAttribute="height" constant="24" id="QVG-A2-ML4"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="Xa5-0S-uvM"/>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="27" id="sUB-cP-7nF"/>
-                                                            </constraints>
-                                                            <variation key="default">
-                                                                <mask key="constraints">
-                                                                    <exclude reference="Xa5-0S-uvM"/>
-                                                                    <exclude reference="sUB-cP-7nF"/>
-                                                                </mask>
-                                                            </variation>
-                                                            <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                                <rect key="frame" x="645" y="14" width="27" height="24"/>
-                                                                <mask key="constraints">
-                                                                    <include reference="Xa5-0S-uvM"/>
-                                                                    <include reference="sUB-cP-7nF"/>
-                                                                </mask>
-                                                            </variation>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hB-rq-fNj">
-                                                            <rect key="frame" x="561" y="15" width="29" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="21" id="DAZ-xV-I5s"/>
-                                                                <constraint firstAttribute="width" constant="29" id="OIw-Bb-7Ng"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                                <rect key="frame" x="750" y="17" width="29" height="21"/>
-                                                            </variation>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaH-ek-B6s">
-                                                            <rect key="frame" x="500" y="16" width="20" height="19"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="20" id="8tp-cc-xFb"/>
-                                                                <constraint firstAttribute="height" constant="19" id="90V-iG-oWX"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                                <rect key="frame" x="680" y="17" width="20" height="21"/>
-                                                            </variation>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mayank's 16th Party" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQ2-e3-NhU">
-                                                            <rect key="frame" x="10" y="2" width="280" height="31"/>
-                                                            <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <variation key="widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="23" y="0.0" width="280" height="31"/>
-                                                            </variation>
-                                                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                                                <rect key="frame" x="12" y="3" width="280" height="31"/>
-                                                            </variation>
-                                                        </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="quj-dt-IjW">
-                                                            <rect key="frame" x="526" y="12" width="27" height="24"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="24" id="4NQ-bT-869"/>
-                                                                <constraint firstAttribute="width" constant="27" id="Q8R-h9-LNk"/>
-                                                            </constraints>
-                                                            <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                                <rect key="frame" x="715" y="14" width="27" height="24"/>
-                                                            </variation>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="X8H-Yl-Nu1" secondAttribute="bottom" constant="11" id="BSc-yW-w9O">
-                                                            <variation key="heightClass=regular-widthClass=regular" constant="13"/>
-                                                        </constraint>
-                                                        <constraint firstAttribute="height" constant="47" id="QSt-Uc-QbU"/>
-                                                        <constraint firstAttribute="trailing" secondItem="4hB-rq-fNj" secondAttribute="trailing" constant="10" id="Rjo-SG-I09"/>
-                                                        <constraint firstAttribute="trailing" secondItem="X8H-Yl-Nu1" secondAttribute="trailing" constant="108" id="TSM-XI-N1Q"/>
-                                                        <constraint firstAttribute="bottom" secondItem="4hB-rq-fNj" secondAttribute="bottom" constant="11" id="WJC-WY-2Th">
-                                                            <variation key="heightClass=regular-widthClass=regular" constant="13"/>
-                                                        </constraint>
-                                                        <constraint firstItem="X8H-Yl-Nu1" firstAttribute="leading" secondItem="quj-dt-IjW" secondAttribute="trailing" constant="-88" id="Zmf-yx-44B"/>
-                                                        <constraint firstItem="quj-dt-IjW" firstAttribute="leading" secondItem="UaH-ek-B6s" secondAttribute="trailing" constant="6" id="bGu-BA-d2q"/>
-                                                        <constraint firstAttribute="bottom" secondItem="quj-dt-IjW" secondAttribute="bottom" constant="11" id="bOv-FO-Zut">
-                                                            <variation key="heightClass=regular-widthClass=regular" constant="13"/>
-                                                        </constraint>
-                                                        <constraint firstAttribute="bottom" secondItem="UaH-ek-B6s" secondAttribute="bottom" constant="12" id="sm8-4m-aci">
-                                                            <variation key="heightClass=regular-widthClass=regular" constant="13"/>
-                                                        </constraint>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="51" id="tZW-sj-72I"/>
-                                                    </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="tZW-sj-72I"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="100" width="800" height="51"/>
-                                                        <mask key="constraints">
-                                                            <include reference="tZW-sj-72I"/>
-                                                        </mask>
-                                                    </variation>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="3Eb-NP-cn0" firstAttribute="leading" secondItem="QbP-Zl-OxJ" secondAttribute="leadingMargin" constant="-8" id="7dS-Qc-ItO"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="BgV-py-8cq" secondAttribute="bottom" constant="-8" id="F6Z-0z-gzL"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="BgV-py-8cq" secondAttribute="trailing" constant="-8" id="V0m-cT-lhm"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="3Eb-NP-cn0" secondAttribute="bottom" constant="-9.5" id="W1M-4T-Fs4"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="3Eb-NP-cn0" secondAttribute="trailing" constant="-8" id="YXd-ge-mTy"/>
-                                                <constraint firstItem="BgV-py-8cq" firstAttribute="leading" secondItem="QbP-Zl-OxJ" secondAttribute="leadingMargin" constant="-8" id="d7j-2u-IBd"/>
-                                                <constraint firstItem="BgV-py-8cq" firstAttribute="top" secondItem="QbP-Zl-OxJ" secondAttribute="topMargin" constant="-8" id="w1P-bu-vUZ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="backgroundImageView" destination="BgV-py-8cq" id="ejA-iC-cCJ"/>
-                                            <outlet property="lobbyName" destination="tQ2-e3-NhU" id="ipP-bl-Xfr"/>
-                                            <outlet property="lobbyTime" destination="cDa-rd-rkr" id="cRM-2B-bVL"/>
-                                            <outlet property="numPeople" destination="UaH-ek-B6s" id="2ha-3h-vx0"/>
-                                            <outlet property="numPhotos" destination="4hB-rq-fNj" id="lkj-Ft-YiG"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVp-OX-d3X">
                                 <rect key="frame" x="513" y="506" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.75686274509999996" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -600,6 +443,143 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="136" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ivg-HU-cu4">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="test" selectionStyle="default" indentationWidth="10" reuseIdentifier="test" rowHeight="125" id="O2k-h4-eF6" customClass="LobbyCell">
+                                        <rect key="frame" x="0.0" y="225" width="600" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O2k-h4-eF6" id="QbP-Zl-OxJ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humin.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="BgV-py-8cq">
+                                                    <rect key="frame" x="16" y="19" width="88" height="86.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="86.5" id="lDj-r1-ICF"/>
+                                                        <constraint firstAttribute="width" constant="88" id="tWO-UZ-xTF"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mayank's 16th Party" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQ2-e3-NhU">
+                                                    <rect key="frame" x="117" y="27" width="280" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="31" id="EzC-Wj-MI9"/>
+                                                        <constraint firstAttribute="width" constant="280" id="yCg-aj-9yK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="23" y="0.0" width="280" height="31"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                                        <rect key="frame" x="12" y="3" width="280" height="31"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October 17th, 9pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDa-rd-rkr">
+                                                    <rect key="frame" x="117" y="54" width="146" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="146" id="a2F-43-f6b"/>
+                                                        <constraint firstAttribute="height" constant="21" id="riD-69-mcC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GillSansStd" family="Gill Sans Std" pointSize="12"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="23" y="23" width="146" height="21"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                                        <rect key="frame" x="12" y="28" width="146" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hB-rq-fNj">
+                                                    <rect key="frame" x="194" y="77" width="29" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="29" id="Uee-et-BlZ"/>
+                                                        <constraint firstAttribute="height" constant="21" id="dGc-15-Uf7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="750" y="17" width="29" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaH-ek-B6s">
+                                                    <rect key="frame" x="142" y="77" width="20" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="76d-AD-5Wl"/>
+                                                        <constraint firstAttribute="height" constant="19" id="hCW-N1-9Yc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="680" y="17" width="20" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="quj-dt-IjW">
+                                                    <rect key="frame" x="170" y="77" width="16" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="16" id="0D4-EN-CpM"/>
+                                                        <constraint firstAttribute="height" constant="15" id="9L4-RP-5an"/>
+                                                    </constraints>
+                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="715" y="14" width="27" height="24"/>
+                                                    </variation>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="members_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="X8H-Yl-Nu1">
+                                                    <rect key="frame" x="117" y="77" width="17" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="TgF-wT-bUr"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="Xa5-0S-uvM"/>
+                                                        <constraint firstAttribute="width" constant="17" id="d3c-Ff-Ojp"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="27" id="sUB-cP-7nF"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Xa5-0S-uvM"/>
+                                                            <exclude reference="sUB-cP-7nF"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="645" y="14" width="27" height="24"/>
+                                                        <mask key="constraints">
+                                                            <include reference="Xa5-0S-uvM"/>
+                                                            <include reference="sUB-cP-7nF"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="X8H-Yl-Nu1" firstAttribute="leading" secondItem="BgV-py-8cq" secondAttribute="trailing" constant="13" id="15c-7h-7Hs"/>
+                                                <constraint firstItem="BgV-py-8cq" firstAttribute="top" secondItem="QbP-Zl-OxJ" secondAttribute="topMargin" constant="11" id="Bff-PV-dG1"/>
+                                                <constraint firstItem="quj-dt-IjW" firstAttribute="top" secondItem="cDa-rd-rkr" secondAttribute="bottom" constant="2" id="F5U-VJ-xQr"/>
+                                                <constraint firstItem="tQ2-e3-NhU" firstAttribute="top" secondItem="QbP-Zl-OxJ" secondAttribute="topMargin" constant="19" id="HcK-fb-cbG"/>
+                                                <constraint firstItem="tQ2-e3-NhU" firstAttribute="leading" secondItem="BgV-py-8cq" secondAttribute="trailing" constant="13" id="KeN-o9-UVb"/>
+                                                <constraint firstItem="4hB-rq-fNj" firstAttribute="top" secondItem="cDa-rd-rkr" secondAttribute="bottom" constant="2" id="ORb-EN-cLz"/>
+                                                <constraint firstItem="cDa-rd-rkr" firstAttribute="leading" secondItem="BgV-py-8cq" secondAttribute="trailing" constant="13" id="TYt-yj-Zug"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BgV-py-8cq" secondAttribute="trailing" constant="488" id="V0m-cT-lhm"/>
+                                                <constraint firstItem="UaH-ek-B6s" firstAttribute="leading" secondItem="X8H-Yl-Nu1" secondAttribute="trailing" constant="8" id="YrJ-iW-2Tq"/>
+                                                <constraint firstItem="BgV-py-8cq" firstAttribute="leading" secondItem="QbP-Zl-OxJ" secondAttribute="leadingMargin" constant="8" id="cZx-6y-tco"/>
+                                                <constraint firstItem="quj-dt-IjW" firstAttribute="leading" secondItem="UaH-ek-B6s" secondAttribute="trailing" constant="8" id="eyv-78-eyJ"/>
+                                                <constraint firstItem="X8H-Yl-Nu1" firstAttribute="top" secondItem="cDa-rd-rkr" secondAttribute="bottom" constant="2" id="fKh-jM-ikc"/>
+                                                <constraint firstItem="4hB-rq-fNj" firstAttribute="leading" secondItem="quj-dt-IjW" secondAttribute="trailing" constant="8" id="hxY-e6-S1g"/>
+                                                <constraint firstItem="UaH-ek-B6s" firstAttribute="top" secondItem="cDa-rd-rkr" secondAttribute="bottom" constant="2" id="y0M-Nt-B27"/>
+                                                <constraint firstItem="cDa-rd-rkr" firstAttribute="top" secondItem="QbP-Zl-OxJ" secondAttribute="topMargin" constant="46" id="zPK-sE-eij"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="V0m-cT-lhm"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backgroundImageView" destination="BgV-py-8cq" id="ejA-iC-cCJ"/>
+                                            <outlet property="lobbyName" destination="tQ2-e3-NhU" id="ipP-bl-Xfr"/>
+                                            <outlet property="lobbyTime" destination="cDa-rd-rkr" id="cRM-2B-bVL"/>
+                                            <outlet property="numPeople" destination="UaH-ek-B6s" id="2ha-3h-vx0"/>
+                                            <outlet property="numPhotos" destination="4hB-rq-fNj" id="lkj-Ft-YiG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -914,6 +894,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activeIndicator" destination="HrZ-YH-G9g" id="LEf-KZ-sbL"/>
                                     <outlet property="dateLabel" destination="fAW-fL-mZk" id="c3T-Lg-KDr"/>
                                     <outlet property="titleLabel" destination="C3Q-2p-1Vz" id="GMb-hU-aSx"/>
                                 </connections>

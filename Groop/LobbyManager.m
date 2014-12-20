@@ -18,6 +18,7 @@
         self.pastLobbies = [[NSMutableArray alloc] init];
         self.activeLobbies = [[NSMutableArray alloc] init];
         self.futureLobbies = [[NSMutableArray alloc] init];
+        self.pausedLobbies = [[NSMutableArray alloc] init];
         
         [self queryLobbies];
     }
@@ -97,6 +98,30 @@
         sharedInstance = [[self alloc] init];
     });
     return sharedInstance;
+}
+
+- (void) toggleLobby:(PFObject *)lobby{
+    if([self.pausedLobbies containsObject:lobby]){
+        [self.pausedLobbies removeObject:lobby];
+    }
+    else{
+        [self.pausedLobbies addObject:lobby];
+    }
+}
+
+- (NSArray *) postingLobbies{
+    NSMutableArray * postingLobbies = [[NSMutableArray alloc] init];
+    
+    for (PFObject * lobby in self.activeLobbies){
+        if(![self.pausedLobbies containsObject:lobby]){
+            [postingLobbies addObject:lobby];
+        }
+    }
+    return postingLobbies;
+}
+
+- (BOOL) isPaused:(PFObject *)lobby{
+    return [self.pausedLobbies containsObject:lobby];
 }
 
 @end

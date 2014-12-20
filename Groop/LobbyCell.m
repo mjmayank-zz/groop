@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.backgroundImageView.layer.cornerRadius = 44.0;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

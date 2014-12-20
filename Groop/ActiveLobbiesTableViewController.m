@@ -27,9 +27,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.pastLobbies = [LobbyManager sharedLobbyManager].pastLobbies;
-    self.activeLobbies = [LobbyManager sharedLobbyManager].activeLobbies;
-    self.futureLobbies = [LobbyManager sharedLobbyManager].futureLobbies;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,14 +51,33 @@
     if (cell == nil) {
         cell = [[ActiveLobbiesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"activeLobbyCell"];
     }
+    PFObject * lobby = [LobbyManager sharedLobbyManager].activeLobbies[indexPath.row];
     // Configure the cell...
-    cell.titleLabel.text = [LobbyManager sharedLobbyManager].activeLobbies[indexPath.row][@"name"];
+    cell.titleLabel.text = lobby[@"name"];
+    
+    if([[LobbyManager sharedLobbyManager] isPaused:lobby]){
+        cell.activeIndicator.hidden = YES;
+    }
+    else{
+        cell.activeIndicator.hidden = NO;
+    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PFObject * lobby = [LobbyManager sharedLobbyManager].activeLobbies[indexPath.row];
+    [[LobbyManager sharedLobbyManager] toggleLobby:lobby];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    ActiveLobbiesTableViewCell * cell = (ActiveLobbiesTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    if([[LobbyManager sharedLobbyManager] isPaused:lobby]){
+        cell.activeIndicator.hidden = YES;
+    }
+    else{
+        cell.activeIndicator.hidden = NO;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
