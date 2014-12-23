@@ -12,10 +12,12 @@
 #import "MWPhotoBrowser.h"
 #import "LobbyCell.h"
 #import "PhotoBrowserViewController.h"
+#import "LobbyStatusObject.h"
 
 @interface LobbiesTableViewController ()
 @property(nonatomic, strong) NSCache *cache;
 @end
+
 
 @implementation LobbiesTableViewController
 
@@ -192,10 +194,11 @@
             
             if ([self.cache objectForKey:cell_key] != nil)
             {
-                UIImage *image = [self.cache objectForKey:cell_key];
+                LobbyStatusObject *cacheObject = [self.cache objectForKey:cell_key];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [cell.backgroundImageView setImage:image];
+                    [cell.backgroundImageView setImage:cacheObject.image];
                 });
+                [cell.numPhotos setText:[NSString stringWithFormat:@"%d", cacheObject.numPeople]];
             }
             else{
                 PFRelation *relation = [lobby relationForKey:@"pictures"];
@@ -217,7 +220,10 @@
                                 
                                 if (image)
                                 {
-                                    [self.cache setObject:image forKey:cell_key];
+                                    LobbyStatusObject * cacheObject = [[LobbyStatusObject alloc] init];
+                                    cacheObject.image = image;
+                                    cacheObject.numPeople = (int)[objects count];
+                                    [self.cache setObject:cacheObject forKey:cell_key];
                                 }
                                 else
                                 {
@@ -365,7 +371,7 @@
  }
  */
 - (IBAction)refreshButtonPressed:(id)sender {
-//    [self refreshLobbies];
+    [self refreshLobbies];
     [self.pageController setViewControllers:@[[self.pageController pageViewController:self.pageController viewControllerBeforeViewController:self.navigationController]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
 }
 

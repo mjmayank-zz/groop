@@ -119,6 +119,7 @@
 		8FFB4D0A1A0753D90048A5AC /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4D091A0753D90048A5AC /* Twitter.framework */; };
 		8FFB4D0E1A07544A0048A5AC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4D0D1A07544A0048A5AC /* Social.framework */; };
 		8FFB4D101A0754530048A5AC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFB4D0F1A0754530048A5AC /* Accounts.framework */; };
+		ED17E9C31A49647200046885 /* LobbyStatusObject.m in Sources */ = {isa = PBXBuildFile; fileRef = ED17E9C21A49647200046885 /* LobbyStatusObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,6 +315,8 @@
 		8FFB4D091A0753D90048A5AC /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		8FFB4D0D1A07544A0048A5AC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		8FFB4D0F1A0754530048A5AC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		ED17E9C11A49640B00046885 /* LobbyStatusObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LobbyStatusObject.h; sourceTree = "<group>"; };
+		ED17E9C21A49647200046885 /* LobbyStatusObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LobbyStatusObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +427,8 @@
 				8F040BB019EF60D20066F2F4 /* LaunchScreen.xib */,
 				8F040BA519EF60D20066F2F4 /* Groop.xcdatamodeld */,
 				8F040B9E19EF60D20066F2F4 /* Supporting Files */,
+				ED17E9C11A49640B00046885 /* LobbyStatusObject.h */,
+				ED17E9C21A49647200046885 /* LobbyStatusObject.m */,
 			);
 			path = Groop;
 			sourceTree = "<group>";
@@ -850,6 +855,7 @@
 				8F7DB1671A0D6932008A1C7E /* AVCamPreviewView.m in Sources */,
 				8F1189081A0EFF7D00873865 /* UIImageView+WebCache.m in Sources */,
 				8F1188E51A0EFF7D00873865 /* MWTapDetectingImageView.m in Sources */,
+				ED17E9C31A49647200046885 /* LobbyStatusObject.m in Sources */,
 				8F1188E41A0EFF7D00873865 /* MWPhotoBrowser.m in Sources */,
 				8F1188F41A0EFF7D00873865 /* PSTGridLayoutInfo.m in Sources */,
 			);
