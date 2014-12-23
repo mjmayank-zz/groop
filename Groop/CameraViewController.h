@@ -11,5 +11,6 @@
 
 @interface CameraViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *lobbiesButton;
+@property (strong, nonatomic) IBOutlet UIButton *activeButton;
 @property (weak, nonatomic) PageViewController *pageController;
 @end

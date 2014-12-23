@@ -24,7 +24,6 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 @property (nonatomic, weak) IBOutlet UIButton *recordButton;
 @property (nonatomic, weak) IBOutlet UIButton *cameraButton;
 @property (nonatomic, weak) IBOutlet UIButton *stillButton;
-@property (strong, nonatomic) IBOutlet UIButton *activeButton;
 
 - (IBAction)toggleMovieRecording:(id)sender;
 - (IBAction)changeCamera:(id)sender;
@@ -63,6 +62,8 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 {
     [super viewDidLoad];
     
+    
+    
     self.stillButton.layer.cornerRadius = 40;
     self.stillButton.layer.borderWidth=3.0f;
     self.stillButton.layer.borderColor=[[UIColor colorWithRed:62.0/255 green:162.0/255 blue:183.0/255 alpha:1] CGColor];
@@ -78,8 +79,12 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     // Check for device authorization
     [self checkDeviceAuthorizationStatus];
     
-    [LobbyManager sharedLobbyManager];
+    [[LobbyManager sharedLobbyManager] queryLobbies];
     
+    // Display the right number of active lobbies
+    // NOTE: This is really slow right now since it takes forever to retrieve all the lobbies
+    NSInteger numActiveLobbies = [[LobbyManager sharedLobbyManager].activeLobbies count];
+    [self.activeButton setTitle:[NSString stringWithFormat:@"%d", (int)numActiveLobbies] forState:UIControlStateNormal];
     
     self.previewView = [[AVCamPreviewView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
@@ -164,6 +169,11 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES
                                             withAnimation:UIStatusBarAnimationFade];
+    
+    // Update the number of active lobbies
+    NSInteger numActiveLobbies = [[LobbyManager sharedLobbyManager].activeLobbies count];
+    [self.activeButton setTitle:[NSString stringWithFormat:@"%d", (int)numActiveLobbies] forState:UIControlStateNormal];
+    
     dispatch_async([self sessionQueue], ^{
         [self addObserver:self forKeyPath:@"sessionRunningAndDeviceAuthorized" options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew) context:SessionRunningAndDeviceAuthorizedContext];
         [self addObserver:self forKeyPath:@"stillImageOutput.capturingStillImage" options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew) context:CapturingStillImageContext];
