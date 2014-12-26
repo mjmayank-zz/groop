@@ -377,6 +377,8 @@
 
 - (void)refreshLobbies{
     [[LobbyManager sharedLobbyManager] queryLobbies];
+    [self.cache removeAllObjects];
+    [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
 
