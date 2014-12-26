@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) UIImage * image;
 @property (nonatomic, assign) int numPeople;
+@property (nonatomic, assign) int numPhotos;
 
 @end

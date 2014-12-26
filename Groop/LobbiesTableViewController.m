@@ -198,11 +198,13 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [cell.backgroundImageView setImage:cacheObject.image];
                 });
-                [cell.numPhotos setText:[NSString stringWithFormat:@"%d", cacheObject.numPeople]];
+                [cell.numPhotos setText:[NSString stringWithFormat:@"%d", cacheObject.numPhotos]];
+                [cell.numPeople setText:[NSString stringWithFormat:@"%d", cacheObject.numPeople]];
             }
             else{
                 PFRelation *relation = [lobby relationForKey:@"pictures"];
                 PFQuery *query = [relation query];
+                LobbyStatusObject * cacheObject = [[LobbyStatusObject alloc] init];
                 
                 [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                     if (!error) {
@@ -220,10 +222,8 @@
                                 
                                 if (image)
                                 {
-                                    LobbyStatusObject * cacheObject = [[LobbyStatusObject alloc] init];
                                     cacheObject.image = image;
-                                    cacheObject.numPeople = (int)[objects count];
-                                    [self.cache setObject:cacheObject forKey:cell_key];
+                                    cacheObject.numPhotos = (int)[objects count];
                                 }
                                 else
                                 {
@@ -246,15 +246,19 @@
                     
                     [cell.numPhotos setText:[NSString stringWithFormat:@"%d", (int)[objects count]]];
                 }];
+                
+                
+                PFRelation *people_relation = [lobby relationForKey:@"users"];
+                PFQuery *people_query = [people_relation query];
+                [people_query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    [cell.numPeople setText:[NSString stringWithFormat:@"%d", (int) [objects count]]];
+                    cacheObject.numPeople = (int)[objects count];
+                    [self.cache setObject:cacheObject forKey:cell_key];
+                }];
             }
             
             [cell.lobbyName setText:[lobby[@"name"] uppercaseString]];
             
-            PFRelation *people_relation = [lobby relationForKey:@"users"];
-            PFQuery *people_query = [people_relation query];
-            [people_query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                [cell.numPeople setText:[NSString stringWithFormat:@"%d", (int) [objects count]]];
-            }];
             
         }
         
