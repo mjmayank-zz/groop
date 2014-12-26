@@ -65,6 +65,11 @@
     self.inboxNotificationLabel.layer.masksToBounds = YES;
     self.inboxNotificationLabel.layer.cornerRadius = 12.5;
     
+    [self.tableView addSubview:self.inboxButton];
+    [self.tableView addSubview:self.inboxNotificationLabel];
+    [self.tableView bringSubviewToFront:self.inboxButton];
+    [self.tableView bringSubviewToFront:self.inboxNotificationLabel];
+    
     [self refreshLobbies];
 }
 
