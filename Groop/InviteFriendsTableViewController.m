@@ -148,7 +148,7 @@
             {
                 NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
                 
-                PFRelation * relation = [self.lobby relationForKey:@"users"];
+                PFRelation * relation = [self.lobby relationForKey:@"invited"];
                 
                 PFQuery *query = [PFUser query];
                 [query whereKey:@"fbID" equalTo:[self.array objectAtIndex:indexPath.row][@"id"]];
