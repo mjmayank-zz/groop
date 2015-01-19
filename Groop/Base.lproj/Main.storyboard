@@ -633,7 +633,7 @@
         <!--INBOX-->
         <scene sceneID="fyA-hP-UOv">
             <objects>
-                <tableViewController title="INBOX" id="1bf-fs-S9f" sceneMemberID="viewController">
+                <tableViewController title="INBOX" id="1bf-fs-S9f" customClass="InboxViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" id="dWx-oG-Ep6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1077,7 +1077,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-KU-Z9n">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PI3-KU-Z9n">
                                 <rect key="frame" x="0.0" y="64" width="600" height="268"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="19"/>
@@ -1089,7 +1089,7 @@
                                     <segue destination="iLw-mP-g7Y" kind="show" id="nJs-YL-i8M"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pq-pb-NkP">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pq-pb-NkP">
                                 <rect key="frame" x="0.0" y="332" width="600" height="268"/>
                                 <color key="backgroundColor" red="0.14117647058823529" green="0.19607843137254902" blue="0.39215686274509803" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GillSansStd-Bold" family="Gill Sans Std" pointSize="19"/>
@@ -1502,8 +1502,8 @@
         <image name="switch_camera.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qff-YJ-5N8"/>
-        <segue reference="vgG-rB-Whd"/>
+        <segue reference="4Vx-Ji-cCb"/>
         <segue reference="nJs-YL-i8M"/>
+        <segue reference="gBp-Lq-rft"/>
     </inferredMetricsTieBreakers>
 </document>
